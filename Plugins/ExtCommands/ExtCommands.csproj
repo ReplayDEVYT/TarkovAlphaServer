@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>SlejmUr</Authors>
+    <Description>Add external commands support</Description>
+  </PropertyGroup>
+	
+  <ItemGroup>
+	<PackageReference Include="JWT" Version="10.0.2" />
+	<PackageReference Include="System.Composition.AttributedModel" Version="6.0.0" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <ProjectReference Include="..\..\ServerLib\ServerLib.csproj" />
+  </ItemGroup>
+	
+</Project>

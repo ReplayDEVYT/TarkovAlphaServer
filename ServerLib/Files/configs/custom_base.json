@@ -1,0 +1,9 @@
+﻿{
+  "Account": {
+    "checkTakenNickname": false,
+    "useSha1" :  false
+  },
+  "Server": {
+    "PublicConfigEnabled": true
+  }
+}

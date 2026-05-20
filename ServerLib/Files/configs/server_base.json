@@ -1,0 +1,14 @@
+{
+	"ip": "127.0.0.1",
+	"port": 6969,
+	"name": "Tarkov Server",
+	"version": "Alpha-0.1",
+	"debug": true,
+	"servers":
+	[
+		{
+			"ip":"127.0.0.1",
+			"port": 7777
+		}
+	]
+}
