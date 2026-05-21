@@ -59,7 +59,7 @@ namespace ServerLib.Controllers
         /// <param name="SessionId">SessionId/AccountId</param>
         public static void SessionLogout(string SessionId)
         {
-            Debug.PrintDebug($"User with ID {SessionId} has logged out");
+            Utilities.Debug.PrintDebug($"User with ID {SessionId} has logged out");
             ActiveAccountIds.Remove(SessionId);
         }
 

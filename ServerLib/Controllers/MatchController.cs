@@ -51,7 +51,7 @@ namespace ServerLib.Controllers
         {
             
             var match = GetMatch(ProfileId);
-            Debug.PrintDebug($"Match [{match.matchData.MatchId}] deleted.", "MatchController");
+            Utilities.Debug.PrintDebug($"Match [{match.matchData.MatchId}] deleted.", "MatchController");
             Matches.Remove(match.matchData.MatchId);
         }
 
@@ -63,7 +63,7 @@ namespace ServerLib.Controllers
             matchData.Ip = ConfigController.Configs.Server.Servers[0].Ip;
             matchData.Port = ConfigController.Configs.Server.Servers[0].Port;
             matchData.Mode = joinMatch.mode;
-            Debug.PrintDebug($"Match [{matchData.MatchId}] created for {ProfileId}", "MatchController");
+            Utilities.Debug.PrintDebug($"Match [{matchData.MatchId}] created for {ProfileId}", "MatchController");
             Matches[matchData.MatchId] = matchData;
         }
     }

@@ -2,6 +2,7 @@
 using ServerLib.Json.Classes;
 using ServerLib.Handlers;
 using Newtonsoft.Json;
+using UnityEngine;
 
 namespace ServerLib.Controllers
 {
@@ -61,7 +62,7 @@ namespace ServerLib.Controllers
 
                 while (true)
                 {
-                    Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.GetSize");
+                    Utilities.Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.GetSize");
                     if (ItemIds.Count != 0)
                     {
                         foreach (var item in Items)
@@ -121,7 +122,7 @@ namespace ServerLib.Controllers
                 List<string> ItemIds = new() { body.item };
                 while (true)
                 {
-                    Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.RemoveItem");
+                    Utilities.Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.RemoveItem");
                     if (ItemIds.Count != 0)
                     {
                         while (true)
@@ -154,6 +155,36 @@ namespace ServerLib.Controllers
             }
         }
 
+        public static void AddNote(string SessionId, dynamic body)
+        {
+                var ch = CharacterController.GetCharacter(SessionId);
+                if (ch != null)
+                {
+                    ch.Notes.NotesNotes = ch.Notes.NotesNotes.Append(new Character.InsideNotes() { Time = body.note.Time, Text = body.note.Text }).ToArray();
+                    SaveHandler.SaveCharacter(SessionId, ch);
+                }
+        }
+
+        public static void MoveItem(string SessionId, dynamic body)
+        {
+                var ch = CharacterController.GetCharacter(SessionId);
+                if (ch != null)
+                {
+                    foreach (var item in ch.Inventory.Items)
+                    {
+                        if (item.Id == body.itemId)
+                        {
+                            item.ParentId = body.to.id;
+                            item.SlotId = body.to.container;
+                            var newLocation = new Character.LocationClass() { X = body.to.location.x, Y = body.to.location.y, R = body.to.location.r };
+                            item.Location = newLocation;
+                            MoveActionResult.items.change.Append(item);
+                        }
+                    }
+                    SaveHandler.SaveCharacter(SessionId, ch);
+                }
+        }
+
         public static string HandleMoving(string SessionId, dynamic body)
         {
             MoveActionResult = new()
@@ -176,8 +207,14 @@ namespace ServerLib.Controllers
                 case "Remove":
                     RemoveItem(SessionId, body);
                     break;
+                case "AddNote":
+                    AddNote(SessionId, body);
+                    break;
+                case "Move":
+                    MoveItem(SessionId, body);
+                    break;
                 default:
-                    Debug.PrintError("Action Cannot be Handled! " + body.Action);
+                    Utilities.Debug.PrintError("Action Cannot be Handled! " + body.Action);
                     break;
             }
 

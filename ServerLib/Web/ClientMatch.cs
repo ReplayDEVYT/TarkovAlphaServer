@@ -29,7 +29,7 @@ namespace ServerLib.Web
             var sessionId = Utils.GetSessionId(session.Headers);
 
             var jsonreq = JsonConvert.DeserializeObject<Requests.MatchJoin>(ResponseControl.DeCompressReq(request.BodyBytes));
-            Debug.PrintDebug(JsonConvert.SerializeObject(jsonreq));
+            Utilities.Debug.PrintDebug(JsonConvert.SerializeObject(jsonreq));
             JoinMatch(sessionId, jsonreq);
             var character = CharacterController.GetCharacter(sessionId);
             if (character == null)
@@ -59,7 +59,7 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             var sessionId = Utils.GetSessionId(session.Headers);
-            Debug.PrintDebug(ResponseControl.DeCompressReq(request.BodyBytes));
+            Utilities.Debug.PrintDebug(ResponseControl.DeCompressReq(request.BodyBytes));
             Exit(sessionId);
             var rsp = ResponseControl.NullResponse();
             Utils.SendUnityResponse(session, rsp);

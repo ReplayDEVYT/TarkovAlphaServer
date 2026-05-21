@@ -119,6 +119,7 @@ namespace ServerLib.Web
             string Uncompressed = ResponseControl.DeCompressReq(request.BodyBytes);
             Console.WriteLine("Items Moving: " + Uncompressed);
             var body = JsonConvert.DeserializeObject<dynamic>(Uncompressed);
+            Debug.PrintDebug(body.ToString());
             string resp = ResponseControl.GetBody(ItemController.HandleMoving(SessionId, body));
             // RPS
             Utils.SendUnityResponse(session, resp);

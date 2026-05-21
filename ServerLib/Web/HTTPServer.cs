@@ -28,7 +28,7 @@ namespace ServerLib.Web
                 if (method == null)
                     continue;
                 var url = method.GetCustomAttribute<HTTPAttribute>().url;
-                Debug.PrintDebug(method.Name + $" ({url}) is added as an URL", "HTTPServer");
+                Utilities.Debug.PrintDebug(method.Name + $" ({url}) is added as an URL", "HTTPServer");
                 HttpServerThingy.Add(url, method);
             }
             methods = basemethods.Where(x => x.GetCustomAttribute<HTTPAttribute>().method.Contains("POST")).ToArray();
@@ -37,7 +37,7 @@ namespace ServerLib.Web
                 if (method == null)
                     continue;
                 var url = method.GetCustomAttribute<HTTPAttribute>().url;
-                Debug.PrintDebug(method.Name + $" ({url}) is added as an URL", "HTTPServer");
+                Utilities.Debug.PrintDebug(method.Name + $" ({url}) is added as an URL", "HTTPServer");
                 HttpServerThingy.Add(url, method);
             }
         }
@@ -143,7 +143,7 @@ namespace ServerLib.Web
                 }
                 string url = request.Url;
                 url = Uri.UnescapeDataString(url);
-                Debug.PrintDebug(url);
+                Utilities.Debug.PrintDebug(url);
                 var ret = PluginLoader.PluginHttpRequest(request, this);
                 if (ret.Contains(true))
                     return;
@@ -151,7 +151,7 @@ namespace ServerLib.Web
                 if (url.Contains("?retry="))
                 {
                     var retry = url.Split("?retry=");
-                    Debug.PrintDebug("Retreid: " + retry[1]);
+                    Utilities.Debug.PrintDebug("Retreid: " + retry[1]);
                     url = retry[0];
                 }
 
@@ -161,7 +161,7 @@ namespace ServerLib.Web
                 {
                     if (UrlHelper.Match(url, item.Key, out HttpParam) || item.Key == url)
                     {
-                        Debug.PrintDebug("Url Called function: " + item.Value.Name);
+                        Utilities.Debug.PrintDebug("Url Called function: " + item.Value.Name);
                         Debug.logger.Log("REQUEST", request.ToString());
                         item.Value.Invoke(this, new object[] { request, this });
                         Sent = true;

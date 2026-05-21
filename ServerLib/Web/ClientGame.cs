@@ -15,7 +15,7 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             string SessionId = Utils.GetSessionId(session.Headers);
-            Debug.PrintDebug($"User ({SessionId}) is still in the server!");
+            Utilities.Debug.PrintDebug($"User ({SessionId}) is still in the server!");
             Utils.SendUnityResponse(session, ResponseControl.NullResponse());
             return true;
         }
@@ -28,15 +28,15 @@ namespace ServerLib.Web
             Utils.PrintRequest(request, session);
             string SessionId = Utils.GetSessionId(session.Headers);
             string Uncompressed = ResponseControl.DeCompressReq(request.BodyBytes);
-            Debug.PrintDebug(Uncompressed);
+            Utilities.Debug.PrintDebug(Uncompressed);
             Requests.Validate validate = JsonConvert.DeserializeObject<Requests.Validate>(Uncompressed);
             if (AccountController.FindAccount(SessionId) != null)
             {
-                Debug.PrintDebug($"User ({SessionId}) connected with client version {validate.version.ToString()}");
+                Utilities.Debug.PrintDebug($"User ({SessionId}) connected with client version {validate.version.ToString()}");
             }
             else
             {
-                Debug.PrintDebug($"Unknown User connected with client version {validate.version.ToString()}");
+                Utilities.Debug.PrintDebug($"Unknown User connected with client version {validate.version.ToString()}");
             }
             var rsp = ResponseControl.NullResponse();
             Utils.SendUnityResponse(session, rsp);
@@ -50,7 +50,7 @@ namespace ServerLib.Web
             Utils.PrintRequest(request, session);
             string SessionId = Utils.GetSessionId(session.Headers);
             string Uncompressed = ResponseControl.DeCompressReq(request.BodyBytes);
-            Debug.PrintDebug(Uncompressed);
+            Utilities.Debug.PrintDebug(Uncompressed);
             var ID =  AccountController.Login(JsonConvert.DeserializeObject<Requests.Login>(Uncompressed));
             string rsp = "";
             if (ID == "FAILED")

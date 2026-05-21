@@ -55,8 +55,8 @@ namespace ServerLib.Web
             public override void OnWsConnected(HttpRequest request)
             {
                 Console.WriteLine($"WebSocket session with Id {Id} connected!");
-                Debug.PrintDebug(request.ToString());
-                Debug.PrintDebug(request.Url);
+                Utilities.Debug.PrintDebug(request.ToString());
+                Utilities.Debug.PrintDebug(request.Url);
                 //Server.Multicast(JsonConvert.SerializeObject(NotificationController.DefaultNotification(), Formatting.Indented));
             }
 

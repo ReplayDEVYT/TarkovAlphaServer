@@ -61,13 +61,13 @@ namespace ServerLib.Handlers
                 if (Serialized != saved)
                 {
                     File.WriteAllText(path, Serialized);
-                    Debug.PrintDebug($"{saveType} file for account {SessionId} was saved to disk.");
+                    Utilities.Debug.PrintDebug($"{saveType} file for account {SessionId} was saved to disk.");
                 }
             }
             else
             {
                 File.WriteAllText(path, Serialized);
-                Debug.PrintDebug($"New {saveType} {SessionId} registered and was saved to disk.");
+                Utilities.Debug.PrintDebug($"New {saveType} {SessionId} registered and was saved to disk.");
             }
         }
         #endregion

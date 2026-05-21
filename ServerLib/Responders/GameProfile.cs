@@ -24,7 +24,7 @@ namespace ServerLib.Responders
             var profilesave = JsonConvert.DeserializeObject<Requests.ProfileSave>(JsonBody);
             try
             {
-                Debug.PrintDebug("User exitStatus: " + profilesave.exitStatus);
+                Utilities.Debug.PrintDebug("User exitStatus: " + profilesave.exitStatus);
                 var newChar = Character.Base.FromJson(profilesave.Profile);
                 SaveHandler.SaveCharacter(SessionId, newChar);
                 CharacterController.ReloadCharacters();

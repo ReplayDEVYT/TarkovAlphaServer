@@ -23,7 +23,7 @@ namespace ServerLib.Controllers
             DataBase.Characters.CharacterBase.TryAdd("bear", Character.Base.FromJson(File.ReadAllText("Files/characters/bear.json")));
             DataBase.Characters.CharacterBase.TryAdd("usec", Character.Base.FromJson(File.ReadAllText("Files/characters/usec.json")));
             DataBase.Characters.CharacterBase.TryAdd("scav", Character.Base.FromJson(File.ReadAllText("Files/characters/scav.json")));
-            Debug.PrintDebug("Characters loaded");
+            Utilities.Debug.PrintDebug("Characters loaded");
         }
         static void LoadBots()
         {
@@ -35,14 +35,14 @@ namespace ServerLib.Controllers
             DataBase.Bot.Names = JsonConvert.DeserializeObject<Bot.Names>(File.ReadAllText("Files/bot/botNames.json"));
             DataBase.Bot.Weapons = JsonConvert.DeserializeObject<Bot.Weapons[]>(File.ReadAllText("Files/bot/botWeapons.json"));
             DataBase.Bot.Settings = JsonConvert.DeserializeObject<Dictionary<string, string[]>>(File.ReadAllText("Files/bot/botSettings.json"));
-            Debug.PrintDebug("Bots loaded");
+            Utilities.Debug.PrintDebug("Bots loaded");
         }
 
         static void LoadItems()
         {
             DataBase.Items = new();
             DataBase.Items = JsonConvert.DeserializeObject<Dictionary<string, Item.Base>>(File.ReadAllText("Files/static/items.json"), Item.Converter.Settings);
-            Debug.PrintDebug("Items loaded");
+            Utilities.Debug.PrintDebug("Items loaded");
         }
     }
 }
