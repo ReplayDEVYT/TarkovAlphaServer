@@ -63,13 +63,13 @@
 					"rcid": "bigmap.scenespreset.asset"
 				},
 				"Description": "Very Big Map",
-				"Area": 0,
+				"Area": 0.45,
 				"RequiredPlayerLevel": 0,
-				"session_duration_minutes": 240,
+				"session_duration_minutes": 2,
 				"surv_gather_minutes": 10,
 				"sav_gather_minutes": 10,
 				"exit_count": 2,
-				"exit_access_time": 240,
+				"exit_access_time": 2,
 				"exit_time": 2,
 				"Preview": {
 					"path": "",
@@ -99,7 +99,7 @@
 						"slots_min": 3,
 						"slots_max": 3,
 						"SpawnPoints": "Scav_ZAV_04",
-						"BotSide": "Bear"
+						"BotSide": "Savage"
 					},
 					{
 						"time_min": 0,
@@ -107,7 +107,7 @@
 						"slots_min": 3,
 						"slots_max": 3,
 						"SpawnPoints": "Scav_OBSH_1",
-						"BotSide": "Usec"
+						"BotSide": "Savage"
 					},
 					{
 						"time_min": 0,
@@ -163,11 +163,11 @@
 				"doors": {},
 				"containers": null,
 				"Banners": [],
-				"MinPlayers": 1,
-				"MaxPlayers": 2,
-				"AveragePlayerLevel": 10,
+				"MinPlayers": 4,
+				"MaxPlayers": 7,
+				"AveragePlayerLevel": 3,
 				"AveragePlayTime": 100,
-				"Rules": "AvoidAllPmc",
+				"Rules": "AvoidOwnPmc",
 				"SpawnAreas": [
 					{
 						"Id": "Scav_FirstWave_1",
@@ -617,9 +617,9 @@
 							"Bear"
 						],
 						"Position": {
-							"x": -333.1,
-							"y": 2.40,
-							"z": -206.3
+							"x": -192.48,
+							"y": 2.53,
+							"z": -234.61
 						},
 						"Center": {
 							"x": 0,
@@ -727,9 +727,9 @@
 							"Bear"
 						],
 						"Position": {
-							"x": -206.30,
-							"y": 2.4,
-							"z": -333.10
+							"x": -234.23,
+							"y": 2.86,
+							"z": -151.66
 						},
 						"Center": {
 							"x": 0,
@@ -774,28 +774,20 @@
 				"filter_ex": [],
 				"waves": [
 					{
-						"time_min": 0,
-						"time_max": 30,
+						"time_min": 60,
+						"time_max": 70,
 						"slots_min": 12,
 						"slots_max":  20,
 						"SpawnPoints": "Scavspawn (11)",
 						"BotSide": "Savage"
 					},
 					{
-						"time_min": 5,
-						"time_max": 60,
+						"time_min": 60,
+						"time_max": 70,
 						"slots_min": 12,
 						"slots_max":  20,
 						"SpawnPoints": "ScavPMCspawn",
 						"BotSide": "Bear"
-					},
-					{
-						"time_min": 10,
-						"time_max": 60,
-						"slots_min": 12,
-						"slots_max":  20,
-						"SpawnPoints": "ScavPMCspawn (1)",
-						"BotSide": "Usec"
 					}
 				],
 				"limits": [],
@@ -803,11 +795,11 @@
 				"doors": {},
 				"containers": null,
 				"Banners": [],
-				"MinPlayers": 1,
-				"MaxPlayers": 40,
-				"AveragePlayerLevel": 30,
+				"MinPlayers": 3,
+				"MaxPlayers": 6,
+				"AveragePlayerLevel": 12,
 				"AveragePlayTime": 60,
-				"Rules": "AvoidOwnPmc",
+				"Rules": "AvoidAllPmc",
 				"SpawnAreas": [
 					{
 						"Id": "ScavPMCspawn",
@@ -1055,13 +1047,13 @@
 				]
 			},
 			"55f2d3fd4bdc2d5f408b4567": {
-				"Enabled": false,
+				"Enabled": true,
 				"Locked": false,
 				"Name": "hvh map",
 				"Description": "epic style",
 				"Scene": {
-					"path": "maps/dust2.bundle",
-					"rcid": "dust2.scenespreset.asset"
+					"path": "maps/develop_preset.bundle",
+					"rcid": "develop.scenespreset.asset"
 				},
 				"Area": 0,
 				"RequiredPlayerLevel": 0,
@@ -1078,21 +1070,12 @@
 				},
 				"IconX": 400,
 				"IconY": 500,
-				"Banners": [
-					{
-						"name": "BANNER1",
-						"description": "BANNER1",
-						"pic": {
-							"path": "CONTENT/banners/SYS1.jpg",
-							"rcid": ""
-						}
-					}
-				],
+				"Banners": [],
 				"AveragePlayTime": 0,
-				"AveragePlayerLevel": 22,
-				"MinPlayers": 0,
-				"MaxPlayers": 0,
-				"Rules": false,
+				"AveragePlayerLevel": 50,
+				"MinPlayers": 4,
+				"MaxPlayers": 10,
+				"Rules": "AvoidAllPmc",
 				"IsSecret": false,
 				"_id": "55f2d3fd4bdc2d5f408b4567",
 				"_Id": "56c591b3d2720be0288b456d",

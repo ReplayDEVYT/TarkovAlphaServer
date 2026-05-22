@@ -1,0 +1,14 @@
+{
+    "err": 0,
+    "errmsg": "0 - ",
+    "data": {
+        "Individuals": [
+			{
+				"id": "TestPerson",
+				"FirstName": "Skibidi",
+				"LastName": "Skibidi",
+				"Name": "Skibidi"
+			}
+		]
+    }
+}

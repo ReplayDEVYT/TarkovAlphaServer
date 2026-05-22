@@ -5,7 +5,7 @@
 	"surname": "Самойлов",
 	"nickname": "Механик",
 	"location": "Химкомбинат",
-	"avatar": "/data/images/traders/mechanic.png",
+	"avatar": "Files/res/trader/mechanic.png",
 	"balance_rub": 80000000,
 	"balance_dol": 0,
 	"balance_eur": 0,

@@ -31,12 +31,12 @@
 			"node_5448bd6b4bdc2dfc2f8b4569": {
 				"Name": "PM 9х18PM pistol",
 				"ShortName": "PM",
-				"Description": "A time-proven PM. Due to the ubiquitous spread of both pistol and ammo, it is still being used by Russian Spetznaz, thanks to it's reliability, weight, and compact size. The only serious drawback is its lack of power and ergonomics."
+				"Description": "A time-proven PM. Due to the ubiquitous spread of both pistol and ammo it is still being used by Russian Spetznaz, thanks to exceptional reliability, light weight and compact size. The only serious drawback is its lack of a knockdown power."
 			},
 			"node_5448be9a4bdc2dfd2f8b456a": {
 				"Name": "RGD-5 hand grenade",
 				"ShortName": "RGD-5",
-				"Description": "The RGD-5 is classified as an antipersonnel fragmentation time-delayed offensive hand grenade. Fragments are relatively light and have a smaller radius of dispersion, but can easily kill."
+				"Description": "RGD-5 (Distance Hand Grenade, mod. 5) is classified as antipersonnel fragmentation time-delayed offensive hand grenade. Igniter delay time 3,2—4,2 seconds. Due to offensive type of the grenade, fragments are relatively light and have a smaller radius of dispersion."
 			},
 			"node_5448c12b4bdc2d02308b456f": {
 				"Name": "90-93 9х18PM Magazine, for 8 PM rounds",
@@ -51,12 +51,12 @@
 			"node_5448fee04bdc2dbc018b4567": {
 				"Name": "0.6L water bottle",
 				"ShortName": "Water",
-				"Description": "A bottle of water, with some dust and dirt on it."
+				"Description": "A bit dirty 0.6L bottle of water."
 			},
 			"node_5448ff904bdc2d6f028b456e": {
 				"Name": "Army Crackers",
 				"ShortName": "Crackers",
-				"Description": "Dense, dry crackers found inside of a Russian army lunchbox."
+				"Description": "Hard and unforgiving water crackers from Russian army combat ration."
 			},
 			"node_5449016a4bdc2d6f028b456f": {
 				"Name": "Roubles",
@@ -65,7 +65,7 @@
 			},
 			"node_544901bf4bdc2ddf018b456d": {
 				"Name": "Wad of roubles",
-				"ShortName": "Rouble Wad",
+				"ShortName": "Roubles",
 				"Description": "A wad of the still-valued Russian roubles."
 			},
 			"node_544909bb4bdc2d6f028b4577": {
@@ -89,9 +89,9 @@
 				"Description": "Multi-shot, smoothbore МR-133 pump-action shotgun produced by IzhMekh. Reliable and practical hunting and self-defense weapon. Considered unique in its class for having a slide stop."
 			},
 			"node_544a11ac4bdc2d470e8b456a": {
-				"Name": "Secure container Gamma",
-				"ShortName": "Gamma Container",
-				"Description": "Unique secure container used only by veterans of PMCs formerly deployed in Tarkov. Everything inside of the container is securely locked, and is primarily used for keeping private information safe."
+				"Name": "Secure container Alpha",
+				"ShortName": "Alpha Container",
+				"Description": "Unique secure container used only by veterans of PMCs formerly deployed in Tarkov."
 			},
 			"node_544a378f4bdc2d30388b4567": {
 				"Name": "40-round PMAG GEN M3 40 5.56х45 STANAG magazine",
@@ -136,17 +136,17 @@
 			"node_544a5cde4bdc2d39388b456b": {
 				"Name": "Flyye MBSS Backpack",
 				"ShortName": "MBSS",
-				"Description": "Extra durable backpack from 1000D Cordura, with separate pocket for a water bladder with a hose slot and a MOLLE attachment system on the sides."
+				"Description": "Extra durable backpack from 1000D Cordura, with separate pocket for water bladder with hose slot and MOLLE attachment system on the sides."
 			},
 			"node_544fb25a4bdc2dfb738b4567": {
 				"Name": "Aseptic bandage",
 				"ShortName": "Bandage",
-				"Description": "The most commonly used gauze bandage, autoclaved and aseptic."
+				"Description": "The most common gauze bandage, autoclaved and aseptic."
 			},
 			"node_544fb3364bdc2d34748b456a": {
 				"Name": "Immobilizing splint",
 				"ShortName": "Splint",
-				"Description": "Common splint for fixing damaged or fractured bones in position as an emergency aid measure."
+				"Description": "Common splint for fixing the damaged bones in position as an emergency aid measure."
 			},
 			"node_544fb37f4bdc2dee738b4567": {
 				"Name": "Analgin painkillers",
@@ -165,17 +165,17 @@
 			},
 			"node_544fb5454bdc2df8738b456a": {
 				"Name": "Leatherman Multitool",
-				"ShortName": "MultiTool",
-				"Description": "With this compact and versatile multitool there is no need to be worried about having the right tools at the right time."
+				"ShortName": "Tool",
+				"Description": "With this compact and versatile multitool there is no need to be worried about having the right tools on at the right time. "
 			},
 			"node_544fb62a4bdc2dfb738b4568": {
 				"Name": "Russian Army pineapple juice",
-				"ShortName": "Pineapple",
+				"ShortName": "Pineapp.Jc.",
 				"Description": "Reconstituted pineapple juice 'Russian Army'. It's hard to imagine a better source of carbs and vitamins under the blockade conditions."
 			},
 			"node_544fb6cc4bdc2d34748b456e": {
-				"Name": "Slickers bar",
-				"ShortName": "Slickers",
+				"Name": "Slippers bar",
+				"ShortName": "Slippers",
 				"Description": "Sweet nutritional bar for some quick bite. Well-balance in proteins, fiber and vitamins, but a bit over the top in sweetness."
 			},
 			"node_54527a984bdc2d4e668b4567": {
@@ -193,16 +193,16 @@
 			"node_545cdae64bdc2d39198b4568": {
 				"Name": "Camelbak Tri-Zip Backpack",
 				"ShortName": "Tri-Zip",
-				"Description": "Mid-sized versatile assault pack. Spacious, sturdy and comfortable, this backpack is loved both by military and hikers worldwide. 34L of total space, a hydration system, easy access to side pockets, near-perfect suspension, and a MOLLE attachment system make it a great choice for up to 72 hours autonomous hikes... or carrying a good load of loot. "
+				"Description": "Mid-sized versatile assault pack. Spacious, sturdy and comfortable, this backpack is loved both by military and hikers worldwide. 34L of total space, hydration system, easy access to side pockets, near-perfect suspension and MOLLE attachment system make it a great choice for up to 72 hours autonomous hikes... or carrying a good load of loot. "
 			},
 			"node_545cdb794bdc2d3a198b456a": {
 				"Name": "FORT Defender Armor",
-				"ShortName": "FORT",
+				"ShortName": "Defender",
 				"Description": "Adjustable modular set of armor covering the whole torso with armor plates equivalent to NIJ Level III."
 			},
 			"node_557ff21e4bdc2d89578b4586": {
 				"Name": "Tactical glasses",
-				"ShortName": "TacGlass",
+				"ShortName": "TGlass",
 				"Description": "Commonplace tactical glasses with glare and impact protection."
 			},
 			"node_557ffd194bdc2d28148b457f": {
@@ -223,7 +223,7 @@
 			"node_5580223e4bdc2d1c128b457f": {
 				"Name": "МР43e double-barrel shotgun",
 				"ShortName": "МР43e",
-				"Description": "A hunter's dream. A classic double-barrel beauty, simple and elegant, with selective shell ejector. Fed with 12ga shells. Extremely rare (how did you find this???)"
+				"Description": "A hunter's dream. A classic double-barrel beauty, simple and elegant, with selective shell ejector. Fed with 12ga shells."
 			},
 			"node_558022b54bdc2dac148b458d": {
 				"Name": "Eotech EXPS3 holographic sight",
@@ -540,12 +540,12 @@
 			"node_5648a69d4bdc2ded0b8b457b": {
 				"Name": "BlackRock chest rig",
 				"ShortName": "BlackRock",
-				"Description": "Artisan custom-made chest rig for wearing on top of armor in urban operations. Sturdy and versatile. Features both MOLLE and ALICE attachment systems."
+				"Description": "Artisan custom-made chest rig for wearing on top of armor in urban operations. Sturdy and versatile, it features both MOLLE and ALICE attachment systems."
 			},
 			"node_5648a7494bdc2d9d488b4583": {
 				"Name": "SVS Personal Armor",
 				"ShortName": "SVS",
-				"Description": "Light armor, offering essential protection of vital body areas only, but still pretty dependable, with IIIA level plates. Can and intended to be carried under a chest rig."
+				"Description": "Light armor, offering essential protection of vital body areas only, but still pretty dependable, with IIIA level plates. Can and intended to be carried under the chest rig."
 			},
 			"node_5648ac824bdc2ded0b8b457d": {
 				"Name": "Zenit RP-1 charge handle for AK",
@@ -702,12 +702,12 @@
 			"node_5671446a4bdc2d97058b4569": {
 				"Name": "Pistol Case Key",
 				"ShortName": "Case Key",
-				"Description": "A key for a pistol case. No markings or hints."
+				"Description": "Somewhere out there, a certain pistol case is opened with this key."
 			},
 			"node_5672c92d4bdc2d180f8b4567": {
 				"Name": "Dorm room 118 Key",
 				"ShortName": "Room 118 Key",
-				"Description": "A dorm room key with a tag on it, reading 'Room 118'."
+				"Description": "A dorm room key with 118 tag on it."
 			},
 			"node_5672cb124bdc2d1a0f8b4568": {
 				"Name": "AA Battery",
@@ -727,12 +727,12 @@
 			"node_5673de654bdc2d180f8b456d": {
 				"Name": "Can of pacific saury",
 				"ShortName": "Saury",
-				"Description": "Smoked pacific saury in a tin can offers some easily digestible protein and aliphatic acid, making it a nice addition to your rations."
+				"Description": "Smoked pacific saury in a tin can offers some easily digestible protein and aliphatic acid, making it a nice addition to the ration."
 			},
 			"node_56742c284bdc2d98058b456d": {
 				"Name": "Crickent lighter",
 				"ShortName": "Crickent",
-				"Description": "Very common lighter."
+				"Description": "Crickent gas lighter."
 			},
 			"node_56742c2e4bdc2d95058b456d": {
 				"Name": "Zibbo lighter",
@@ -741,7 +741,7 @@
 			},
 			"node_56742c324bdc2d150f8b456d": {
 				"Name": "Broken GPhone",
-				"ShortName": "Broken Phone",
+				"ShortName": "GPhone",
 				"Description": "GPhone 9s - one of the previous generations of the famous smartphone model. Shattered beyond repair."
 			},
 			"node_5675838d4bdc2d95058b456e": {
@@ -757,7 +757,7 @@
 			"node_569668774bdc2da2298b4568": {
 				"Name": "Euros",
 				"ShortName": "Euros",
-				"Description": "Several notes of euros."
+				"Description": "Several notes of the EU currency"
 			},
 			"node_56d59856d2720bd8418b456a": {
 				"Name": "P226R 9х19 pistol",
@@ -919,12 +919,12 @@
 			"node_56e335e4d2720b6c058b456d": {
 				"Name": "Scav Backpack",
 				"ShortName": "ScavBP",
-				"Description": "Some cheap replica of a 3-day assault pack with a MOLLE attachment system, adapted and enhanced by the owner as much as his creativity allowed. Does not offer much comfort, and the volume is lower than a genuine 3-day backpack, but it's still a backpack."
+				"Description": "Cheap replica of some 3-day assault pack with MOLLE attachment system, adapted and enhanced by owner as much as his creativity allowed. Does not offer much comfort, and volume is far lower than that of a proper 3-day pack, but it's still a backpack alright."
 			},
 			"node_56e33634d2720bd8058b456b": {
 				"Name": "Duffle bag",
 				"ShortName": "Duffle",
-				"Description": "Gym duffle bag, what used to be associated with fitness enthusiasts, is now associated with scavs."
+				"Description": "Gym duffle bag, generally seen before with fitness enthusiasts or long-distance commuters, is now a typical Scav attribute."
 			},
 			"node_56e33680d2720be2748b4576": {
 				"Name": "Transformer Bag",
@@ -1039,7 +1039,7 @@
 			"node_572b7adb24597762ae139821": {
 				"Name": "Scav Vest",
 				"ShortName": "Scav Vest",
-				"Description": "A fisherman's vest can more or less replace a chest rig, if the need is pressing enough. Doesnt offer much space."
+				"Description": "A fisherman's vest can more or less replace the chest rig, if the need is pressing enough."
 			},
 			"node_572b7d8524597762b472f9d1": {
 				"Name": "Baseball cap",
@@ -1049,7 +1049,7 @@
 			"node_572b7f1624597762ae139822": {
 				"Name": "Balaclava",
 				"ShortName": "Balaclava",
-				"Description": "A balaclava. The pinnacle of scav outfitting."
+				"Description": "A definitive black woolen balaclava is not only a head-warmer, but soul-warmer too for anyone who is too modest for public heroic deeds."
 			},
 			"node_572b7fa124597762b472f9d2": {
 				"Name": "Knitcap",
@@ -1064,7 +1064,7 @@
 			"node_5732ee6a24597719ae0c0281": {
 				"Name": "Waist pouch",
 				"ShortName": "Waistbag",
-				"Description": "Durable and convenient waist pouch for a variety of things you want to keep close. Very secure."
+				"Description": "Durable and convenient waist pouch for a variety of things you want to keep close."
 			},
 			"node_5733279d245977289b77ec24": {
 				"Name": "Car battery",
@@ -1149,7 +1149,7 @@
 			"node_57347c2e24597744902c94a1": {
 				"Name": "Power supply unit",
 				"ShortName": "PSU",
-				"Description": "PC power supply units can be easily converted from powering PCs to a universal charger for all kinds of low-voltage rechargeable batteries and devices."
+				"Description": "PC power supply unit can be easily converted from powering PCs to universal charger for all kinds of low-voltage rechargeable batteries and devices."
 			},
 			"node_57347c5b245977448d35f6e1": {
 				"Name": "Bolts",
@@ -1168,8 +1168,8 @@
 			},
 			"node_57347ca924597744596b4e71": {
 				"Name": "Graphics card",
-				"ShortName": "GPU",
-				"Description": "A graphics card is just as good source of electronic components as anything else - fans, GPUs, IC, whatever."
+				"ShortName": "Graphics card",
+				"Description": "Graphics card is just as good source of electronic components as anything else - fans, GPUs, IC, whatever."
 			},
 			"node_57347cd0245977445a2d6ff1": {
 				"Name": "T-Shaped Plug",
@@ -1214,12 +1214,12 @@
 			"node_57347d9c245977448b40fa85": {
 				"Name": "Can of herring",
 				"ShortName": "Herring",
-				"Description": "Canned herring, probably the lightest meal among canned fish, is rich with calcium and magnesium. This goes well with saury."
+				"Description": "Canned herring, probably the lightest meal among canned fish, is rich with calcium and magnesium."
 			},
 			"node_57347da92459774491567cf5": {
 				"Name": "Can of beef stew",
 				"ShortName": "Tushonka",
-				"Description": "Canned beef stew, commonly referred to as tushonka, can be stored for years, thus rivaling condensed milk in importance as military and tourist food supply. Not very good cold, though. Seems to be made out of cheap parts of cows, like ankles or knuckles."
+				"Description": "Canned beef stew, commonly referred to as tushonka, can be stored for years, thus rivaling condensed milk in importance as military and tourist food supply."
 			},
 			"node_5735fdcd2459776445391d61": {
 				"Name": "7.62x25mm TT AKBS",
@@ -1580,21 +1580,21 @@
 			"node_57505f6224597709a92585a9": {
 				"Name": "Alyonka chocolate bar",
 				"ShortName": "Alyonka",
-				"Description": "The best known milk chocolate of post-Soviet space, sweet and creamy, but also makes you dehydrated."
+				"Description": "The best known milk chocolate of post-Soviet space, sweet and creamy."
 			},
 			"node_575062b524597720a31c09a1": {
 				"Name": "Green Ice",
 				"ShortName": "Green Tea",
-				"Description": "Sweetened green tea drink, tastes better while cold."
+				"Description": "Sweetened green tea drink, for consumption ice-cold."
 			},
 			"node_57513f07245977207e26a311": {
 				"Name": "Apple juice",
-				"ShortName": "Apple Jc.",
+				"ShortName": "Apl.jc.",
 				"Description": "Clarified and reconstituted apple juice, a bit refreshing, a bit sweet."
 			},
 			"node_57513f9324597720a7128161": {
 				"Name": "Grand juice",
-				"ShortName": "Pom. Juice",
+				"ShortName": "Pom.juice",
 				"Description": "Grand pomegranate juice, great drink for those who lack bitterness in their lives."
 			},
 			"node_57513fcc24597720a31c09a6": {
@@ -1780,7 +1780,7 @@
 			"node_5780cf722459777a5108b9a1": {
 				"Name": "Dorm room 308 Key",
 				"ShortName": "308 Key",
-				"Description": "A dorm room key with 308 tag on it. The room tagged on the key is rumored to have a case with good ammo, seemingly planted there by an unknown figure, but it's unlikely that you'll find anything."
+				"Description": "A dorm room key with 308 tag on it."
 			},
 			"node_5780cf7f2459777de4559322": {
 				"Name": "Marked key",
@@ -1808,9 +1808,9 @@
 				"Description": "Key to the Customs office building"
 			},
 			"node_5780d0652459777df90dcb74": {
-				"Name": "Unknown Key",
-				"ShortName": "??? Key",
-				"Description": "An unknown key. No tags or clues."
+				"Name": "Key",
+				"ShortName": "Key",
+				"Description": "Key"
 			},
 			"node_5780d07a2459777de4559324": {
 				"Name": "Portable cabin key",
@@ -1869,17 +1869,17 @@
 			},
 			"node_578f879c24597735401e6bc6": {
 				"Name": "Cash register",
-				"ShortName": "Register",
+				"ShortName": "Cash register",
 				"Description": "Cash register"
 			},
 			"node_578f87a3245977356274f2cb": {
 				"Name": "Sport bag",
-				"ShortName": "Bag",
+				"ShortName": "Sport bag",
 				"Description": "Sport bag"
 			},
 			"node_578f87ad245977356274f2cc": {
 				"Name": "Wooden crate",
-				"ShortName": "Crate",
+				"ShortName": "Wooden crate",
 				"Description": "Wooden crate"
 			},
 			"node_578f87b7245977356274f2cd": {
@@ -1915,8 +1915,8 @@
 				"Description": "B-3 mounts are fixed on the VSS or VAL suppressor to form a Picatinny rail for installation of additional weapon equipment."
 			},
 			"node_57a349b2245977762b199ec7": {
-				"Name": "Old Key",
-				"ShortName": "Old Key",
+				"Name": "Door key",
+				"ShortName": "Key",
 				"Description": "Old key, apparently even Soviet-made, most likely it's from administration building doors."
 			},
 			"node_57a9b9ce2459770ee926038d": {
@@ -2707,7 +2707,7 @@
 				"banners": {
 					"node_54621f014bdc2de6728b4567": {
 						"name": "United Security",
-						"description": "The USEC private military company was established in 1999 after the merging of two companies: KerniSEC and Safe Sea. In 2004, an agent of TerraGroup international holding made contact with USEC, which have essentially become a private army of the holding, with offices all around the world and over 7500 strong of staff.",
+						"description": "The USEC private military company was established in 1999 after merger of two companies: KerniSEC and Safe Sea. In 2004, an agent of Terra Group international holding made contact with USEC, which have consecutively become, essentially, a private army of the holding, with offices all around the world and over 7500 strong of staff.",
 						"pic": {
 							"path": "CONTENT/banners/SYS1.jpg",
 							"rcid": ""
@@ -2715,7 +2715,7 @@
 					},
 					"54621f014bdc2de6728b4567": {
 						"name": "BEAR",
-						"description": "The BEAR private military company was established by a secret decree of the Russian Federation Government as a countermeasure against illegal activities of TerraGroup in Russian territory. Not much information is known.",
+						"description": "The BEAR private military company was established by a secret decree of the Russian Federation Government as a countermeasure against illegal activities of the Terra Group in the Russian territory.",
 						"pic": {
 							"path": "CONTENT/banners/SYS1.jpg",
 							"rcid": ""
@@ -2725,7 +2725,7 @@
 			},
 			"node_55f2d3fd4bdc2d5f408b4567": {
 				"Name": "Factory",
-				"Description": "The industrial estate and facilities of chemical plant No. 16 were rented out illegally to TerraGroup. During the Contract Wars, the premises of the plant became a scene for numerous firefights between USEC and BEAR that determined control over the industrial district of Tarkov. Later on, in the wake of chaos, the plant facilities turned into a shelter for the remaining civilians, scavs, and all kinds of straggling military and armed forces, including scattered remains of USEC and BEAR",
+				"Description": "The industrial estate and facilities of the chemical plant No.16 were rented out illegally to the TerraGroup company. During the Contract Wars the premises of the plant became a scene for numerous firefights between USEC and BEAR that determined control over the industrial district of Tarkov.\\n\\nLater on, in the wake of chaos, the plant facilities turned into  a shelter for remaining civilians, Scavs and all kinds of straggling military and armed forces, including scattered remains of USEC and BEAR",
 				"pic": {
 					"path": "CONTENT/banners/SYS1.jpg",
 					"rcid": ""
@@ -2751,7 +2751,7 @@
 			},
 			"node_56c5928bd2720bd5288b456a": {
 				"Name": "Customs",
-				"Description": "Large piece of industrial park adjacent to the factory - includes customs terminal, dorms, fuel oil storage and other infrastructure objects.",
+				"Description": "Large piece of industrial park adjacent to the factory - includes customs terminal, dorm,  fuel oil storage and other infrastructure objects.",
 				"pic": {
 					"path": "CONTENT/banners/SYS1.jpg",
 					"rcid": ""
@@ -2785,7 +2785,7 @@
 				"banners": {
 					"node_56c591b3d2720be0288b456d": {
 						"name": "United Security",
-						"description": "Terrorists",
+						"description": "The USEC private military company was established in 1999 after merger of two companies: KerniSEC and Safe Sea. In 2004, an agent of Terra Group international holding made contact with USEC, which have consecutively become, essentially, a private army of the holding, with offices all around the world and over 7500 strong of staff.",
 						"pic": {
 							"path": "CONTENT/banners/SYS1.jpg",
 							"rcid": ""
@@ -2793,7 +2793,7 @@
 					},
 					"56c591b3d2720be0288b456d": {
 						"name": "BEAR",
-						"description": "Counter-terrorists",
+						"description": "The BEAR private military company was established by a secret decree of the Russian Federation Government as a countermeasure against illegal activities of the Terra Group in the Russian territory.",
 						"pic": {
 							"path": "CONTENT/banners/SYS1.jpg",
 							"rcid": ""
@@ -2807,8 +2807,8 @@
 				"FullName": "Pavel Yegorovich Romanenko",
 				"FirstName": "Pavel Romanenko",
 				"Nickname": "Prapor",
-				"Location": "A town in the outskirts of Tarkov.",
-				"Description": "Warrant officer in charge of supply warehouses on the sustaining base for the Internal Troops enforcing the Norvinsk region blockade. During the Contract Wars, he secretly supplied the BEAR PMC operators with weapons, ammunition and various other provisions he had at his disposal."
+				"Location": "Town",
+				"Description": "Warrant officer in charge of supply warehouses on the sustaining base for the Internal Troops enforcing the Norvinsk region blockade. During the Contract Wars secretly supplied the BEAR PMC operators with weapons, ammunition and various other provisions he had at his disposal. <color=#fafa41>Sells surplus, mainly gear and survival supplies. Limited medical supplies and provisions.</color>"
 			},
 			"node_579dc571d53a0658a154fbec": {
 				"FullName": "<Real name unknown>",
@@ -2893,6 +2893,13 @@
 				"Nickname": "Bashkir",
 				"Location": "Tarkov",
 				"Description": "Bashkir"
+			},
+			"node_5a7c2eca46aef81a7ca2145d": {
+				"FullName": "Samoilov Sergey Arsenevich",
+				"FirstName": "Sergey",
+				"Nickname": "Mechanic",
+				"Location": "Tarkov",
+				"Description": "A former chemical plant foreman, who from the very beginning of the conflict took to weapon modification, repairs, and maintenance of complex equipment and technology. He prefers clandestine solo living and operates discreetly, while placing complicated and challenging tasks above all else. <color=#fafa41>Sells weapons, weapon presets, mods, and similar.</color>"
 			}
 		}
 	}

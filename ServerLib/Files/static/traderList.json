@@ -9,19 +9,19 @@
 			"surname": "54cb50c76803fa8b248b4571",
 			"nickname": "54cb50c76803fa8b248b4571",
 			"location": "54cb50c76803fa8b248b4571",
-			"avatar": "/data/images/traders/prapor.png",
+			"avatar": "Files/res/trader/prapor.png",
 			"balance_rub": 150000,
 			"balance_dol": 1000,
 			"balance_eur": 500,
 			"display": true,
-			"discount": 0,
-			"discount_end": 0,
-			"buyer_up": false,
+			"discount": 15,
+			"discount_end": 50,
+			"buyer_up": true,
 			"currency": "RUB",
 			"supply_next_time": 1551040000,
 			"repair": {
-				"availability": true,
-				"quality": "0.9",
+				"availability": false,
+				"quality": "1",
 				"excluded_id_list": [],
 				"excluded_category": [],
 				"currency": "5449016a4bdc2d6f028b456f",
@@ -76,9 +76,86 @@
 			},
 			"sell_category": [
 				"57864a66245977548f04a81f",
-				"5447b5cf4bdc2d65278b4567",
-				"5447b5e04bdc2d62278b4567",
-				"5447b6094bdc2dc3278b4567"
+				"543be6674bdc2df1348b4569",
+				"543be5f84bdc2dd4348b456a",
+				"5422acb9af1c889c16000029"
+			]
+		},
+		{
+			"_id": "5a7c2eca46aef81a7ca2145d",
+			"working": true,
+			"name": "5a7c2eca46aef81a7ca2145d",
+			"surname": "5a7c2eca46aef81a7ca2145d",
+			"nickname": "5a7c2eca46aef81a7ca2145d",
+			"location": "5a7c2eca46aef81a7ca2145d",
+			"avatar": "Files/res/trader/mechanic.png",
+			"balance_rub": 470000,
+			"balance_dol": 0,
+			"balance_eur": 10000,
+			"display": true,
+			"discount": -5,
+			"discount_end": 50,
+			"buyer_up": true,
+			"currency": "RUB",
+			"supply_next_time": 1551040000,
+			"repair": {
+				"availability": false,
+				"quality": "1",
+				"excluded_id_list": [],
+				"excluded_category": [],
+				"currency": "5449016a4bdc2d6f028b456f",
+				"currency_coefficient": 0.25,
+				"price_rate": 250
+			},
+			"insurance": {
+				"availability": false,
+				"min_payment": 0,
+				"min_return_hour": 24,
+				"max_return_hour": 36,
+				"max_storage_time": 72,
+				"excluded_category": []
+			},
+			"standing": {
+				"level": 1,
+				"standing": 0,
+				"sales_sum": 0,
+				"next_level": {
+					"min_level": 15,
+					"min_sales_sum": 1500000,
+					"min_standing": 0
+				}
+			},
+			"gridHeight": 500,
+			"loyalty": {
+				"currentLevel": 1,
+				"currentStanding": 0,
+				"currentSalesSum": 0,
+				"loyaltyLevels": {
+					"0": {
+						"minLevel": 1,
+						"minSalesSum": 0,
+						"minStanding": 0
+					},
+					"1": {
+						"minLevel": 15,
+						"minSalesSum": 1500000,
+						"minStanding": 0
+					},
+					"2": {
+						"minLevel": 30,
+						"minSalesSum": 1600000,
+						"minStanding": 0.3
+					},
+					"3": {
+						"minLevel": 40,
+						"minSalesSum": 2500000,
+						"minStanding": 0.6
+					}
+				}
+			},
+			"sell_category": [
+				"5422acb9af1c889c16000029",
+				"55802f3e4bdc2de7118b4584"
 			]
 		}
 	]
