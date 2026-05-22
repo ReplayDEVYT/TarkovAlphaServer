@@ -2,7 +2,8 @@
 using ServerLib.Json.Classes;
 using ServerLib.Handlers;
 using Newtonsoft.Json;
-using UnityEngine;
+using System.Collections.Generic; // Added for List Support
+using System.Linq;
 
 namespace ServerLib.Controllers
 {
@@ -10,133 +11,63 @@ namespace ServerLib.Controllers
     {
         public class MoveItems
         {
-            public Items items;
+            public Items items { get; set; }
             public class Items
             {
-                public Character.Item[] @new;
-                public Character.Item[] change;
-                public Character.Item[] del;
+                public List<Character.Item> @new { get; set; } = new();
+                public List<Character.Item> change { get; set; } = new();
+                public List<Character.Item> del { get; set; } = new();
             }
-        
         }
+
         public static MoveItems MoveActionResult;
-        public struct Size
-        { 
-            public int x; 
-            public int y;
-            public int l;
-            public int r;
-            public int u;
-            public int d;
-
-            public Size()
-            {
-                this.x = 0;
-                this.y = 0;
-                this.l = 0;
-                this.r = 0;
-                this.u = 0;
-                this.d = 0;
-            }
-        }
-
-        public static Item.Base? GetItemFromID(string ID)
-        {
-            foreach (var item in DatabaseController.DataBase.Items)
-            {
-                if (item.Key == ID | item.Value.Id == ID)
-                    return item.Value;
-            }
-            return null;
-        }
-
-        public static Size GetSize(string ItemTpl, string ItemId, List<Character.Item> Items) 
-        {
-            Size ret = new Size();
-            List<string> ItemIds = new() { ItemId };
-            var tmpItem = GetItemFromID(ItemTpl);
-            if (tmpItem != null)
-            {
-                ret.x = (int)tmpItem.Props.Width.Value;
-                ret.y = (int)tmpItem.Props.Height.Value;
-
-                while (true)
-                {
-                    Utilities.Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.GetSize");
-                    if (ItemIds.Count != 0)
-                    {
-                        foreach (var item in Items)
-                        {
-                            var tmpSize = new Size();
-                            if (item.ParentId == ItemIds[0])
-                            {
-                                ItemIds.Add(item.Id);
-                                tmpItem = GetItemFromID(item.Tpl);
-                                if (tmpItem != null)
-                                {
-                                    //No extra size, should we add to the base size?
-                                }
-                            }
-                        }
-                        ItemIds.RemoveRange(0,1);
-                        continue;
-                    }
-                    break;
-                }
-            }
-            return ret;
-        }
-
-        public static void AcceptQuest(string SessionId, dynamic body)
+        public static void AcceptQuest(string SessionId, dynamic actionData)
         {
             var ch = CharacterController.GetCharacter(SessionId);
             if (ch != null)
             {
-                // statuses seem as follow - 1 - not accepted | 2 - accepted | 3 - failed | 4 - completed
-                ch.Quests = ch.Quests.Append(new Character.Quest() { qid = body.qid, startTime = 1337, status = 1 }).ToArray();
-                SaveHandler.SaveCharacter(SessionId, ch);
+                ch.Quests = ch.Quests.Append(new Character.Quest() { qid = actionData.qid, startTime = 1337, status = 1 }).ToArray();
             }
         }
 
-        public static void CompleteQuest(string SessionId, dynamic body)
+        public static void CompleteQuest(string SessionId, dynamic actionData)
         {
             var ch = CharacterController.GetCharacter(SessionId);
             if (ch != null)
             {
                 foreach (var item in ch.Quests)
                 {
-                    if (item.qid == body.qid)
+                    if (item.qid == actionData.qid)
                     {
                         item.status = 4;
                     }
                 }
-                SaveHandler.SaveCharacter(SessionId, ch);
             }
         }
 
-        public static void RemoveItem(string SessionId, dynamic body)
+        public static void RemoveItem(string SessionId, dynamic actionData)
         {
             var ch = CharacterController.GetCharacter(SessionId);
             if (ch != null)
             {
-                List<string> ItemIds = new() { body.item };
+                string targetItem = actionData.item;
+                List<string> ItemIds = new() { targetItem };
                 while (true)
                 {
-                    Utilities.Debug.PrintDebug("Count: " + ItemIds.Count, "ItemController.RemoveItem");
                     if (ItemIds.Count != 0)
                     {
                         while (true)
                         {
                             string tmpEmpty = "yes";
 
-                            foreach (var item in ch.Inventory.Items)
+                            for (int i = ch.Inventory.Items.Count - 1; i >= 0; i--)
                             {
+                                var item = ch.Inventory.Items[i];
                                 if (item != null && ((item.ParentId == ItemIds[0]) || (item.Id == ItemIds[0])))
                                 {
-                                    MoveActionResult.items.del.Append(item);
+                                    MoveActionResult.items.del.Add(item);
                                     ItemIds.Add(item.Id);
-                                    ch.Inventory.Items.Remove(item);
-
+                                    ch.Inventory.Items.RemoveAt(i);
                                     tmpEmpty = "no";
                                 }
                             }
@@ -144,78 +75,131 @@ namespace ServerLib.Controllers
                             if (tmpEmpty == "yes")
                             {
                                 break;
-                            };
+                            }
+                            ;
                         }
                         ItemIds.RemoveRange(0, 1);
                         continue;
                     }
                     break;
                 }
-                SaveHandler.SaveCharacter(SessionId, ch);
             }
         }
 
-        public static void AddNote(string SessionId, dynamic body)
+        public static void AddNote(string SessionId, dynamic actionData)
         {
-                var ch = CharacterController.GetCharacter(SessionId);
-                if (ch != null)
-                {
-                    ch.Notes.NotesNotes = ch.Notes.NotesNotes.Append(new Character.InsideNotes() { Time = body.note.Time, Text = body.note.Text }).ToArray();
-                    SaveHandler.SaveCharacter(SessionId, ch);
-                }
+            var ch = CharacterController.GetCharacter(SessionId);
+            if (ch != null)
+            {
+                ch.Notes.NotesNotes = ch.Notes.NotesNotes.Append(new Character.InsideNotes() { Time = actionData.note.Time, Text = actionData.note.Text }).ToArray();
+            }
         }
 
-        public static void MoveItem(string SessionId, dynamic body)
+        // asked gemini to help with some of this (mainly rotation enum conversion)
+        // may be jank, im ass at C#
+        public static void MoveItem(string SessionId, dynamic actionData)
         {
-                var ch = CharacterController.GetCharacter(SessionId);
-                if (ch != null)
+            var ch = CharacterController.GetCharacter(SessionId);
+            if (ch != null)
+            {
+                string? targetItemId = actionData.item?.ToString();
+
+                Character.Item? itemToMove = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
+
+                if (itemToMove.Id != null)
                 {
-                    foreach (var item in ch.Inventory.Items)
+                    itemToMove.ParentId = actionData.to.id;
+                    itemToMove.SlotId = actionData.to.container;
+
+                    if (actionData.to.location != null)
                     {
-                        if (item.Id == body.itemId)
+                        string rawLocationJson = actionData.to.location.ToString();
+
+
+                        int locX = (int)actionData.to.location.x;
+                        int locY = (int)actionData.to.location.y;
+                        string rawRotation = actionData.to.location.r?.ToString() ?? "Horizontal";
+
+                        if (!Enum.TryParse<Character.REnum>(rawRotation, true, out Character.REnum parsedEnum))
                         {
-                            item.ParentId = body.to.id;
-                            item.SlotId = body.to.container;
-                            var newLocation = new Character.LocationClass() { X = body.to.location.x, Y = body.to.location.y, R = body.to.location.r };
-                            item.Location = newLocation;
-                            MoveActionResult.items.change.Append(item);
+                            parsedEnum = Character.REnum.Horizontal;
                         }
+
+                        // this part was a pain to get gemini to fix
+                        // i might as well just use an if statement LMAO, it seems more efficient
+                        // it works for now, bandaid fix. i dont usually use ai but this was just annoying
+
+                        Character.RUnion cleanRotation = new Character.RUnion();
+                        cleanRotation.Enum = parsedEnum;
+                        cleanRotation.Integer = null;
+
+                        itemToMove.Location = new Character.LocationClass()
+                        {
+                            X = locX,
+                            Y = locY,
+                            R = cleanRotation
+                        };
                     }
-                    SaveHandler.SaveCharacter(SessionId, ch);
                 }
+                else
+                {
+                    // slot locations are always null
+                    // eg: move backpack into backpack slot, location = null
+                    itemToMove.Location = null;
+                }
+
+                MoveActionResult.items.change.Add(itemToMove);
+            }
         }
 
         public static string HandleMoving(string SessionId, dynamic body)
         {
             MoveActionResult = new()
             {
-                items = new()
-                { 
-                    change = { },
-                    del = { },
-                    @new = { }
-                }
+                items = new() // Lists initialize clean and empty
             };
-            switch (body.Action)
+
+            Newtonsoft.Json.Linq.JObject root = Newtonsoft.Json.Linq.JObject.FromObject(body);
+
+            if (root["data"] is Newtonsoft.Json.Linq.JArray actionArray)
             {
-                case "QuestAccept":
-                    AcceptQuest(SessionId, body);
-                    break;
-                case "CompleteQuest":
-                    CompleteQuest(SessionId, body);
-                    break;
-                case "Remove":
-                    RemoveItem(SessionId, body);
-                    break;
-                case "AddNote":
-                    AddNote(SessionId, body);
-                    break;
-                case "Move":
-                    MoveItem(SessionId, body);
-                    break;
-                default:
-                    Utilities.Debug.PrintError("Action Cannot be Handled! " + body.Action);
-                    break;
+                foreach (var actionData in actionArray)
+                {
+                    string actionType = actionData["Action"]?.ToString() ?? string.Empty;
+
+                    if (string.IsNullOrEmpty(actionType))
+                    {
+                        Utilities.Debug.PrintError("No action for data. Skipping.");
+                        continue;
+                    }
+
+                    switch (actionType)
+                    {
+                        case "QuestAccept":
+                            AcceptQuest(SessionId, actionData);
+                            break;
+                        case "CompleteQuest":
+                            CompleteQuest(SessionId, actionData);
+                            break;
+                        case "Remove":
+                            RemoveItem(SessionId, actionData);
+                            break;
+                        case "AddNote":
+                            AddNote(SessionId, actionData);
+                            break;
+                        case "Move":
+                            MoveItem(SessionId, actionData);
+                            break;
+                        default:
+                            Utilities.Debug.PrintError("Action Cannot be Handled! " + actionType);
+                            break;
+                    }
+                }
+
+                var ch = CharacterController.GetCharacter(SessionId);
+
+                // why was it saving every single time an item was moved??
+                if (ch != null) { SaveHandler.SaveCharacter(SessionId, ch); }
             }
 
             return JsonConvert.SerializeObject(MoveActionResult);

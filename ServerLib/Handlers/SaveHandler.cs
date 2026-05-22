@@ -38,9 +38,9 @@ namespace ServerLib.Handlers
         /// <param name="character">Character</param>
         public static void SaveCharacter(string SessionId, Character.Base character)
         {
-            Debug.PrintInfo("Saving started...", "SAVE");
+            Debug.PrintDebug("Saving started...", "SAVE");
             Save(SessionId, "Character", GetCharacterPath(SessionId), Converters.ToJson(character));
-            Debug.PrintInfo("Saving ended!", "SAVE");
+            Debug.PrintDebug("Saving ended!", "SAVE");
         }
 
         /// <summary>
