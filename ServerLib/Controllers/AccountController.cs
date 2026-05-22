@@ -111,10 +111,7 @@ namespace ServerLib.Controllers
                     Email = register.email,
                     Permission = Json.Enums.EPerms.User
                 };
-                if (ConfigController.Configs.CustomSettings.Account.UseSha1)
-                    account.Password = CryptoHelper.Hash(register.pass);
-                else
-                    account.Password = register.pass;
+                account.Password = CryptoHelper.Hash(register.pass);
                 SaveHandler.SaveAccount(AccountID, account);
                 Debug.PrintInfo("Register Success! " + AccountID);
                 if (!ActiveAccountIds.Contains(AccountID))

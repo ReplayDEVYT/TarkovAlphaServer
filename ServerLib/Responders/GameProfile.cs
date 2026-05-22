@@ -22,6 +22,7 @@ namespace ServerLib.Responders
                 Debug.PrintError("Character not found!", "ProfileStatus");
             }
             var profilesave = JsonConvert.DeserializeObject<Requests.ProfileSave>(JsonBody);
+            Debug.PrintDebug(profilesave.ToString());
             try
             {
                 Utilities.Debug.PrintDebug("User exitStatus: " + profilesave.exitStatus);

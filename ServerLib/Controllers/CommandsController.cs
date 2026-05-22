@@ -1,8 +1,11 @@
-﻿using ServerLib.Handlers;
-using DB = ServerLib.Utilities.Debug;
-using System.Diagnostics;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using ServerLib.Handlers;
 using ServerLib.Json.Enums;
+using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
+using UnityEngine;
+using DB = ServerLib.Utilities.Debug;
 
 namespace ServerLib.Controllers
 {
@@ -238,7 +241,7 @@ namespace ServerLib.Controllers
             var account = AccountController.Register(new()
             { 
                 email = email,
-                pass = pass
+                pass = pass,
             });
             DB.PrintInfo($"AID {account} created!");
         }

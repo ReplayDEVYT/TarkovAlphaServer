@@ -42,7 +42,7 @@ namespace ServerLib.Web
                     new()
                     {
                         profileid = character.Id,
-                        status = "Busy",
+                        status = "MatchWait",
                         ip = match.matchData.Ip,
                         port = match.matchData.Port,
                         location = match.matchData.Location,
