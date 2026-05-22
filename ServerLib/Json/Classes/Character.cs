@@ -268,19 +268,19 @@ namespace ServerLib.Json.Classes
         public partial class Upd
         {
             [JsonProperty("Durability", NullValueHandling = NullValueHandling.Ignore)]
-            public long? Durability { get; set; }
+            public int? Durability { get; set; }
 
             [JsonProperty("StackObjectsCount", NullValueHandling = NullValueHandling.Ignore)]
-            public long? StackObjectsCount { get; set; }
+            public int? StackObjectsCount { get; set; }
 
             [JsonProperty("hpPercent", NullValueHandling = NullValueHandling.Ignore)]
-            public long? HpPercent { get; set; }
+            public int? HpPercent { get; set; }
 
             [JsonProperty("hpResource", NullValueHandling = NullValueHandling.Ignore)]
-            public long? HpResource { get; set; }
+            public int? HpResource { get; set; }
 
             [JsonProperty("MaxDurability", NullValueHandling = NullValueHandling.Ignore)]
-            public long? MaxDurability { get; set; }
+            public int? MaxDurability { get; set; }
         }
 
         public partial class Notes

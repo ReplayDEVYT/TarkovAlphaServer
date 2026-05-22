@@ -152,6 +152,50 @@ namespace ServerLib.Controllers
             }
         }
 
+        public static void SplitItem(string SessionId, dynamic actionData)
+        {
+            var ch = CharacterController.GetCharacter(SessionId);
+            if (ch != null)
+            {
+                string? targetItemId = actionData.item?.ToString();
+
+                Character.Item? itemToSplit = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
+
+                
+
+                int splitCount = (int)actionData.count;
+
+                if (itemToSplit.Id != null)
+                {
+                    itemToSplit.Upd.StackObjectsCount = itemToSplit.Upd.StackObjectsCount - splitCount;
+
+                    Character.Item newItemSplit = new()
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        Tpl = itemToSplit.Tpl,
+                        ParentId = actionData.container.id,
+                        SlotId = actionData.container.container,
+                        Location = new Character.LocationClass()
+                        {
+                            X = actionData.container.location.x,
+                            Y = actionData.container.location.y,
+                            // fix later
+                            R = Character.REnum.Horizontal,
+                        },
+                        Upd = new Character.Upd()
+                        {
+                            StackObjectsCount = splitCount
+                        }
+                    };
+
+                    Utilities.Debug.PrintDebug(newItemSplit.Id);
+
+                    MoveActionResult.items.change.Add(itemToSplit);
+                    MoveActionResult.items.@new.Add(newItemSplit);
+                }
+            }
+        }
+
         public static string HandleMoving(string SessionId, dynamic body)
         {
             MoveActionResult = new()
@@ -169,7 +213,7 @@ namespace ServerLib.Controllers
 
                     if (string.IsNullOrEmpty(actionType))
                     {
-                        Utilities.Debug.PrintError("No action for data. Skipping.");
+                        Debug.PrintError("No action for data. Skipping.");
                         continue;
                     }
 
@@ -190,8 +234,11 @@ namespace ServerLib.Controllers
                         case "Move":
                             MoveItem(SessionId, actionData);
                             break;
+                        case "Split":
+                            SplitItem(SessionId, actionData);
+                            break;
                         default:
-                            Utilities.Debug.PrintError("Action Cannot be Handled! " + actionType);
+                            Debug.PrintError("Action Cannot be Handled! " + actionType);
                             break;
                     }
                 }
