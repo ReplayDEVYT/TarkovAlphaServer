@@ -268,7 +268,7 @@ namespace ServerLib.Json.Classes
         public partial class Upd
         {
             [JsonProperty("Durability", NullValueHandling = NullValueHandling.Ignore)]
-            public int? Durability { get; set; }
+            public float? Durability { get; set; }
 
             [JsonProperty("StackObjectsCount", NullValueHandling = NullValueHandling.Ignore)]
             public int? StackObjectsCount { get; set; }
@@ -277,10 +277,10 @@ namespace ServerLib.Json.Classes
             public int? HpPercent { get; set; }
 
             [JsonProperty("hpResource", NullValueHandling = NullValueHandling.Ignore)]
-            public int? HpResource { get; set; }
+            public float? HpResource { get; set; }
 
             [JsonProperty("MaxDurability", NullValueHandling = NullValueHandling.Ignore)]
-            public int? MaxDurability { get; set; }
+            public float? MaxDurability { get; set; }
         }
 
         public partial class Notes

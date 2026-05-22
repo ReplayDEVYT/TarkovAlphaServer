@@ -25,8 +25,7 @@ namespace ServerLib.Responders
             try
             {
                 Utilities.Debug.PrintDebug("User exitStatus: " + profilesave.exitStatus);
-                var newChar = Character.Base.FromJson(profilesave.Profile);
-                SaveHandler.SaveCharacter(SessionId, newChar);
+                SaveHandler.SaveCharacter(SessionId, profilesave.Profile);
                 CharacterController.ReloadCharacters();
             }
             catch (Exception ex)

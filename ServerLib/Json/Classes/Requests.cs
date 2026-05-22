@@ -27,7 +27,7 @@ namespace ServerLib.Json.Classes
 
         public class ProfileSave
         {
-            public string Profile;
+            public Character.Base Profile;
             public ExitStatus exitStatus;
         }
 

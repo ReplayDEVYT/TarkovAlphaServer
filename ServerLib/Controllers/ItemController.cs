@@ -4,6 +4,8 @@ using ServerLib.Handlers;
 using Newtonsoft.Json;
 using System.Collections.Generic; // Added for List Support
 using System.Linq;
+using System.Runtime.Serialization;
+using MongoDB.Bson;
 
 namespace ServerLib.Controllers
 {
@@ -161,7 +163,7 @@ namespace ServerLib.Controllers
 
                 Character.Item? itemToSplit = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
 
-                
+
 
                 int splitCount = (int)actionData.count;
 
@@ -171,27 +173,78 @@ namespace ServerLib.Controllers
 
                     Character.Item newItemSplit = new()
                     {
-                        Id = Guid.NewGuid().ToString(),
+                        Id = ObjectId.GenerateNewId().ToString(),
                         Tpl = itemToSplit.Tpl,
                         ParentId = actionData.container.id,
                         SlotId = actionData.container.container,
-                        Location = new Character.LocationClass()
-                        {
-                            X = actionData.container.location.x,
-                            Y = actionData.container.location.y,
-                            // fix later
-                            R = Character.REnum.Horizontal,
-                        },
                         Upd = new Character.Upd()
                         {
                             StackObjectsCount = splitCount
                         }
                     };
 
+                    if (actionData.container.location == null)
+                    {
+                        newItemSplit.Location = null;
+                    }
+                    else
+                    {
+                        newItemSplit.Location = new Character.LocationClass()
+                        {
+                            X = actionData.container.location.x,
+                            Y = actionData.container.location.y,
+                            // fix later
+                            R = Character.REnum.Horizontal,
+                        };
+                    }
+
                     Utilities.Debug.PrintDebug(newItemSplit.Id);
+
+                    ch.Inventory.Items.Add(newItemSplit);
 
                     MoveActionResult.items.change.Add(itemToSplit);
                     MoveActionResult.items.@new.Add(newItemSplit);
+                }
+            }
+        }
+
+        public static void MergeItem(string SessionId, dynamic actionData)
+        {
+            var ch = CharacterController.GetCharacter(SessionId);
+            if (ch != null)
+            {
+                string? targetItemId = actionData.item?.ToString();
+                string? targetItemId2 = actionData.with?.ToString();
+
+                Character.Item? itemToMerge = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
+                Character.Item? itemToMergeWith = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId2);
+
+                int count = (int)actionData.count;
+
+                if ((itemToMerge.Id != null) && (itemToMergeWith.Id != null))
+                {
+                    Item.Base itemMergeBase = DatabaseController.DataBase.Items[itemToMergeWith.Tpl];
+
+                    if (count > itemMergeBase.Props.StackMaxSize)
+                    {
+                        itemToMergeWith.Upd.StackObjectsCount = itemMergeBase.Props.StackMaxSize;
+                    }
+                    else { itemToMergeWith.Upd.StackObjectsCount += count; }
+
+                    itemToMerge.Upd.StackObjectsCount -= count;
+
+                    if (itemToMerge.Upd.StackObjectsCount <= 0)
+                    {
+                        ch.Inventory.Items.Remove(itemToMerge);
+
+                        MoveActionResult.items.del.Add(itemToMerge);
+                        MoveActionResult.items.change.Add(itemToMergeWith);
+                    }
+                    else
+                    {
+                        MoveActionResult.items.change.Add(itemToMerge);
+                        MoveActionResult.items.change.Add(itemToMergeWith);
+                    }
                 }
             }
         }
@@ -236,6 +289,9 @@ namespace ServerLib.Controllers
                             break;
                         case "Split":
                             SplitItem(SessionId, actionData);
+                            break;
+                        case "Transfer":
+                            MergeItem(SessionId, actionData);
                             break;
                         default:
                             Debug.PrintError("Action Cannot be Handled! " + actionType);

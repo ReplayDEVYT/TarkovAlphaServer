@@ -45,13 +45,13 @@ namespace ServerLib.Json.Classes
             public BackgroundColor? BackgroundColor { get; set; }
 
             [JsonProperty("Width", NullValueHandling = NullValueHandling.Ignore)]
-            public long? Width { get; set; }
+            public int? Width { get; set; }
 
             [JsonProperty("Height", NullValueHandling = NullValueHandling.Ignore)]
-            public long? Height { get; set; }
+            public int? Height { get; set; }
 
             [JsonProperty("StackMaxSize", NullValueHandling = NullValueHandling.Ignore)]
-            public long? StackMaxSize { get; set; }
+            public int? StackMaxSize { get; set; }
 
             [JsonProperty("Rarity", NullValueHandling = NullValueHandling.Ignore)]
             public Rarity? Rarity { get; set; }
