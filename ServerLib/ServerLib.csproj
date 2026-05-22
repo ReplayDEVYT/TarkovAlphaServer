@@ -15,7 +15,7 @@
 		<PackageReference Include="L" Version="5.0.0" />
 		<PackageReference Include="MongoDB.Bson" Version="3.8.1" />
 		<PackageReference Include="NetCoreServer" Version="6.7.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 		<PackageReference Include="WatsonWebsocket" Version="4.0.9" />
 	</ItemGroup>
 
