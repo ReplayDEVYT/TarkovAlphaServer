@@ -35,7 +35,7 @@ namespace ServerLib.Web
             return true;
         }
 
-        [HTTP("POST", "/client/trading/api/getUserAssortPrice/trader/{TraderId}")]
+        [HTTP("POST", "/client/trading/api/getUserAssortPrice/trader/{traderId}")]
         public static bool ClientTradingApiGetUserAssortPriceTrader(HttpRequest request, HttpsBackendSession session)
         {
             Utils.PrintRequest(request, session);

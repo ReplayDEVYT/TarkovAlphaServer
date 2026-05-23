@@ -249,6 +249,41 @@ namespace ServerLib.Controllers
             }
         }
 
+        public static void BuyFromTrader(string SessionId, dynamic actionData)
+        {
+            var ch = CharacterController.GetCharacter(SessionId);
+            if (ch != null)
+            {
+                string buyType = actionData.type;
+
+                switch (buyType)
+                {
+                    case "buy_from_trader":
+                        foreach (var item in actionData.scheme_items)
+                        {
+                            string? targetItemId = item.ToString();
+
+                            Character.Item? itemCurrency = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
+
+                            itemCurrency.Upd.StackObjectsCount -= item.count;
+
+                            if (itemCurrency.Upd.StackObjectsCount <= 0)
+                            {
+                                ch.Inventory.Items.Remove(itemCurrency);
+
+                                MoveActionResult.items.del.Add(itemCurrency);
+                            }
+                            else
+                            {
+                                MoveActionResult.items.change.Add(itemCurrency);
+                            }
+                        }
+
+                        break;
+                };
+            }
+        }
+
         public static string HandleMoving(string SessionId, dynamic body)
         {
             MoveActionResult = new()
@@ -292,6 +327,9 @@ namespace ServerLib.Controllers
                             break;
                         case "Transfer":
                             MergeItem(SessionId, actionData);
+                            break;
+                        case "TradingConfirm":
+                            BuyFromTrader(SessionId, actionData);
                             break;
                         default:
                             Debug.PrintError("Action Cannot be Handled! " + actionType);
