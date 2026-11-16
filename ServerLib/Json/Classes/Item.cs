@@ -60,7 +60,7 @@ namespace ServerLib.Json.Classes
             public long? SpawnChance { get; set; }
 
             [JsonProperty("CreditsPrice", NullValueHandling = NullValueHandling.Ignore)]
-            public long? CreditsPrice { get; set; }
+            public int? CreditsPrice { get; set; }
 
             [JsonProperty("ItemSound", NullValueHandling = NullValueHandling.Ignore)]
             public string ItemSound { get; set; }
@@ -69,7 +69,7 @@ namespace ServerLib.Json.Classes
             public ConfigPath Prefab { get; set; }
 
             [JsonProperty("StackObjectsCount", NullValueHandling = NullValueHandling.Ignore)]
-            public long? StackObjectsCount { get; set; }
+            public int? StackObjectsCount { get; set; }
 
             [JsonProperty("NotShownInSlot", NullValueHandling = NullValueHandling.Ignore)]
             public bool? NotShownInSlot { get; set; }

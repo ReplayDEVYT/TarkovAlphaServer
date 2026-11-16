@@ -1,0 +1,47 @@
+{
+	"6a1f00000000000000000001": {
+		"name": "Debut",
+		"description": "Hello, soldier. I see you've been recently split from your people. What a shame.. but not all is lost. You obviously aren't going to be surviving here alone, let's make that clear. If you want to stay on your little vacation for a while, you're going to need to get your hands dirty. Now, now.. I know you're probably itching to do some spec-ops job already! I'm not entrusting you with that level of work yet. You think I just give big jobs to any random bum who walks in here?\r\nLet's start simple. The Customs area has been overrun with people of your kind, no offense. This is causing a lot of problems for me and my men, as shipping things through that zone has become a pain in the ass. I can't count how many times my men have been robbed by USEC or shot by BEAR. I need you to go out there, and clear out some of the people that have been causing a mess in Customs. Yes, yes.. I'll obviously pay you. I'm not that much of a cheapskate! Now, get to work. Report back when you're done.",
+		"conditions": {
+			"6a1f00000000000000000202": "Eliminate Targets on Customs",
+			"6a1f00000000000000000205": "Hand over a 0.6L water bottle",
+			"6af9261f3bf39e67e24f2631": "Sell Water Bottle to Prapor",
+			"6af991c93bdbcad489dedff5": "Hand over 2 Water Bottles"
+		}
+	},
+	"6af980a40be5fc938f8684eb": {
+		"name": "Factory Maintenance",
+		"conditions": {
+			"6af980ac0be5fc938f8684ec": "",
+			"6af980b00be5fc938f8684ed": "",
+			"6af980be0be5fc938f8684ee": "Kill 3 targets on Factory",
+			"6af982210be5fc938f8684f6": ""
+		},
+		"description": "Why hello, soldier. I'm sure you've heard about the mess being made in the old chemical plant right now? Who am I kidding, of course you have! Well, I have a few friends who want the place cleaned up. Said something about making a new trader outpost.. Don't know. Well, anyways, just go get some kills there and get back to me when you're finished."
+	},
+	"6afa5e1777a29edad8e19b5a": {
+		"name": "Supply Request",
+		"description": "Hello, young man. Prapor has told me about your situation. You're in a bit of trouble, yes? Well, I am willing to help you. I'll provide you with medicine, emergency routes, and other forms of aid.. but I have to see if you can be trusted with my work. Recently, we have been running quite low on medical supplies... Tarkov has been overrun with the sick and injured. I would like you to deliver some supplies to us, just to get the clinic back on its feet. It's nothing too extraordinary, just a few AI-2 medical kits and one of those Salewa emergency first aid kits. Maybe we can start discussing true work after this.",
+		"conditions": {
+			"6afa60f077a29edad8e19b5c": "Hand over 2 AI-2 medkits",
+			"6afa610a77a29edad8e19b5d": "Hand over Salewa First Aid Kit"
+		}
+	},
+	"6afa646277a29edad8e19b5f": {
+		"name": "Collector",
+		"description": "Hey, soldier, I have an odd job for you. Recently, some people have been stashing their dogtags anywhere they see fit. Cabinets, coats, safes, you name it. I've been quite the avid collector of these, you can sell them for some pretty damn good money. I'm thinking about getting some jewelry melted out of them, heh.. Why don't you snoop around and see if you can find some for me?",
+		"conditions": {
+			"6afa64f677a29edad8e19b62": "Hand over 3 dogtags"
+		}
+	},
+	"6afa66db630443d93127891b": {
+		"name": "Cleanup",
+		"description": "Well, I am sure you know of the issues Prapor is having with his experience on Customs recently. Sad to say, I am also having problems transporting goods to people. This is extremely bad, I need to bring supplies to people who are in need. Customs is one of our main gateways to other parts of Tarkov, and if it is compromised, we cannot efficiently do our jobs. I would be very grateful if you were to help us out.",
+		"conditions": {
+			"6afa66db630443d93127891d": "Eliminate Targets on Customs",
+			"6a1f00000000000000000205": "Hand over a 0.6L water bottle",
+			"6af9261f3bf39e67e24f2631": "Sell Water Bottle to Prapor",
+			"6af991c93bdbcad489dedff5": "Hand over 2 Water Bottles"
+		}
+	}
+}

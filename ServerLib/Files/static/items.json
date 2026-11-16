@@ -336,7 +336,7 @@
             "ShortName": "АК-74N 5.45x39",
             "Description": "Автомат Калашникова калибра 5,45 мм, разработанный в 1970 году конструктором М. Т. Калашниковым. Дальнейшее развитие АКМ в связи с переходом Вооруженных Сил на новый боеприпас 5.45x39. Основное отличие от штатного АК-74 это наличие крепления для оптических и ночных прицелов.",
             "Weight": 2.092,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 2,
             "StackMaxSize": 1,
@@ -574,10 +574,10 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": true,
-            "RecoilForceUp": 120,
-            "RecoilForceBack": 320,
+            "RecoilForceUp": 100,
+            "RecoilForceBack": 300,
             "Convergence": 1.5,
-            "RecoilAngle": 86,
+            "RecoilAngle": 90,
             "RecolDispersion": 25,
             "bFirerate": 650,
             "Ergonomics": 17,
@@ -616,7 +616,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.3,
+            "CameraRecoil": 0.2,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0,
             "Velocity": 0,
@@ -1878,7 +1878,7 @@
             "ShortName": "ПБ",
             "Description": "Пистолет бесшумный ПБ (Индекс ГРАУ 6П9) — был создан для вооружения армейских разведывательных групп, а также персонала КГБ СССР, принят на вооружение в 1967 году. Продолжает находиться на вооружении спецподразделений ФСБ и внутренних войск МВД РФ.",
             "Weight": 0.674,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 2,
             "Height": 1,
             "StackMaxSize": 1,
@@ -2475,11 +2475,11 @@
         "_parent": "5448e54d4bdc2dcc718b4568",
         "_type": "Item",
         "_props": {
-            "Name": "SVS ballistic vest",
-            "ShortName": "SVS armor",
-            "Description": "Not heavy armor",
+            "Name": "SVS Personal Armor",
+            "ShortName": "SVS",
+            "Description": "Light armor, offering essential protection of vital body areas only, but still pretty dependable, with III level plates. Can and intended to be carried under the chest rig.",
             "Weight": 20,
-            "BackgroundColor": "green",
+            "BackgroundColor": "blue",
             "Width": 4,
             "Height": 4,
             "StackMaxSize": 1,
@@ -2505,7 +2505,7 @@
             "ExamineExperience": 2,
             "HideEntrails": false,
             "armorPoints": 100,
-            "armorClass": "5",
+            "armorClass": "3",
             "speedPenaltyPercent": -10,
             "mousePenalty": -10,
             "weaponErgonomicPenalty": 10,
@@ -3733,7 +3733,7 @@
             "ShortName": "M4A1 5.56x45",
             "Description": "Colt M4A1- штурмовая винтовка (карабин) созданная в США на базе платформы AR-15 под патрон 5.56x45 NATO. Планировалась к вооружению экипажей боевых машин и расчетов техники, которым было необходимо иметь оружие меньших габаритов чем штатное вооружение но использующее стандартный боеприпас. Однако вскоре US SOCOM (Командование Сил Специальных Операций США) приняло на вооружение M4A1 для всех входящих в его состав подразделений. Затем последовало полное принятие M4A1 на вооружение в армии и морской пехоте США.",
             "Weight": 0.38,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 2,
             "StackMaxSize": 1,
@@ -3872,10 +3872,10 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": true,
-            "RecoilForceUp": 120,
-            "RecoilForceBack": 310,
+            "RecoilForceUp": 85,
+            "RecoilForceBack": 290,
             "Convergence": 2,
-            "RecoilAngle": 80,
+            "RecoilAngle": 90,
             "RecolDispersion": 25,
             "bFirerate": 800,
             "Ergonomics": 20,
@@ -3906,7 +3906,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.3,
+            "CameraRecoil": 0.2,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0.01,
             "Velocity": 0,
@@ -4587,7 +4587,7 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": true,
-            "RecoilForceUp": 600,
+            "RecoilForceUp": 500,
             "RecoilForceBack": 250,
             "Convergence": 5,
             "RecoilAngle": 85,
@@ -4632,7 +4632,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.1,
+            "CameraRecoil": 0.05,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0.3,
             "Velocity": 0,
@@ -4651,7 +4651,7 @@
             "ShortName": "RGD-5",
             "Description": "РГД-5 (Ручная Граната Дистанционная, модификация 5) относится к противопехотным осколочным ручным гранатам дистанционного действия наступательного типа. Время замедления запала 3,2—4,2 секунды. Так как граната наступательного типа осколки гранаты имеют небольшую массу и соответственно летят на меньшую дальность.",
             "Weight": 0.31,
-            "BackgroundColor": "red",
+            "BackgroundColor": "grey",
             "Width": 1,
             "Height": 1,
             "StackMaxSize": 1,
@@ -5048,8 +5048,8 @@
             "LootExperience": 10,
             "ExamineExperience": 10,
             "HideEntrails": false,
-            "foodUseTime": 6,
-            "foodEffectType": "duringUse",
+            "foodUseTime": 4,
+            "foodEffectType": "afterUse",
             "effects_health": {
                 "common": {
                     "value": 0,
@@ -5100,13 +5100,13 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": 10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "hydration": {
-                    "value": 60,
+                    "value": 40,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -5588,7 +5588,7 @@
             "ShortName": "МР-133 12к",
             "Description": "Гладкоствольное многозарядное ружьё МР-133 с перезаряжанием цевьем, производства ИжМех. Надежное и удобное оружие для охоты и самообороны. Уникально в своем роде благодаря наличию затворной задержки.",
             "Weight": 3.3,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 1,
             "StackMaxSize": 1,
@@ -5748,10 +5748,10 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": false,
-            "RecoilForceUp": 700,
-            "RecoilForceBack": 600,
+            "RecoilForceUp": 400,
+            "RecoilForceBack": 500,
             "Convergence": 2.5,
-            "RecoilAngle": 92,
+            "RecoilAngle": 90,
             "RecolDispersion": 15,
             "bFirerate": 30,
             "Ergonomics": 50,
@@ -5780,7 +5780,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.5,
+            "CameraRecoil": 0.3,
             "ReloadMode": "InternalMagazine",
             "CenterOfImpact": 0.01,
             "Velocity": 0,
@@ -5831,8 +5831,8 @@
                     "_parent": "544a11ac4bdc2d470e8b456a",
                     "_props": {
                         "filters": [],
-                        "cellsH": 3,
-                        "cellsV": 3,
+                        "cellsH": 2,
+                        "cellsV": 2,
                         "maxCount": 0,
                         "maxWeight": 0
                     },
@@ -5841,8 +5841,8 @@
             ],
             "Slots": [],
             "containType": [],
-            "sizeWidth": 3,
-            "sizeHeight": 3,
+            "sizeWidth": 2,
+            "sizeHeight": 2,
             "isSecured": true,
             "spawnTypes": "None",
             "lootFilter": [],
@@ -6838,7 +6838,7 @@
             "ShortName": "Ф-1",
             "Description": "Ф-1, ручная противопехотная оборонительная граната. Предназначена для поражения живой силы в оборонительном бою. Из-за значительного радиуса разлёта осколков метать её можно только из-за укрытия",
             "Weight": 0.31,
-            "BackgroundColor": "red",
+            "BackgroundColor": "grey",
             "Width": 1,
             "Height": 1,
             "StackMaxSize": 1,
@@ -6906,7 +6906,7 @@
             "ShortName": "AWS",
             "Description": "Crye Precision AWS",
             "Weight": 1,
-            "BackgroundColor": "blue",
+            "BackgroundColor": "default",
             "Width": 3,
             "Height": 3,
             "StackMaxSize": 1,
@@ -6978,7 +6978,7 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
-                        "cellsV": 2,
+                        "cellsV": 1,
                         "maxCount": 0,
                         "maxWeight": 0
                     },
@@ -7057,7 +7057,7 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 4,
-                        "cellsV": 5,
+                        "cellsV": 4,
                         "maxCount": 0,
                         "maxWeight": 0
                     },
@@ -7998,13 +7998,13 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": -10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "hydration": {
-                    "value": -10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -8129,7 +8129,7 @@
                     "duration": 0
                 },
                 "arm_left": {
-                    "value": -10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -8211,34 +8211,34 @@
             },
             "effects_speed": {
                 "mobility": {
+                    "value": 25,
+                    "percent": true,
+                    "time": 10,
+                    "duration": 120
+                },
+                "recoil": {
                     "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
-                "recoil": {
-                    "value": 2,
-                    "percent": false,
-                    "time": 0,
-                    "duration": 30
-                },
                 "reloadSpeed": {
-                    "value": -5,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
-                    "duration": 20
+                    "duration": 0
                 },
                 "lootSpeed": {
-                    "value": -2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
-                    "duration": 10
+                    "duration": 0
                 },
                 "unlockSpeed": {
-                    "value": -2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
-                    "duration": 10
+                    "duration": 0
                 }
             }
         }
@@ -8331,9 +8331,9 @@
         "_parent": "5448f39d4bdc2d0a728b4568",
         "_type": "Item",
         "_props": {
-            "Name": "Аптечка Salewa FIRST AID KIT",
+            "Name": "Salewa FIRST AID KIT",
             "ShortName": "Salewa",
-            "Description": "",
+            "Description": "First aid kit containing bivibag, various types of bandages and dressing tools.",
             "Weight": 0.6,
             "BackgroundColor": "orange",
             "Width": 1,
@@ -8420,8 +8420,8 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": -10,
-                    "percent": true,
+                    "value": 0,
+                    "percent": false,
                     "time": 0,
                     "duration": 0
                 }
@@ -8843,7 +8843,7 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": 35,
+                    "value": 25,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -8907,7 +8907,7 @@
                     "duration": 0
                 },
                 "lootSpeed": {
-                    "value": 1,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -9482,8 +9482,8 @@
             },
             "StackObjectsCount": 1,
             "NotShownInSlot": false,
-            "ExaminedByDefault": false,
-            "ExamineTime": 1,
+            "ExaminedByDefault": true,
+            "ExamineTime": 2,
             "IsUnlootable": false,
             "IsUndiscardable": false,
             "IsUnsaleable": false,
@@ -9496,86 +9496,86 @@
             "Grids": [
                 {
                     "_name": "1",
-                    "_id": "5648a6f44bdc2d3b4c8b4576",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13124597719ad692861",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
                         "cellsV": 2,
-                        "maxCount": 0,
-                        "maxWeight": 3
+                        "maxCount": 1,
+                        "maxWeight": 1
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
                 {
                     "_name": "2",
-                    "_id": "5648a6f74bdc2d363b8b4576",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13324597719b55f50f8",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
-                        "cellsV": 1,
-                        "maxCount": 0,
+                        "cellsV": 2,
+                        "maxCount": 1,
                         "maxWeight": 1
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
                 {
                     "_name": "3",
-                    "_id": "5648a6f94bdc2d16268b4577",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13524597719b472d3fe",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
                         "cellsV": 1,
                         "maxCount": 0,
-                        "maxWeight": 1
+                        "maxWeight": 0.25
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
                 {
                     "_name": "4",
-                    "_id": "5648a6fc4bdc2df8348b457f",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13724597719bd403076",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
                         "cellsV": 1,
                         "maxCount": 0,
-                        "maxWeight": 1
+                        "maxWeight": 0.25
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
                 {
                     "_name": "5",
-                    "_id": "5648a6ff4bdc2d91118b45a3",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13b24597719af191441",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
-                        "cellsV": 1,
-                        "maxCount": 0,
+                        "cellsV": 2,
+                        "maxCount": 1,
                         "maxWeight": 1
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
                 {
                     "_name": "6",
-                    "_id": "5648a7034bdc2d3d1c8b457c",
-                    "_parent": "5648a69d4bdc2ded0b8b457b",
+                    "_id": "5732f13e24597719b900f451",
+                    "_parent": "572b7adb24597762ae139821",
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
                         "cellsV": 2,
-                        "maxCount": 0,
-                        "maxWeight": 3
+                        "maxCount": 1,
+                        "maxWeight": 1
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 }
             ],
             "Slots": []
         },
-        "_proto": "544a5caa4bdc2d1a388b4568"
+        "_proto": "5648a69d4bdc2ded0b8b457b"
     },
     "566965d44bdc2d814c8b4571": {
         "_id": "566965d44bdc2d814c8b4571",
@@ -9597,8 +9597,8 @@
             "Description": "Cap",
             "Weight": 0.1,
             "BackgroundColor": "default",
-            "Width": 1,
-            "Height": 1,
+            "Width": 2,
+            "Height": 2,
             "StackMaxSize": 1,
             "Rarity": "Common",
             "SpawnChance": 50,
@@ -9641,8 +9641,8 @@
             "Description": "Balaclava",
             "Weight": 0.1,
             "BackgroundColor": "default",
-            "Width": 1,
-            "Height": 1,
+            "Width": 2,
+            "Height": 2,
             "StackMaxSize": 1,
             "Rarity": "Rare",
             "SpawnChance": 50,
@@ -9655,7 +9655,7 @@
             "StackObjectsCount": 1,
             "NotShownInSlot": false,
             "ExaminedByDefault": true,
-            "ExamineTime": 0.2,
+            "ExamineTime": 2,
             "IsUnlootable": false,
             "IsUndiscardable": false,
             "IsUnsaleable": false,
@@ -9929,7 +9929,7 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 10,
-                        "cellsV": 30,
+                        "cellsV": 20,
                         "maxCount": 0,
                         "maxWeight": 0
                     },
@@ -9945,9 +9945,9 @@
         "_parent": "5448bf274bdc2dfc2f8b456a",
         "_type": "Item",
         "_props": {
-            "Name": "Дамская сумочка",
-            "ShortName": "Сумка",
-            "Description": "",
+            "Name": "Waist pouch",
+            "ShortName": "Waistbag",
+            "Description": "Durable and convenient waist pouch for a variety of things you want to keep close.",
             "Weight": 1,
             "BackgroundColor": "violet",
             "Width": 2,
@@ -9981,7 +9981,7 @@
                     "_parent": "5732ee6a24597719ae0c0281",
                     "_props": {
                         "filters": [],
-                        "cellsH": 2,
+                        "cellsH": 3,
                         "cellsV": 2,
                         "maxCount": 0,
                         "maxWeight": 0
@@ -11031,13 +11031,13 @@
             "ShortName": "Video card",
             "Description": "Video card",
             "Weight": 0.6,
-            "BackgroundColor": "green",
+            "BackgroundColor": "blue",
             "Width": 2,
             "Height": 1,
             "StackMaxSize": 1,
-            "Rarity": "Superrare",
-            "SpawnChance": 50,
-            "CreditsPrice": 100000,
+            "Rarity": "Common",
+            "SpawnChance": 3,
+            "CreditsPrice": 28500,
             "ItemSound": "generic",
             "Prefab": {
                 "path": "assets/content/items/barter/video_card/item_video_card.bundle",
@@ -11705,7 +11705,7 @@
                     "duration": 0
                 },
                 "tummy": {
-                    "value": -2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -11729,7 +11729,7 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": -20,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -12033,7 +12033,7 @@
                     "duration": 0
                 },
                 "chest": {
-                    "value": 2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -12313,10 +12313,10 @@
             "Name": "Camelback Tri Zipps Backpack",
             "ShortName": "TriZipps",
             "Description": "",
-            "Weight": 1.5,
+            "Weight": 1,
             "BackgroundColor": "violet",
             "Width": 4,
-            "Height": 5,
+            "Height": 4,
             "StackMaxSize": 1,
             "Rarity": "Not_exist",
             "SpawnChance": 50,
@@ -12336,7 +12336,7 @@
             "IsUnbuyable": false,
             "IsUngivable": false,
             "IsLockedafterEquip": false,
-            "LootExperience": 100,
+            "LootExperience": 20,
             "ExamineExperience": 2,
             "HideEntrails": true,
             "Grids": [
@@ -12347,7 +12347,7 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 5,
-                        "cellsV": 7,
+                        "cellsV": 6,
                         "maxCount": 0,
                         "maxWeight": 0
                     },
@@ -12355,7 +12355,7 @@
                 }
             ],
             "Slots": [],
-            "speedPenaltyPercent": 3
+            "speedPenaltyPercent": 0
         }
     },
     "56742c284bdc2d98058b456d": {
@@ -12646,7 +12646,7 @@
             "ShortName": "Defender",
             "Description": "Heavy armor",
             "Weight": 30,
-            "BackgroundColor": "green",
+            "BackgroundColor": "blue",
             "Width": 4,
             "Height": 4,
             "StackMaxSize": 1,
@@ -12822,7 +12822,7 @@
                     "duration": 0
                 },
                 "chest": {
-                    "value": -2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -13197,9 +13197,9 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
-                        "cellsV": 2,
+                        "cellsV": 1,
                         "maxCount": 0,
-                        "maxWeight": 1
+                        "maxWeight": 0
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
@@ -13210,9 +13210,9 @@
                     "_props": {
                         "filters": [],
                         "cellsH": 1,
-                        "cellsV": 2,
+                        "cellsV": 1,
                         "maxCount": 0,
-                        "maxWeight": 1
+                        "maxWeight": 0
                     },
                     "_proto": "55d329c24bdc2d892f8b4567"
                 },
@@ -13358,7 +13358,7 @@
             "ShortName": "СВ-98",
             "Description": "СВ-98- Российская снайперская винтовка разработанная 1998-2000 г.г. группой конструкторов под руководством В. Стронского. Серийно выпускается концерном \"Ижмаш\". Винтовка имеет магазинное питание и продольно скользящий затвор, предназначена для поражения живой силы на дистанции до 1000 м.",
             "Weight": 5.425,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 2,
             "StackMaxSize": 1,
@@ -23196,25 +23196,25 @@
                     "duration": 0
                 },
                 "recoil": {
-                    "value": -1,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "reloadSpeed": {
-                    "value": 1,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "lootSpeed": {
-                    "value": 1,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "unlockSpeed": {
-                    "value": 1,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23259,7 +23259,7 @@
             "LootExperience": 10,
             "ExamineExperience": 10,
             "HideEntrails": false,
-            "foodUseTime": 3,
+            "foodUseTime": 5,
             "foodEffectType": "afterUse",
             "effects_health": {
                 "common": {
@@ -23317,7 +23317,7 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": 40,
+                    "value": 20,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23770,7 +23770,7 @@
                     "duration": 0
                 },
                 "head": {
-                    "value": 5,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23788,7 +23788,7 @@
                     "duration": 0
                 },
                 "chest": {
-                    "value": 5,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23812,7 +23812,7 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": 15,
+                    "value": 10,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23928,7 +23928,7 @@
             "ExamineExperience": 10,
             "HideEntrails": false,
             "foodUseTime": 5,
-            "foodEffectType": "duringUse",
+            "foodEffectType": "afterUse",
             "effects_health": {
                 "common": {
                     "value": 0,
@@ -23955,7 +23955,7 @@
                     "duration": 0
                 },
                 "chest": {
-                    "value": -3,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -23979,7 +23979,7 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": 80,
+                    "value": 10,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24037,13 +24037,13 @@
                     "duration": 0
                 },
                 "reloadSpeed": {
-                    "value": 0,
+                    "value": 5,
                     "percent": false,
                     "time": 3,
                     "duration": 36
                 },
                 "lootSpeed": {
-                    "value": 0,
+                    "value": 5,
                     "percent": false,
                     "time": 3,
                     "duration": 36
@@ -24152,7 +24152,7 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": 40,
+                    "value": 15,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24192,8 +24192,8 @@
             },
             "effects_speed": {
                 "mobility": {
-                    "value": 10,
-                    "percent": true,
+                    "value": 0,
+                    "percent": false,
                     "time": 0,
                     "duration": 0
                 },
@@ -24204,8 +24204,8 @@
                     "duration": 0
                 },
                 "reloadSpeed": {
-                    "value": 10,
-                    "percent": true,
+                    "value": 0,
+                    "percent": false,
                     "time": 0,
                     "duration": 0
                 },
@@ -24319,7 +24319,7 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": 40,
+                    "value": 30,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24377,13 +24377,13 @@
                     "duration": 0
                 },
                 "lootSpeed": {
-                    "value": 2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "unlockSpeed": {
-                    "value": 2,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24486,7 +24486,7 @@
                     "duration": 0
                 },
                 "hydration": {
-                    "value": -5,
+                    "value": -10,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24605,7 +24605,7 @@
                     "duration": 0
                 },
                 "head": {
-                    "value": -10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24623,7 +24623,7 @@
                     "duration": 0
                 },
                 "chest": {
-                    "value": -10,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24647,13 +24647,13 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": 100,
+                    "value": 10,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "hydration": {
-                    "value": 30,
+                    "value": 20,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24677,8 +24677,8 @@
                 },
                 "contusion": {
                     "remove": false,
-                    "time": 3,
-                    "duration": 10
+                    "time": 0,
+                    "duration": 0
                 },
                 "toxication": {
                     "remove": false,
@@ -24699,7 +24699,7 @@
                     "duration": 0
                 },
                 "recoil": {
-                    "value": -3,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -24717,7 +24717,7 @@
                     "duration": 36
                 },
                 "unlockSpeed": {
-                    "value": 5,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -25297,9 +25297,9 @@
         "_parent": "5448f39d4bdc2d0a728b4568",
         "_type": "Item",
         "_props": {
-            "Name": "Medkit",
-            "ShortName": "Medkit",
-            "Description": "Medkit",
+            "Name": "AI-2 medikit",
+            "ShortName": "AI-2",
+            "Description": "The AI-2 medikit was developed as a standard service first aid kit for various defence and law enforcement agencies and civil defense forces of USSR. In case of all-out conflict with the use of weapons of mass destruction it should have been distributed to the population  of the affected and surrounding areas.",
             "Weight": 0.6,
             "BackgroundColor": "orange",
             "Width": 1,
@@ -25329,7 +25329,7 @@
             "medUseTime": 5,
             "medEffectType": "duringUse",
             "MaxHpResource": 250,
-            "hpResourceRate": 10,
+            "hpResourceRate": 50,
             "effects_health": {
                 "common": {
                     "value": 0,
@@ -25548,13 +25548,13 @@
                     "duration": 0
                 },
                 "energy": {
-                    "value": -3,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
                 },
                 "hydration": {
-                    "value": -5,
+                    "value": 0,
                     "percent": false,
                     "time": 0,
                     "duration": 0
@@ -25637,7 +25637,7 @@
             "ShortName": "",
             "Description": ".",
             "Weight": 2.622,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 2,
             "StackMaxSize": 1,
@@ -25839,7 +25839,7 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 100,
             "isFastReload": true,
-            "RecoilForceUp": 400,
+            "RecoilForceUp": 300,
             "RecoilForceBack": 500,
             "Convergence": 2,
             "RecoilAngle": 90,
@@ -25871,7 +25871,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.5,
+            "CameraRecoil": 0.4,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0.01,
             "Velocity": 0,
@@ -26431,7 +26431,7 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": true,
-            "RecoilForceUp": 500,
+            "RecoilForceUp": 400,
             "RecoilForceBack": 250,
             "Convergence": 5,
             "RecoilAngle": 85,
@@ -26463,7 +26463,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.1,
+            "CameraRecoil": 0.05,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0.3,
             "Velocity": 0,
@@ -27294,7 +27294,7 @@
             "ShortName": "",
             "Description": "",
             "Weight": 0.92,
-            "BackgroundColor": "red",
+            "BackgroundColor": "black",
             "Width": 5,
             "Height": 2,
             "StackMaxSize": 1,
@@ -27458,10 +27458,10 @@
             "durabSpawnMin": 25,
             "durabSpawnMax": 75,
             "isFastReload": true,
-            "RecoilForceUp": 90,
-            "RecoilForceBack": 100,
+            "RecoilForceUp": 75,
+            "RecoilForceBack": 150,
             "Convergence": 2.5,
-            "RecoilAngle": 92,
+            "RecoilAngle": 90,
             "RecolDispersion": 25,
             "bFirerate": 900,
             "Ergonomics": 50,
@@ -27492,7 +27492,7 @@
                     "_proto": "55d4af244bdc2d962f8b4571"
                 }
             ],
-            "CameraRecoil": 0.4,
+            "CameraRecoil": 0.2,
             "ReloadMode": "ExternalMagazine",
             "CenterOfImpact": 0.01,
             "Velocity": 100,
@@ -33831,5 +33831,172 @@
             "muzzleModType": "muzzleCombo"
         },
         "_proto": "576167ab2459773cad038c43"
+    },
+    "6af8d1a595b1df23c4ec96df": {
+        "_id": "6af8d1a595b1df23c4ec96df",
+        "_name": "grizzly",
+        "_parent": "5448f39d4bdc2d0a728b4568",
+        "_type": "Item",
+        "_props": {
+            "Name": "Grizzly First Aid Kit",
+            "ShortName": "Grizzly",
+            "Description": "Travel Grizzly Medical Kit is considered one of the best first aid kits. It contains everything necessary to provide timely medical care in extreme conditions.",
+            "Weight": 2,
+            "BackgroundColor": "orange",
+            "Width": 2,
+            "Height": 2,
+            "StackMaxSize": 1,
+            "Rarity": "Rare",
+            "SpawnChance": 25,
+            "CreditsPrice": 15000,
+            "ItemSound": "med_medkit",
+            "Prefab": {
+                "path": "assets/content/items/meds/grizzly/amk_grizzly.bundle",
+                "rcid": ""
+            },
+            "StackObjectsCount": 1,
+            "NotShownInSlot": false,
+            "ExaminedByDefault": true,
+            "ExamineTime": 2,
+            "IsUnlootable": false,
+            "IsUndiscardable": false,
+            "IsUnsaleable": false,
+            "IsUnbuyable": false,
+            "IsUngivable": false,
+            "IsLockedafterEquip": false,
+            "LootExperience": 70,
+            "ExamineExperience": 6,
+            "HideEntrails": false,
+            "medUseTime": 10,
+            "medEffectType": "duringUse",
+            "MaxHpResource": 1880,
+            "hpResourceRate": 85,
+            "effects_health": {
+                "common": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "head": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "arm_left": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "arm_right": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "chest": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "tummy": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "leg_left": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "leg_right": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "energy": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "hydration": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                }
+            },
+            "effects_damage": {
+                "bloodloss": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                },
+                "fracture": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                },
+                "pain": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                },
+                "contusion": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                },
+                "toxication": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                },
+                "radExposure": {
+                    "remove": true,
+                    "time": 0,
+                    "duration": 0
+                }
+            },
+            "effects_speed": {
+                "mobility": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "recoil": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "reloadSpeed": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "lootSpeed": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                },
+                "unlockSpeed": {
+                    "value": 0,
+                    "percent": false,
+                    "time": 0,
+                    "duration": 0
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,66 @@
+{
+	"_id": "6afa5e1777a29edad8e19b5a",
+	"traderId": "6afa55d33d2787af8b204192",
+	"name": "Supply Request",
+	"description": "Hello, young man. Prapor has told me about your situation. You're in a bit of trouble, yes? Well, I am willing to help you. I'll provide you with medicine, emergency routes, and other forms of aid.. but I have to see if you can be trusted with my work. Recently, we have been running quite low on medical supplies... Tarkov has been overrun with the sick and injured. I would like you to deliver some supplies to us, just to get the clinic back on its feet. It's nothing too extraordinary, just a few AI-2 medical kits and one of those Salewa emergency first aid kits. Maybe we can start discussing true work after this.",
+	"image": "/files/quest/icon/59c2742286f77475ec568d92.png",
+	"type": "PickUp",
+	"isKey": true,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Item",
+				"target": "6afa613377a29edad8e19b5e",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6afa613377a29edad8e19b5e",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 2235
+						}
+					}
+				]
+			},
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 360
+			},
+			{
+				"type": "TraderStanding",
+				"target": "6afa55d33d2787af8b204192",
+				"value": 0.0099999997764825821
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [],
+		"AvailableForFinish": [
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afa60f077a29edad8e19b5c",
+					"description": "Hand over 2 AI-2 medkits",
+					"target": "5755356824597772cb798962",
+					"value": 2
+				}
+			},
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afa610a77a29edad8e19b5d",
+					"description": "Hand over Salewa First Aid Kit",
+					"target": "544fb45d4bdc2dee738b4568",
+					"value": 1
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

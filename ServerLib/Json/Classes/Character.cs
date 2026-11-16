@@ -67,7 +67,8 @@ namespace ServerLib.Json.Classes
             public StandingLevel next_level { get; set; }
             public class StandingLevel
             {
-                public int min_leve { get; set; }
+                // the client's field is min_level (Standing.GClass630); this was min_leve
+                public int min_level { get; set; }
                 public int min_sales_sum { get; set; }
                 public float standing { get; set; }
             }
@@ -76,7 +77,14 @@ namespace ServerLib.Json.Classes
         public partial class ConditionCounters
         {
             [JsonProperty("Counters")]
-            public object[] Counters { get; set; }
+            public List<ConditionCounter> Counters { get; set; } = new();
+        }
+
+        /// <summary>One quest counter (client GClass663: id, value).</summary>
+        public partial class ConditionCounter
+        {
+            public string id { get; set; }
+            public int value { get; set; }
         }
 
         public partial class Customization
@@ -213,6 +221,11 @@ namespace ServerLib.Json.Classes
             [JsonProperty("Side")]
             public string Side { get; set; }
 
+            // The character templates carry it ("Usec_1"); the Unity project's client uses it for the PMC's voice
+            // (CharacterCustomization). Was dropped on load/save before.
+            [JsonProperty("Voice", NullValueHandling = NullValueHandling.Ignore)]
+            public string Voice { get; set; }
+
             [JsonProperty("RegistrationDate")]
             public int RegistrationDate { get; set; }
         }
@@ -281,6 +294,11 @@ namespace ServerLib.Json.Classes
 
             [JsonProperty("MaxDurability", NullValueHandling = NullValueHandling.Ignore)]
             public float? MaxDurability { get; set; }
+
+            /// <summary>Every other saved item field the client writes (weapon/mod Locked, light and sight IsActive and
+            /// SelectedMode, map Markers, ...). Kept as they come, so a save does not drop them.</summary>
+            [JsonExtensionData]
+            public IDictionary<string, Newtonsoft.Json.Linq.JToken> Extra { get; set; }
         }
 
         public partial class Notes
@@ -354,11 +372,36 @@ namespace ServerLib.Json.Classes
             [JsonProperty("Value")]
             public long Value { get; set; }
         }
+        /// <summary>
+        /// A profile quest (client GClass666). The client writes status as the QuestStatus name ("Started"); older saves
+        /// with a number are still read.
+        /// </summary>
         public class Quest
         {
             public string qid { get; set; }
             public int startTime { get; set; }
-            public int status { get; set; }
+            [JsonConverter(typeof(QuestStatusConverter))]
+            public string status { get; set; } = "Locked";
+            public List<string> completedConditions { get; set; } = new();
+        }
+
+        public static readonly string[] QuestStatusNames = { "Locked", "AvailableForStart", "Started", "AvailableForFinish", "Success", "Fail" };
+
+        internal class QuestStatusConverter : JsonConverter
+        {
+            public override bool CanConvert(Type t) => t == typeof(string);
+
+            public override object ReadJson(JsonReader reader, Type t, object existingValue, JsonSerializer serializer)
+            {
+                if (reader.TokenType == JsonToken.Integer)
+                {
+                    long n = Convert.ToInt64(reader.Value);
+                    return n >= 0 && n < QuestStatusNames.Length ? QuestStatusNames[n] : "Locked";
+                }
+                return reader.Value?.ToString() ?? "Locked";
+            }
+
+            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer) => writer.WriteValue((string)value);
         }
         public enum REnum { Horizontal, Vertical };
 
@@ -383,7 +426,7 @@ namespace ServerLib.Json.Classes
 
         public partial class Base
         {
-            public static Base FromJson(string json) => JsonConvert.DeserializeObject<Base>(json, Converter.Settings);
+            public static Base FromJson(string json) => JsonConvert.DeserializeObject<Base>(json, Converter.ReadSettings);
         }
 
         internal static class Converter
@@ -392,6 +435,24 @@ namespace ServerLib.Json.Classes
             {
                 MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
                 DateParseHandling = DateParseHandling.None,
+                Converters = {
+                LocationUnionConverter.Singleton,
+                RUnionConverter.Singleton,
+                REnumConverter.Singleton,
+                new IsoDateTimeConverter { DateTimeStyles = DateTimeStyles.AssumeUniversal }
+            },
+            };
+
+            /// <summary>
+            /// Reading a profile the client sent: a null keeps the field's default instead of failing the whole profile.
+            /// The client writes NaN/infinite floats as null (seen: Stats.SessionExperienceMult after a death online),
+            /// which made every such raid-end save throw and be lost.
+            /// </summary>
+            public static readonly JsonSerializerSettings ReadSettings = new JsonSerializerSettings
+            {
+                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
+                DateParseHandling = DateParseHandling.None,
+                NullValueHandling = NullValueHandling.Ignore,
                 Converters = {
                 LocationUnionConverter.Singleton,
                 RUnionConverter.Singleton,

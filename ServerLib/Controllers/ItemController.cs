@@ -1,14 +1,17 @@
-﻿using ServerLib.Utilities;
-using ServerLib.Json.Classes;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using ServerLib.Handlers;
-using Newtonsoft.Json;
-using System.Collections.Generic; // Added for List Support
-using System.Linq;
-using System.Runtime.Serialization;
-using MongoDB.Bson;
+using ServerLib.Json.Classes;
+using ServerLib.Utilities;
 
 namespace ServerLib.Controllers
 {
+    /// <summary>
+    /// /client/game/profile/items/moving: a list of actions ({"data": [{"Action": ...}, ...]}). Inventory actions are in
+    /// InventoryActions, trading in TradingController, quests in QuestController. The answer is the items the actions
+    /// added, changed and removed; a refused action (Fail) answers with its error code and message, which the client
+    /// shows (trading) or uses to undo (quests).
+    /// </summary>
     public class ItemController
     {
         public class MoveItems
@@ -23,265 +26,14 @@ namespace ServerLib.Controllers
         }
 
         public static MoveItems MoveActionResult;
-        public static void AcceptQuest(string SessionId, dynamic actionData)
+
+        /// <summary>Refuses the current items/moving request (first error wins).</summary>
+        public static void Fail(int code, string message)
         {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                ch.Quests = ch.Quests.Append(new Character.Quest() { qid = actionData.qid, startTime = 1337, status = 1 }).ToArray();
-            }
-        }
-
-        public static void CompleteQuest(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                foreach (var item in ch.Quests)
-                {
-                    if (item.qid == actionData.qid)
-                    {
-                        item.status = 4;
-                    }
-                }
-            }
-        }
-
-        public static void RemoveItem(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                string targetItem = actionData.item;
-                List<string> ItemIds = new() { targetItem };
-                while (true)
-                {
-                    if (ItemIds.Count != 0)
-                    {
-                        while (true)
-                        {
-                            string tmpEmpty = "yes";
-
-                            for (int i = ch.Inventory.Items.Count - 1; i >= 0; i--)
-                            {
-                                var item = ch.Inventory.Items[i];
-                                if (item != null && ((item.ParentId == ItemIds[0]) || (item.Id == ItemIds[0])))
-                                {
-                                    MoveActionResult.items.del.Add(item);
-                                    ItemIds.Add(item.Id);
-                                    ch.Inventory.Items.RemoveAt(i);
-                                    tmpEmpty = "no";
-                                }
-                            }
-
-                            if (tmpEmpty == "yes")
-                            {
-                                break;
-                            }
-                            ;
-                        }
-                        ItemIds.RemoveRange(0, 1);
-                        continue;
-                    }
-                    break;
-                }
-            }
-        }
-
-        public static void AddNote(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                ch.Notes.NotesNotes = ch.Notes.NotesNotes.Append(new Character.InsideNotes() { Time = actionData.note.Time, Text = actionData.note.Text }).ToArray();
-            }
-        }
-
-        // asked gemini to help with some of this (mainly rotation enum conversion)
-        // may be jank, im ass at C#
-        public static void MoveItem(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                string? targetItemId = actionData.item?.ToString();
-
-                Character.Item? itemToMove = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
-
-                if (itemToMove.Id != null)
-                {
-                    itemToMove.ParentId = actionData.to.id;
-                    itemToMove.SlotId = actionData.to.container;
-
-                    if (actionData.to.location != null)
-                    {
-                        string rawLocationJson = actionData.to.location.ToString();
-
-
-                        int locX = (int)actionData.to.location.x;
-                        int locY = (int)actionData.to.location.y;
-                        string rawRotation = actionData.to.location.r?.ToString() ?? "Horizontal";
-
-                        if (!Enum.TryParse<Character.REnum>(rawRotation, true, out Character.REnum parsedEnum))
-                        {
-                            parsedEnum = Character.REnum.Horizontal;
-                        }
-
-                        // this part was a pain to get gemini to fix
-                        // i might as well just use an if statement LMAO, it seems more efficient
-                        // it works for now, bandaid fix. i dont usually use ai but this was just annoying
-
-                        Character.RUnion cleanRotation = new Character.RUnion();
-                        cleanRotation.Enum = parsedEnum;
-                        cleanRotation.Integer = null;
-
-                        itemToMove.Location = new Character.LocationClass()
-                        {
-                            X = locX,
-                            Y = locY,
-                            R = cleanRotation
-                        };
-                    }
-                }
-                else
-                {
-                    // slot locations are always null
-                    // eg: move backpack into backpack slot, location = null
-                    itemToMove.Location = null;
-                }
-
-                MoveActionResult.items.change.Add(itemToMove);
-            }
-        }
-
-        public static void SplitItem(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                string? targetItemId = actionData.item?.ToString();
-
-                Character.Item? itemToSplit = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
-
-
-
-                int splitCount = (int)actionData.count;
-
-                if (itemToSplit.Id != null)
-                {
-                    itemToSplit.Upd.StackObjectsCount = itemToSplit.Upd.StackObjectsCount - splitCount;
-
-                    Character.Item newItemSplit = new()
-                    {
-                        Id = ObjectId.GenerateNewId().ToString(),
-                        Tpl = itemToSplit.Tpl,
-                        ParentId = actionData.container.id,
-                        SlotId = actionData.container.container,
-                        Upd = new Character.Upd()
-                        {
-                            StackObjectsCount = splitCount
-                        }
-                    };
-
-                    if (actionData.container.location == null)
-                    {
-                        newItemSplit.Location = null;
-                    }
-                    else
-                    {
-                        newItemSplit.Location = new Character.LocationClass()
-                        {
-                            X = actionData.container.location.x,
-                            Y = actionData.container.location.y,
-                            // fix later
-                            R = Character.REnum.Horizontal,
-                        };
-                    }
-
-                    Utilities.Debug.PrintDebug(newItemSplit.Id);
-
-                    ch.Inventory.Items.Add(newItemSplit);
-
-                    MoveActionResult.items.change.Add(itemToSplit);
-                    MoveActionResult.items.@new.Add(newItemSplit);
-                }
-            }
-        }
-
-        public static void MergeItem(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                string? targetItemId = actionData.item?.ToString();
-                string? targetItemId2 = actionData.with?.ToString();
-
-                Character.Item? itemToMerge = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
-                Character.Item? itemToMergeWith = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId2);
-
-                int count = (int)actionData.count;
-
-                if ((itemToMerge.Id != null) && (itemToMergeWith.Id != null))
-                {
-                    Item.Base itemMergeBase = DatabaseController.DataBase.Items[itemToMergeWith.Tpl];
-
-                    if (count > itemMergeBase.Props.StackMaxSize)
-                    {
-                        itemToMergeWith.Upd.StackObjectsCount = itemMergeBase.Props.StackMaxSize;
-                    }
-                    else { itemToMergeWith.Upd.StackObjectsCount += count; }
-
-                    itemToMerge.Upd.StackObjectsCount -= count;
-
-                    if (itemToMerge.Upd.StackObjectsCount <= 0)
-                    {
-                        ch.Inventory.Items.Remove(itemToMerge);
-
-                        MoveActionResult.items.del.Add(itemToMerge);
-                        MoveActionResult.items.change.Add(itemToMergeWith);
-                    }
-                    else
-                    {
-                        MoveActionResult.items.change.Add(itemToMerge);
-                        MoveActionResult.items.change.Add(itemToMergeWith);
-                    }
-                }
-            }
-        }
-
-        public static void BuyFromTrader(string SessionId, dynamic actionData)
-        {
-            var ch = CharacterController.GetCharacter(SessionId);
-            if (ch != null)
-            {
-                string buyType = actionData.type;
-
-                switch (buyType)
-                {
-                    case "buy_from_trader":
-                        foreach (var item in actionData.scheme_items)
-                        {
-                            string? targetItemId = item.ToString();
-
-                            Character.Item? itemCurrency = ch.Inventory.Items.FirstOrDefault(i => i != null && i.Id == targetItemId);
-
-                            itemCurrency.Upd.StackObjectsCount -= item.count;
-
-                            if (itemCurrency.Upd.StackObjectsCount <= 0)
-                            {
-                                ch.Inventory.Items.Remove(itemCurrency);
-
-                                MoveActionResult.items.del.Add(itemCurrency);
-                            }
-                            else
-                            {
-                                MoveActionResult.items.change.Add(itemCurrency);
-                            }
-                        }
-
-                        break;
-                };
-            }
+            Debug.PrintWarn(message, "ITEMS");
+            if (QuestController.LastErrorCode != 0) return;
+            QuestController.LastErrorCode = code;
+            QuestController.LastErrorMessage = message;
         }
 
         public static string HandleMoving(string SessionId, dynamic body)
@@ -290,60 +42,101 @@ namespace ServerLib.Controllers
             {
                 items = new() // Lists initialize clean and empty
             };
+            QuestController.LastErrorCode = 0;
+            QuestController.LastErrorMessage = null;
 
-            Newtonsoft.Json.Linq.JObject root = Newtonsoft.Json.Linq.JObject.FromObject(body);
+            JObject root = JObject.FromObject(body);
+            var ch = CharacterController.GetCharacter(SessionId);
 
-            if (root["data"] is Newtonsoft.Json.Linq.JArray actionArray)
+            if (ch != null && root["data"] is JArray actionArray)
             {
                 foreach (var actionData in actionArray)
                 {
                     string actionType = actionData["Action"]?.ToString() ?? string.Empty;
-
-                    if (string.IsNullOrEmpty(actionType))
+                    try
                     {
-                        Debug.PrintError("No action for data. Skipping.");
-                        continue;
+                        switch (actionType)
+                        {
+                            // the client sends "QuestAccept" {qid} and "QuestComplete" {qid, removeExcessItems} (GClass183.imethod_21/22)
+                            case "QuestAccept":
+                                QuestController.Accept(SessionId, actionData, MoveActionResult);
+                                break;
+                            case "QuestComplete":
+                                QuestController.Complete(SessionId, actionData, MoveActionResult);
+                                break;
+                            case "QuestHandover":
+                                // HANDOVER button of a HandoverItem objective (client EFT.Reconstruction.QuestHandover)
+                                QuestController.Handover(SessionId, actionData, MoveActionResult);
+                                break;
+                            case "TradingConfirm":
+                                TradingController.Confirm(SessionId, actionData, MoveActionResult);
+                                break;
+                            case "Move":
+                                InventoryActions.Move(ch, actionData, MoveActionResult);
+                                break;
+                            case "Split":
+                                InventoryActions.Split(ch, actionData, MoveActionResult);
+                                break;
+                            case "Merge":
+                                InventoryActions.Merge(ch, actionData, MoveActionResult);
+                                break;
+                            case "Transfer":
+                                InventoryActions.Transfer(ch, actionData, MoveActionResult);
+                                break;
+                            case "Swap":
+                                InventoryActions.Swap(ch, actionData, MoveActionResult);
+                                break;
+                            case "Remove":
+                                InventoryActions.Remove(ch, actionData, MoveActionResult);
+                                break;
+                            case "Apply":
+                                InventoryActions.Apply(ch, actionData, MoveActionResult);
+                                break;
+                            case "Eat":
+                                InventoryActions.Eat(ch, actionData, MoveActionResult);
+                                break;
+                            case "Examine":
+                                InventoryActions.Examine(ch, actionData, MoveActionResult);
+                                break;
+                            case "CreateMapMarker":
+                                InventoryActions.CreateMapMarker(ch, actionData, MoveActionResult);
+                                break;
+                            case "EditMapMarker":
+                                InventoryActions.EditMapMarker(ch, actionData, MoveActionResult);
+                                break;
+                            case "DeleteMapMarker":
+                                InventoryActions.DeleteMapMarker(ch, actionData, MoveActionResult);
+                                break;
+                            case "AddNote":
+                                InventoryActions.AddNote(ch, actionData);
+                                break;
+                            case "EditNote":
+                                InventoryActions.EditNote(ch, actionData);
+                                break;
+                            case "DeleteNote":
+                                InventoryActions.DeleteNote(ch, actionData);
+                                break;
+                            case "":
+                                Debug.PrintError("No action for data. Skipping.");
+                                break;
+                            default:
+                                Debug.PrintError("Action Cannot be Handled! " + actionType);
+                                break;
+                        }
                     }
-
-                    switch (actionType)
+                    catch (Exception ex)
                     {
-                        case "QuestAccept":
-                            AcceptQuest(SessionId, actionData);
-                            break;
-                        case "CompleteQuest":
-                            CompleteQuest(SessionId, actionData);
-                            break;
-                        case "Remove":
-                            RemoveItem(SessionId, actionData);
-                            break;
-                        case "AddNote":
-                            AddNote(SessionId, actionData);
-                            break;
-                        case "Move":
-                            MoveItem(SessionId, actionData);
-                            break;
-                        case "Split":
-                            SplitItem(SessionId, actionData);
-                            break;
-                        case "Transfer":
-                            MergeItem(SessionId, actionData);
-                            break;
-                        case "TradingConfirm":
-                            BuyFromTrader(SessionId, actionData);
-                            break;
-                        default:
-                            Debug.PrintError("Action Cannot be Handled! " + actionType);
-                            break;
+                        Debug.PrintError($"{actionType} failed: {ex}", "ITEMS");
+                        Fail(228, $"{actionType} failed on the server");
                     }
                 }
 
-                var ch = CharacterController.GetCharacter(SessionId);
-
-                // why was it saving every single time an item was moved??
-                if (ch != null) { SaveHandler.SaveCharacter(SessionId, ch); }
+                SaveHandler.SaveCharacter(SessionId, ch);
             }
 
-            return JsonConvert.SerializeObject(MoveActionResult);
+            // Character converters write locations as {x, y, r:"Horizontal"}, the way the client reads them.
+            // Without them the LocationUnion struct is written field by field and the client cannot place new items.
+            return JsonConvert.SerializeObject(MoveActionResult, Character.Converter.Settings);
         }
     }
 }

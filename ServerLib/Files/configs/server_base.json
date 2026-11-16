@@ -10,5 +10,23 @@
 			"ip":"127.0.0.1",
 			"port": 7777
 		}
-	]
+	],
+	"matchmaking":
+	{
+		"mode": "auto",
+		"matchIp": "",
+		"hostPublicIp": "",
+		"portStart": 7777,
+		"portEnd": 7796,
+		"hostDefaultPort": 7777,
+		"minPlayers": 1,
+		"maxPlayers": 10,
+		"startDelaySeconds": 10,
+		"maxStartDelaySeconds": 300,
+		"requireServerReady": false,
+		"gameServerPath": "",
+		"gameServerArgs": "",
+		"gameServerStartTimeoutSeconds": 90,
+		"matchTimeoutMinutes": 90
+	}
 }

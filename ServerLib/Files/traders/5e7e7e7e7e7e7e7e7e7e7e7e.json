@@ -1,0 +1,80 @@
+{
+	"err": 0,
+	"errmsg": null,
+	"data": {
+		"_id": "5e7e7e7e7e7e7e7e7e7e7e7e",
+		"working": true,
+		"name": "5e7e7e7e7e7e7e7e7e7e7e7e",
+		"surname": "5e7e7e7e7e7e7e7e7e7e7e7e",
+		"nickname": "5e7e7e7e7e7e7e7e7e7e7e7e",
+		"location": "5e7e7e7e7e7e7e7e7e7e7e7e",
+		"avatar": "files/trader/avatar/custom.png",
+		"balance_rub": 999999999,
+		"balance_dol": 9999999,
+		"balance_eur": 9999999,
+		"display": false,
+		"discount": 0,
+		"discount_end": 0,
+		"buyer_up": true,
+		"currency": "RUB",
+		"supply_next_time": 1551040000,
+		"repair": {
+			"availability": false,
+			"quality": "1",
+			"excluded_id_list": [],
+			"excluded_category": [],
+			"currency": "5449016a4bdc2d6f028b456f",
+			"currency_coefficient": 0.25,
+			"price_rate": 250
+		},
+		"insurance": {
+			"availability": false,
+			"min_payment": 0,
+			"min_return_hour": 24,
+			"max_return_hour": 36,
+			"max_storage_time": 72,
+			"excluded_category": []
+		},
+		"standing": {
+			"level": 1,
+			"standing": 0,
+			"sales_sum": 0,
+			"next_level": {
+				"min_level": 15,
+				"min_sales_sum": 1500000,
+				"min_standing": 0
+			}
+		},
+		"gridHeight": 178,
+		"loyalty": {
+			"currentLevel": 1,
+			"currentStanding": 0,
+			"currentSalesSum": 0,
+			"loyaltyLevels": {
+				"0": {
+					"minLevel": 1,
+					"minSalesSum": 0,
+					"minStanding": 0
+				},
+				"1": {
+					"minLevel": 1,
+					"minSalesSum": 0,
+					"minStanding": 0
+				},
+				"2": {
+					"minLevel": 1,
+					"minSalesSum": 0,
+					"minStanding": 0
+				},
+				"3": {
+					"minLevel": 1,
+					"minSalesSum": 0,
+					"minStanding": 0
+				}
+			}
+		},
+		"sell_category": [
+			"54009119af1c881c07000029"
+		]
+	}
+}

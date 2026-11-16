@@ -1,0 +1,87 @@
+{
+  "_id": "6a1f00000000000000000001",
+  "traderId": "54cb50c76803fa8b248b4571",
+  "name": "Debut",
+  "description": "Hello, soldier. I see you've been recently split from your people. What a shame.. but not all is lost. You obviously aren't going to be surviving here alone, let's make that clear. If you want to stay on your little vacation for a while, you're going to need to get your hands dirty. Now, now.. I know you're probably itching to do some spec-ops job already! I'm not entrusting you with that level of work yet. You think I just give big jobs to any random bum who walks in here?\r\nLet's start simple. The Customs area has been overrun with people of your kind, no offense. This is causing a lot of problems for me and my men, as shipping things through that zone has become a pain in the ass. I can't count how many times my men have been robbed by USEC or shot by BEAR. I need you to go out there, and clear out some of the people that have been causing a mess in Customs. Yes, yes.. I'll obviously pay you. I'm not that much of a cheapskate! Now, get to work. Report back when you're done.",
+  "image": "/files/quest/icon/debut.jpg",
+  "type": "Elimination",
+  "isKey": true,
+  "rewards": {
+    "Started": [],
+    "Success": [
+      {
+        "type": "Experience",
+        "target": "",
+        "value": 500
+      },
+      {
+        "type": "TraderStanding",
+        "target": "54cb50c76803fa8b248b4571",
+        "value": 0.019999999552965164
+      },
+      {
+        "type": "Item",
+        "target": "6a1f00000000000000000102",
+        "value": 1,
+        "items": [
+          {
+            "_id": "6a1f00000000000000000102",
+            "_tpl": "5449016a4bdc2d6f028b456f",
+            "upd": {
+              "StackObjectsCount": 5136
+            }
+          }
+        ]
+      }
+    ],
+    "Fail": []
+  },
+  "conditions": {
+    "AvailableForStart": [
+      {
+        "_parent": "Level",
+        "_props": {
+          "id": "6a1f00000000000000000201",
+          "value": 1,
+          "compareMethod": ">="
+        }
+      }
+    ],
+    "AvailableForFinish": [
+      {
+        "_parent": "CounterCreator",
+        "_props": {
+          "id": "6a1f00000000000000000202",
+          "description": "Eliminate Targets on Customs",
+          "value": 3,
+          "type": "Elimination",
+          "counter": {
+            "id": "6a1f00000000000000000203",
+            "conditions": [
+              {
+                "_parent": "Kills",
+                "_props": {
+                  "id": "6a1f00000000000000000204",
+                  "target": "Any",
+                  "value": 1,
+                  "compareMethod": ">="
+                }
+              },
+              {
+                "_parent": "Location",
+                "_props": {
+                  "id": "6af9a920bd45e44f9cf5a2d6",
+                  "target": "bigmap"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "Fail": []
+  },
+  "_server": {
+    "handOverItems": false
+  }
+}

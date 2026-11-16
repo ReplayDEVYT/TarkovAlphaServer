@@ -144,6 +144,7 @@ namespace ServerLib.Web
                 string url = request.Url;
                 url = Uri.UnescapeDataString(url);
                 Utilities.Debug.PrintDebug(url);
+                ClientServerInfo.Touch(Headers); // players online for /client/server/info
                 var ret = PluginLoader.PluginHttpRequest(request, this);
                 if (ret.Contains(true))
                     return;

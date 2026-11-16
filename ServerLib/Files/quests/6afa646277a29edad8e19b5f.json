@@ -1,0 +1,66 @@
+{
+	"_id": "6afa646277a29edad8e19b5f",
+	"traderId": "54cb50c76803fa8b248b4571",
+	"name": "Collector",
+	"description": "Hey, soldier, I have an odd job for you. Recently, some people have been stashing their dogtags anywhere they see fit. Cabinets, coats, safes, you name it. I've been quite the avid collector of these, you can sell them for some pretty damn good money. I'm thinking about getting some jewelry melted out of them, heh.. Why don't you snoop around and see if you can find some for me?",
+	"image": "/files/quest/icon/59c273da86f77459b8017e7b.png",
+	"type": "PickUp",
+	"isKey": false,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 150
+			},
+			{
+				"type": "TraderStanding",
+				"target": "54cb50c76803fa8b248b4571",
+				"value": 0.029999999329447746
+			},
+			{
+				"type": "Item",
+				"target": "6afa652277a29edad8e19b63",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6afa652277a29edad8e19b63",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 5308
+						}
+					}
+				]
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [
+			{
+				"_parent": "Level",
+				"_props": {
+					"id": "6afa64d477a29edad8e19b60",
+					"value": 3,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"AvailableForFinish": [
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afa64f677a29edad8e19b62",
+					"description": "Hand over 3 dogtags",
+					"target": "57347cf924597744902c94a2",
+					"value": 3
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

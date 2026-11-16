@@ -545,7 +545,7 @@
 			"node_5648a7494bdc2d9d488b4583": {
 				"Name": "SVS Personal Armor",
 				"ShortName": "SVS",
-				"Description": "Light armor, offering essential protection of vital body areas only, but still pretty dependable, with IIIA level plates. Can and intended to be carried under the chest rig."
+				"Description": "Light armor, offering essential protection of vital body areas only, but still pretty dependable, with III level plates. Can and intended to be carried under the chest rig."
 			},
 			"node_5648ac824bdc2ded0b8b457d": {
 				"Name": "Zenit RP-1 charge handle for AK",
@@ -2686,14 +2686,19 @@
 				"Description": "EDIT"
 			},
 			"node_m995": {
-                "Name": "5.56x45 мм M995",
-                "ShortName": "М995",
-                "Description": "Armor-piercing cartridge 5. 56x45 M995 with a tungsten core"
-            },
+				"Name": "5.56x45 мм M995",
+				"ShortName": "М995",
+				"Description": "Armor-piercing cartridge 5. 56x45 M995 with a tungsten core"
+			},
 			"node_58272d7f2459774f6311ddfd": {
 				"Name": "EDIT",
 				"ShortName": "EDIT",
 				"Description": "EDIT"
+			},
+			"node_6af8d1a595b1df23c4ec96df": {
+				"Name": "Grizzly First Aid Kit",
+				"ShortName": "Grizzly",
+				"Description": "Travel Grizzly Medical Kit is considered one of the best first aid kits. It contains everything necessary to provide timely medical care in extreme conditions."
 			}
 		},
 		"locations": {
@@ -2808,7 +2813,7 @@
 				"FirstName": "Pavel Romanenko",
 				"Nickname": "Prapor",
 				"Location": "Town",
-				"Description": "Warrant officer in charge of supply warehouses on the sustaining base for the Internal Troops enforcing the Norvinsk region blockade. During the Contract Wars secretly supplied the BEAR PMC operators with weapons, ammunition and various other provisions he had at his disposal. <color=#fafa41>Sells surplus, mainly gear and survival supplies. Limited medical supplies and provisions.</color>"
+				"Description": "Warrant officer in charge of supply warehouses on the sustaining base for the Internal Troops enforcing the Norvinsk region blockade. During the Contract Wars secretly supplied the BEAR PMC operators with weapons, ammunition and various other provisions he had at his disposal."
 			},
 			"node_579dc571d53a0658a154fbec": {
 				"FullName": "<Real name unknown>",
@@ -2894,12 +2899,19 @@
 				"Location": "Tarkov",
 				"Description": "Bashkir"
 			},
-			"node_5a7c2eca46aef81a7ca2145d": {
-				"FullName": "Samoilov Sergey Arsenevich",
-				"FirstName": "Sergey",
-				"Nickname": "Mechanic",
+			"node_5e7e7e7e7e7e7e7e7e7e7e7e": {
+				"FullName": "Everything Trader",
+				"FirstName": "Everything",
+				"Nickname": "Everything",
 				"Location": "Tarkov",
-				"Description": "A former chemical plant foreman, who from the very beginning of the conflict took to weapon modification, repairs, and maintenance of complex equipment and technology. He prefers clandestine solo living and operates discreetly, while placing complicated and challenging tasks above all else. <color=#fafa41>Sells weapons, weapon presets, mods, and similar.</color>"
+				"Description": "Sells every item in the game for 1 rouble. Buys anything."
+			},
+			"node_6afa55d33d2787af8b204192": {
+				"FullName": "Habibulina Elvira",
+				"FirstName": "Elvira",
+				"Nickname": "Nurse",
+				"Location": "Tarkov",
+				"Description": "Head of the Trauma Care Department of the Tarkov Central City Hospital."
 			}
 		}
 	}

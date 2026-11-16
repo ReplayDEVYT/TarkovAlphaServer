@@ -22,7 +22,7 @@ namespace ConsoleApp
 
         static void ServerInfo() 
         {
-            LogDetailed("Welcome to the EXFIL Dedicated Server Console!");
+            LogDetailed("Welcome to the EFT Alpha Dedicated Server Console!");
             ConsoleSpacer();
         }
 
@@ -60,8 +60,10 @@ namespace ConsoleApp
 
             SL.ServerLibClass.Init();
             LogDetailed("Initialization Done!");
+            ConsoleSpacer();
             Console.WriteLine("Commands start with !. For example: !help");
             Console.WriteLine("Type 'exit' or 'q' to quit the console and shutdown the server.");
+            ConsoleSpacer();
             string endCheck = "not";
             while (endCheck.ToLower() != "exit")
             {

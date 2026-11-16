@@ -19,5 +19,7 @@
         }
 
         public Dictionary<string, Item.Base> Items { get; set; }
+
+        public Dictionary<string, List<List<ItemPrice.Base>>> ItemPrices { get; set; } = new();
     }
 }

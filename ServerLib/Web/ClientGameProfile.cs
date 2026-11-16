@@ -120,7 +120,11 @@ namespace ServerLib.Web
             Console.WriteLine("Items Moving: " + Uncompressed);
             var body = JsonConvert.DeserializeObject<dynamic>(Uncompressed);
             Debug.PrintDebug(body.ToString());
-            string resp = ResponseControl.GetBody(ItemController.HandleMoving(SessionId, body));
+            string moved = ItemController.HandleMoving(SessionId, body);
+            // a refused QuestAccept/QuestComplete answers with its error code, so the client keeps the quest's status
+            string resp = QuestController.LastErrorCode != 0
+                ? ResponseControl.GetBody(moved, QuestController.LastErrorCode, JsonConvert.SerializeObject(QuestController.LastErrorMessage ?? "Quest error"))
+                : ResponseControl.GetBody(moved);
             // RPS
             Utils.SendUnityResponse(session, resp);
             return true;

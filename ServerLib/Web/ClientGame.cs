@@ -81,6 +81,9 @@ namespace ServerLib.Web
             //REQ stuff
             Utils.PrintRequest(request, session);
             string SessionId = Utils.GetSessionId(session.Headers);
+            var character = CharacterController.GetCharacter(SessionId);
+            if (character != null) Handlers.SaveHandler.SaveCharacter(SessionId, character);
+            MatchController.Exit(SessionId);
             AccountController.SessionLogout(SessionId);
             var rsp = ResponseControl.GetBody("{status: \"ok\"}");
             Utils.SendUnityResponse(session, rsp);

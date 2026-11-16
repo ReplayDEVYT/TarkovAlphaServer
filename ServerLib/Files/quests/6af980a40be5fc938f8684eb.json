@@ -1,0 +1,97 @@
+{
+	"_id": "6af980a40be5fc938f8684eb",
+	"traderId": "54cb50c76803fa8b248b4571",
+	"name": "Factory Maintenance",
+	"description": "Why hello, soldier. I'm sure you've heard about the mess being made in the old chemical plant right now? Who am I kidding, of course you have! Well, I have a few friends who want the place cleaned up. Said something about making a new trader outpost.. Don't know. Well, anyways, just go get some kills there and get back to me when you're finished.",
+	"image": "/files/quest/icon/gunsmith.jpg",
+	"type": "Elimination",
+	"isKey": false,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Item",
+				"target": "6af981120be5fc938f8684f4",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6af981120be5fc938f8684f4",
+						"_tpl": "5645bc214bdc2d363b8b4571"
+					}
+				]
+			},
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 650
+			},
+			{
+				"type": "TraderStanding",
+				"target": "54cb50c76803fa8b248b4571",
+				"value": 0.019999999552965164
+			},
+			{
+				"type": "Item",
+				"target": "6af9812b0be5fc938f8684f5",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6af9812b0be5fc938f8684f5",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 25231
+						}
+					}
+				]
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [],
+		"AvailableForFinish": [
+			{
+				"_parent": "CounterCreator",
+				"_props": {
+					"id": "6af980be0be5fc938f8684ee",
+					"description": "Kill 3 targets on Factory",
+					"value": 3,
+					"type": "Elimination",
+					"counter": {
+						"id": "6af980be0be5fc938f8684ef",
+						"conditions": [
+							{
+								"_parent": "Kills",
+								"_props": {
+									"id": "6af980be0be5fc938f8684f0",
+									"target": "Any",
+									"value": 1,
+									"compareMethod": ">="
+								}
+							},
+							{
+								"_parent": "Location",
+								"_props": {
+									"id": "6af980e10be5fc938f8684f1",
+									"target": "factory4"
+								}
+							}
+						]
+					}
+				}
+			}
+		],
+		"Fail": [
+			{
+				"_parent": "QuestTime",
+				"_props": {
+					"id": "6af981010be5fc938f8684f3",
+					"value": 12300
+				}
+			}
+		]
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

@@ -1,0 +1,89 @@
+{
+	"_id": "6afa66db630443d93127891b",
+	"traderId": "6afa55d33d2787af8b204192",
+	"name": "Cleanup",
+	"description": "Well, I am sure you know of the issues Prapor is having with his experience on Customs recently. Sad to say, I am also having problems transporting goods to people. This is extremely bad, I need to bring supplies to people who are in need. Customs is one of our main gateways to other parts of Tarkov, and if it is compromised, we cannot efficiently do our jobs. I would be very grateful if you were to help us out.",
+	"image": "/files/quest/icon/5c1e358f86f77408017f539f.png",
+	"type": "Elimination",
+	"isKey": true,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 320
+			},
+			{
+				"type": "TraderStanding",
+				"target": "6afa55d33d2787af8b204192",
+				"value": 0.019999999552965164
+			},
+			{
+				"type": "Item",
+				"target": "6a1f00000000000000000102",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6a1f00000000000000000102",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 6638
+						}
+					}
+				]
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [
+			{
+				"_parent": "Quest",
+				"_props": {
+					"id": "6afa6799630443d931278921",
+					"target": "6a1f00000000000000000001",
+					"status": "Started",
+					"value": 1,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"AvailableForFinish": [
+			{
+				"_parent": "CounterCreator",
+				"_props": {
+					"id": "6afa66db630443d93127891d",
+					"description": "Eliminate Targets on Customs",
+					"value": 2,
+					"type": "Elimination",
+					"counter": {
+						"id": "6afa66db630443d93127891e",
+						"conditions": [
+							{
+								"_parent": "Kills",
+								"_props": {
+									"id": "6afa66db630443d93127891f",
+									"target": "Any",
+									"value": 1,
+									"compareMethod": ">="
+								}
+							},
+							{
+								"_parent": "Location",
+								"_props": {
+									"id": "6afa66db630443d931278920",
+									"target": "bigmap"
+								}
+							}
+						]
+					}
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

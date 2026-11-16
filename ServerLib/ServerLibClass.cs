@@ -92,6 +92,7 @@ namespace ServerLib
             if (IsAlreadyQuited)
                 return;
             PluginLoader.UnloadPlugins();
+            Controllers.GameServerLauncher.StopAll();
             ConfigController.Save();
             HTTPServer.Stop();
             WebSocket.Stop();

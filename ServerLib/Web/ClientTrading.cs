@@ -10,7 +10,8 @@ namespace ServerLib.Web
         public static bool ClientTradingApiGetTradersList(HttpRequest request, HttpsBackendSession session)
         {
             Utils.PrintRequest(request, session);
-            string resp = File.ReadAllText("Files/static/traderList.json");
+            // with the profile's standing per trader (quest rewards change it; the client copies it over its own)
+            string resp = Controllers.QuestController.TraderListFor(Utils.GetSessionId(session.Headers));
             Utils.SendUnityResponse(session, resp);
             return true;
         }
@@ -20,7 +21,8 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             string traderId = session.HttpParam["traderId"];
-            string resp = File.ReadAllText($"Files/assort/{traderId}.json");
+            // per profile: offers above the loyalty level hidden, remaining stock (TradingController.AssortFor)
+            string resp = Controllers.TradingController.AssortFor(Utils.GetSessionId(session.Headers), traderId);
             Utils.SendUnityResponse(session, resp);
             return true;
         }
@@ -30,7 +32,8 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             string traderId = session.HttpParam["traderId"];
-            string resp = File.ReadAllText($"Files/traders/{traderId}.json");
+            // standing, restock time and running sale filled in (TradingController.TraderFor)
+            string resp = Controllers.TradingController.TraderFor(Utils.GetSessionId(session.Headers), traderId);
             Utils.SendUnityResponse(session, resp);
             return true;
         }
@@ -40,7 +43,10 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             string traderId = session.HttpParam["traderId"];
-            string resp = File.ReadAllText($"Files/static/purchases.json");
+            var sessionId = Utils.GetSessionId(session.Headers);
+
+            var prices = Controllers.TradingController.GetUserAssortPrice(sessionId);
+            string resp = ResponseControl.GetBody(Newtonsoft.Json.JsonConvert.SerializeObject(prices));
             Utils.SendUnityResponse(session, resp);
             return true;
         }

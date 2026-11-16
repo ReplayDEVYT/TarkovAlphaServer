@@ -1,0 +1,669 @@
+{
+ "location": "bigmap",
+ "rules": {
+  "source": "preset",
+  "pointChance": 0.55,
+  "rarityWeights": {
+   "Common": 1.0,
+   "Rare": 0.35,
+   "Superrare": 0.08
+  },
+  "excludeTemplates": [],
+  "excludeCategories": [
+   "Weapon",
+   "AmmoBox",
+   "Stash",
+   "Pockets",
+   "Inventory",
+   "LootContainer",
+   "StationaryContainer",
+   "LockableContainer",
+   "MobContainer",
+   "SimpleContainer"
+  ],
+  "containers": {
+   "578f8778245977358849a9b5": {
+    "name": "Jacket",
+    "categories": [
+     "Key",
+     "Money",
+     "Food",
+     "Drink",
+     "Medical",
+     "Drugs",
+     "BarterItem"
+    ],
+    "min": 0,
+    "max": 2
+   },
+   "578f8782245977354405a1e3": {
+    "name": "Safe",
+    "categories": [
+     "Money",
+     "Jewelry",
+     "Electronics",
+     "Key"
+    ],
+    "min": 1,
+    "max": 4
+   },
+   "578f879c24597735401e6bc6": {
+    "name": "CashRegister",
+    "categories": [
+     "Money"
+    ],
+    "min": 1,
+    "max": 2
+   },
+   "578f87a3245977356274f2cb": {
+    "name": "SportBag",
+    "categories": [
+     "Food",
+     "Drink",
+     "Meds",
+     "Ammo",
+     "BarterItem"
+    ],
+    "min": 1,
+    "max": 3
+   },
+   "578f87ad245977356274f2cc": {
+    "name": "WeaponCrate",
+    "categories": [
+     "Ammo",
+     "Magazine",
+     "Mod",
+     "ThrowWeap"
+    ],
+    "min": 1,
+    "max": 5
+   },
+   "578f87b7245977356274f2cd": {
+    "name": "Drawer",
+    "categories": [
+     "BarterItem",
+     "Meds",
+     "Key",
+     "Money",
+     "Electronics"
+    ],
+    "min": 0,
+    "max": 3
+   },
+   "566966cd4bdc2d0c4c8b4578": {
+    "name": "StupidBox",
+    "categories": [
+     "Item"
+    ],
+    "min": 2,
+    "max": 6
+   }
+  },
+  "defaultContainer": {
+   "categories": [
+    "BarterItem",
+    "Food",
+    "Drink",
+    "Meds"
+   ],
+   "min": 0,
+   "max": 2
+  },
+  "stacks": {
+   "Money": [
+    500,
+    15000
+   ],
+   "Ammo": [
+    10,
+    40
+   ]
+  }
+ },
+ "containers": [
+  {
+   "id": "Lootable_00006",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00005",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00004",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00002",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00003",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00001",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00010",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00011",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00014",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00013",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00009",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00012",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00000",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00095",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00092",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00090",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00096",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00093",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00094",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00091",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00120",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00119",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00118",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00007",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00008",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00089",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00088",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00082",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00070",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00054",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00087",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00060",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00055",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00083",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00074",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00059",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00058",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00053",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00057",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00068",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00077",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00056",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00084",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00061",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00069",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00078",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00071",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00064",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00079",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00066",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00063",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00065",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00076",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00085",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00075",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00073",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00081",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00062",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00067",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00080",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00086",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00072",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00023",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00028",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00046",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00015",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00031",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00036",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00016",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00045",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00033",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00024",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00017",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00039",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00042",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00043",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00052",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00035",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00034",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00018",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00020",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00051",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00050",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00022",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00030",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00019",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00021",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00044",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00049",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00048",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00040",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00027",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00041",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00029",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00032",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00047",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00037",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00026",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00025",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00038",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00108",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00109",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00103",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00113",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00115",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00105",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00111",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00106",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00114",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00107",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00102",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00112",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00110",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00100",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00101",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00117",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00116",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00104",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00097",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00098",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00099",
+   "template": "578f8778245977358849a9b5"
+  }
+ ],
+ "points": [],
+ "exits": [
+  {
+   "name": "exit",
+   "center": [
+    621.437,
+    -2.65,
+    -127.701
+   ],
+   "size": [
+    6.216,
+    2.197,
+    4.357
+   ],
+   "rotation": [
+    -0.468291,
+    0.529815,
+    0.529815,
+    0.468291
+   ]
+  },
+  {
+   "name": "exit",
+   "center": [
+    459.428,
+    -2.317,
+    -111.043
+   ],
+   "size": [
+    6.216,
+    2.197,
+    4.357
+   ],
+   "rotation": [
+    -0.468291,
+    0.529815,
+    0.529815,
+    0.468291
+   ]
+  },
+  {
+   "name": "exit",
+   "center": [
+    309.5,
+    -2.182,
+    -174.32
+   ],
+   "size": [
+    6.216,
+    2.197,
+    4.357
+   ],
+   "rotation": [
+    -0.552537,
+    0.441252,
+    0.441252,
+    0.552536
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2259 @@
+{
+ "location": "factory4",
+ "rules": {
+  "source": "preset",
+  "pointChance": 0.55,
+  "rarityWeights": {
+   "Common": 1.0,
+   "Rare": 0.35,
+   "Superrare": 0.08
+  },
+  "excludeTemplates": [],
+  "excludeCategories": [
+   "Weapon",
+   "AmmoBox",
+   "Stash",
+   "Pockets",
+   "Inventory",
+   "LootContainer",
+   "StationaryContainer",
+   "LockableContainer",
+   "MobContainer",
+   "SimpleContainer"
+  ],
+  "containers": {
+   "578f8778245977358849a9b5": {
+    "name": "Jacket",
+    "categories": [
+     "Key",
+     "Money",
+     "Food",
+     "Drink",
+     "Medical",
+     "Drugs",
+     "BarterItem"
+    ],
+    "min": 0,
+    "max": 2
+   },
+   "578f8782245977354405a1e3": {
+    "name": "Safe",
+    "categories": [
+     "Money",
+     "Jewelry",
+     "Electronics",
+     "Key"
+    ],
+    "min": 1,
+    "max": 4
+   },
+   "578f879c24597735401e6bc6": {
+    "name": "CashRegister",
+    "categories": [
+     "Money"
+    ],
+    "min": 1,
+    "max": 2
+   },
+   "578f87a3245977356274f2cb": {
+    "name": "SportBag",
+    "categories": [
+     "Food",
+     "Drink",
+     "Meds",
+     "Ammo",
+     "BarterItem"
+    ],
+    "min": 1,
+    "max": 3
+   },
+   "578f87ad245977356274f2cc": {
+    "name": "WeaponCrate",
+    "categories": [
+     "Ammo",
+     "Magazine",
+     "Mod",
+     "ThrowWeap"
+    ],
+    "min": 1,
+    "max": 5
+   },
+   "578f87b7245977356274f2cd": {
+    "name": "Drawer",
+    "categories": [
+     "BarterItem",
+     "Meds",
+     "Key",
+     "Money",
+     "Electronics"
+    ],
+    "min": 0,
+    "max": 3
+   },
+   "566966cd4bdc2d0c4c8b4578": {
+    "name": "StupidBox",
+    "categories": [
+     "Item"
+    ],
+    "min": 2,
+    "max": 6
+   }
+  },
+  "defaultContainer": {
+   "categories": [
+    "BarterItem",
+    "Food",
+    "Drink",
+    "Meds"
+   ],
+   "min": 0,
+   "max": 2
+  },
+  "stacks": {
+   "Money": [
+    500,
+    15000
+   ],
+   "Ammo": [
+    10,
+    40
+   ]
+  }
+ },
+ "containers": [
+  {
+   "id": "Lootable_00015",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00014",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00023",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00005",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00016",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00008",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00007",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00000",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00009",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00010",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00019",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00003",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00024",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00011",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00022",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00006",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00001",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00002",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00021",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00017",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00018",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00013",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00004",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00012",
+   "template": "578f87ad245977356274f2cc"
+  },
+  {
+   "id": "Lootable_00020",
+   "template": "578f87ad245977356274f2cc"
+  }
+ ],
+ "points": [
+  {
+   "id": "lootpoint (29)",
+   "position": [
+    30.27,
+    0.689,
+    17.468
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be6674bdc2df1348b4569",
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (118)",
+   "position": [
+    11.251,
+    5.249,
+    45.632
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "57347b8b24597737dd42e192",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint",
+   "position": [
+    -24.091,
+    8.971,
+    52.265
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (5)",
+   "position": [
+    -24.248,
+    1.494,
+    57.119
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (37)",
+   "position": [
+    38.836,
+    5.363,
+    41.331
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (84)",
+   "position": [
+    6.023,
+    1.498,
+    0.539
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (113)",
+   "position": [
+    27.872,
+    5.293,
+    42.138
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (102)",
+   "position": [
+    27.655,
+    9.405,
+    37.498
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5422acb9af1c889c16000029",
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (17)",
+   "position": [
+    17.137,
+    0.675,
+    0.606
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "57347b8b24597737dd42e192",
+    "5734758f24597738025ee253",
+    "5672cb724bdc2dc2088b456b",
+    "56742c324bdc2d150f8b456d",
+    "57347c77245977448d35f6e2",
+    "5734795124597738002c6176",
+    "57347c93245977448d35f6e3",
+    "5672cb124bdc2d1a0f8b4568",
+    "5672cb304bdc2dc2088b456a",
+    "5733279d245977289b77ec24"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (85)",
+   "position": [
+    31.884,
+    1.551,
+    15.518
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864a66245977548f04a81f",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (57)",
+   "position": [
+    40.902,
+    0.463,
+    -15.204
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (93)",
+   "position": [
+    42.933,
+    0.704,
+    30.049
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "57864a3d24597754843f8721",
+    "57864a66245977548f04a81f",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1",
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (44)",
+   "position": [
+    5.73,
+    2.378,
+    55.629
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (82)",
+   "position": [
+    14.893,
+    1.135,
+    8.672
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864a66245977548f04a81f",
+    "57864bb7245977548b3b66c2",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (70)",
+   "position": [
+    35.877,
+    7.82,
+    17.191
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be6674bdc2df1348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (101)",
+   "position": [
+    28.449,
+    8.664,
+    40.32
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "543be5cb4bdc2deb348b4568",
+    "543be5dd4bdc2deb348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (97)",
+   "position": [
+    -22.484,
+    0.459,
+    23.212
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (96)",
+   "position": [
+    26.351,
+    8.933,
+    36.911
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (89)",
+   "position": [
+    -19.82,
+    3.786,
+    28.326
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (78)",
+   "position": [
+    23.496,
+    9.021,
+    36.062
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 2,
+   "include": [
+    "5422acb9af1c889c16000029",
+    "5448fe124bdc2da5018b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (16)",
+   "position": [
+    12.028,
+    8.483,
+    39.751
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5447e0e74bdc2d3c308b4567",
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (59)",
+   "position": [
+    39.544,
+    0.332,
+    -14.472
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (43)",
+   "position": [
+    57.026,
+    1.353,
+    20.07
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (18)",
+   "position": [
+    33.142,
+    2.674,
+    15.958
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (92)",
+   "position": [
+    -19.966,
+    2.663,
+    51.281
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (86)",
+   "position": [
+    -22.368,
+    1.318,
+    18.294
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (104)",
+   "position": [
+    16.48,
+    9.154,
+    38.589
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5449016a4bdc2d6f028b456f"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (52)",
+   "position": [
+    39.926,
+    0.645,
+    -14.67
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5447e0e74bdc2d3c308b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (83)",
+   "position": [
+    11.361,
+    5.401,
+    38.166
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5422acb9af1c889c16000029",
+    "5448fe124bdc2da5018b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (108)",
+   "position": [
+    31.243,
+    4.845,
+    38.986
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1",
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (112)",
+   "position": [
+    25.606,
+    5.294,
+    41.667
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be6674bdc2df1348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (41)",
+   "position": [
+    45.69,
+    1.64,
+    29.18
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (117)",
+   "position": [
+    19.015,
+    5.267,
+    41.455
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448f3a14bdc2d27728b4569",
+    "5448f3a64bdc2d60728b456a",
+    "5448f3ac4bdc2dce718b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (75)",
+   "position": [
+    31.143,
+    5.268,
+    39.061
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 2,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "543be5f84bdc2dd4348b456a",
+    "543be6564bdc2df4348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (40)",
+   "position": [
+    74.156,
+    1.114,
+    -33.585
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (88)",
+   "position": [
+    -8.161,
+    1.847,
+    30.663
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (120)",
+   "position": [
+    -11.532,
+    2.401,
+    56.054
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (111)",
+   "position": [
+    28.241,
+    6.133,
+    42.191
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (54)",
+   "position": [
+    39.343,
+    1.036,
+    -15.205
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5447e0e74bdc2d3c308b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (34)",
+   "position": [
+    5.132,
+    8.105,
+    57.96
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (94)",
+   "position": [
+    19.275,
+    0.462,
+    -0.673
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5672cb724bdc2dc2088b456b",
+    "56742c324bdc2d150f8b456d",
+    "5672cb124bdc2d1a0f8b4568",
+    "5672cb304bdc2dc2088b456a"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (115)",
+   "position": [
+    32.568,
+    4.873,
+    47.73
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (109)",
+   "position": [
+    28.321,
+    4.845,
+    38.963
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864ada245977548638de91"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (30)",
+   "position": [
+    39.137,
+    1.446,
+    19.145
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (35)",
+   "position": [
+    -10.419,
+    1.451,
+    38.008
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (105)",
+   "position": [
+    27.61,
+    8.857,
+    37.971
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5449016a4bdc2d6f028b456f"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (95)",
+   "position": [
+    19.844,
+    1.027,
+    -0.764
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 2,
+   "include": [
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (19)",
+   "position": [
+    11.362,
+    4.898,
+    38.174
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (45)",
+   "position": [
+    -23.099,
+    2.323,
+    53.573
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (76)",
+   "position": [
+    23.164,
+    9.191,
+    36.119
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 2,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (110)",
+   "position": [
+    28.255,
+    5.308,
+    41.069
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (49)",
+   "position": [
+    21.717,
+    9.106,
+    39.973
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5447e0e74bdc2d3c308b4567",
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (80)",
+   "position": [
+    14.529,
+    9.391,
+    34.633
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (58)",
+   "position": [
+    40.65,
+    0.525,
+    -10.365
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (46)",
+   "position": [
+    66.15,
+    1.4,
+    25.31
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (116)",
+   "position": [
+    27.997,
+    5.237,
+    46.734
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (87)",
+   "position": [
+    -4.858,
+    1.057,
+    28.1
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (65)",
+   "position": [
+    46.348,
+    0.77,
+    31.643
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (39)",
+   "position": [
+    58.738,
+    5.504,
+    13.705
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567",
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (79)",
+   "position": [
+    25.753,
+    8.942,
+    38.068
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "543be6564bdc2df4348b4568",
+    "5447e0e74bdc2d3c308b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (91)",
+   "position": [
+    -22.844,
+    1.598,
+    43.021
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (99)",
+   "position": [
+    31.025,
+    8.903,
+    41.063
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "57864bb7245977548b3b66c2",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (68)",
+   "position": [
+    34.234,
+    1.19,
+    33.684
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (81)",
+   "position": [
+    -24.22,
+    2.042,
+    36.637
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (98)",
+   "position": [
+    -22.668,
+    0.974,
+    23.228
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (33)",
+   "position": [
+    27.799,
+    0.734,
+    17.162
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c322459775490116fbf",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (103)",
+   "position": [
+    19.343,
+    0.871,
+    -0.728
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (121)",
+   "position": [
+    -12.623,
+    1.907,
+    57.416
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (119)",
+   "position": [
+    11.259,
+    5.312,
+    40.287
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (36)",
+   "position": [
+    38.698,
+    5.425,
+    40.349
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "573478bc24597738002c6175",
+    "57347b8b24597737dd42e192",
+    "57347cf924597744902c94a2",
+    "56742c284bdc2d98058b456d",
+    "56742c2e4bdc2d95058b456d",
+    "57864a3d24597754843f8721",
+    "57864ada245977548638de91",
+    "57864bb7245977548b3b66c2",
+    "57864c8c245977548867e7f1",
+    "57864e4c24597754843f8723",
+    "57864ee62459775490116fc1"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (53)",
+   "position": [
+    41.412,
+    0.317,
+    -12.737
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5447e0e74bdc2d3c308b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (1)",
+   "position": [
+    -21.208,
+    1.6,
+    55.25
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "56742c284bdc2d98058b456d",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "5734773724597737fd047c14",
+    "57347b8b24597737dd42e192",
+    "5672cb724bdc2dc2088b456b",
+    "56742c324bdc2d150f8b456d",
+    "57347c5b245977448d35f6e1",
+    "57347c77245977448d35f6e2",
+    "5734795124597738002c6176",
+    "57347c1124597737fb1379e3",
+    "57347c93245977448d35f6e3",
+    "5672cb124bdc2d1a0f8b4568",
+    "5672cb304bdc2dc2088b456a",
+    "5733279d245977289b77ec24"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (107)",
+   "position": [
+    33.45,
+    5.264,
+    40.29
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (50)",
+   "position": [
+    68.72,
+    1.319,
+    -20.981
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (106)",
+   "position": [
+    40.179,
+    1.065,
+    -15.429
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (13)",
+   "position": [
+    5.526,
+    8.138,
+    60.91
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (100)",
+   "position": [
+    27.634,
+    9.948,
+    38.171
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448fe124bdc2da5018b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (56)",
+   "position": [
+    40.915,
+    0.43,
+    -9.394
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (73)",
+   "position": [
+    27.952,
+    8.439,
+    38.367
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "5448eb774bdc2d0a728b4567",
+    "543be5cb4bdc2deb348b4568"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (114)",
+   "position": [
+    18.88,
+    4.899,
+    41.96
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (90)",
+   "position": [
+    -2.689,
+    1.209,
+    38.978
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 1,
+   "include": [
+    "573475fb24597737fb1379e1",
+    "573476d324597737da2adc13",
+    "573476f124597737e04bf328",
+    "5734770f24597738025ee254",
+    "57864bb7245977548b3b66c2"
+   ],
+   "exclude": []
+  },
+  {
+   "id": "lootpoint (7)",
+   "position": [
+    38.038,
+    1.203,
+    40.491
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "isStatic": false,
+   "isContainer": false,
+   "rarity": 0,
+   "include": [
+    "543be5664bdc2dd4348b4569",
+    "5448eb774bdc2d0a728b4567"
+   ],
+   "exclude": []
+  }
+ ],
+ "exits": [
+  {
+   "name": "exit (3)",
+   "center": [
+    77.529,
+    -4.657,
+    -28.891
+   ],
+   "size": [
+    6.216,
+    1.0,
+    4.357
+   ],
+   "rotation": [
+    0.0,
+    -0.725673,
+    0.0,
+    0.68804
+   ]
+  },
+  {
+   "name": "exit (1)",
+   "center": [
+    58.709,
+    0.84,
+    64.112
+   ],
+   "size": [
+    6.216,
+    1.0,
+    4.357
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "exit",
+   "center": [
+    44.891,
+    0.594,
+    -53.48
+   ],
+   "size": [
+    6.216,
+    1.0,
+    4.357
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  },
+  {
+   "name": "exit (2)",
+   "center": [
+    -63.74,
+    1.749,
+    55.902
+   ],
+   "size": [
+    6.216,
+    1.0,
+    4.357
+   ],
+   "rotation": [
+    0.0,
+    -0.725673,
+    0.0,
+    0.68804
+   ]
+  }
+ ]
+}

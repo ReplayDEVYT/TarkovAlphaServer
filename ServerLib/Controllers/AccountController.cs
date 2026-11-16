@@ -111,7 +111,9 @@ namespace ServerLib.Controllers
                     Email = register.email,
                     Permission = Json.Enums.EPerms.User
                 };
-                account.Password = CryptoHelper.Hash(register.pass);
+                // Stored the way Login compares it (useSha1 decides); it always hashed, so with useSha1 off
+                // (the default) a registered account could never log in.
+                account.Password = StoredPassword(register.pass);
                 SaveHandler.SaveAccount(AccountID, account);
                 Debug.PrintInfo("Register Success! " + AccountID);
                 if (!ActiveAccountIds.Contains(AccountID))
@@ -124,6 +126,77 @@ namespace ServerLib.Controllers
             {
                 return ID;
             }
+        }
+
+        /// <summary>The password as Login compares it (the game client already sends an MD5 hex of what was typed).</summary>
+        public static string StoredPassword(string pass)
+        {
+            return ConfigController.Configs.CustomSettings.Account.UseSha1 ? CryptoHelper.Hash(pass) : pass;
+        }
+
+        public static Account? FindAccountByEmail(string mail)
+        {
+            ReloadAccounts();
+            return Accounts.Values.FirstOrDefault(a => string.Equals(a.Email, mail, StringComparison.OrdinalIgnoreCase));
+        }
+
+        private sealed class ResetCode
+        {
+            public string Code = "";
+            public DateTime Expires;
+            public int Attempts;
+        }
+
+        private static readonly Dictionary<string, ResetCode> ResetCodes = new(StringComparer.OrdinalIgnoreCase);
+        private const int ResetCodeMinutes = 15;
+        private const int ResetCodeAttempts = 5;
+
+        /// <summary>
+        /// Game login screen, "Forgot password": there is no mail server, so the reset code is printed on the server
+        /// console (and log); whoever runs the server passes it on. Returns null on success, else the error text.
+        /// </summary>
+        public static string? RequestPasswordReset(string email)
+        {
+            var account = FindAccountByEmail(email);
+            if (account == null)
+                return "No account with this e-mail.";
+            string code = Random.Shared.Next(0, 1000000).ToString("000000");
+            lock (ResetCodes)
+                ResetCodes[account.Email] = new ResetCode { Code = code, Expires = DateTime.UtcNow.AddMinutes(ResetCodeMinutes) };
+            Debug.PrintInfo($"Password reset code for {account.Email}: {code} (valid {ResetCodeMinutes} minutes)", "ACCOUNT");
+            return null;
+        }
+
+        /// <summary>Second step of the reset: code from the server console + new password. Null on success.</summary>
+        public static string? ResetPassword(string email, string code, string pass)
+        {
+            var account = FindAccountByEmail(email);
+            if (account == null)
+                return "No account with this e-mail.";
+            if (string.IsNullOrEmpty(pass))
+                return "Enter a new password.";
+            lock (ResetCodes)
+            {
+                if (!ResetCodes.TryGetValue(account.Email, out var entry) || entry.Expires < DateTime.UtcNow)
+                {
+                    ResetCodes.Remove(account.Email);
+                    return "The reset code has expired. Request a new one.";
+                }
+                if (entry.Code != (code ?? "").Trim())
+                {
+                    if (++entry.Attempts >= ResetCodeAttempts)
+                    {
+                        ResetCodes.Remove(account.Email);
+                        return "Wrong code. Too many attempts: request a new one.";
+                    }
+                    return "Wrong code.";
+                }
+                ResetCodes.Remove(account.Email);
+            }
+            account.Password = StoredPassword(pass);
+            SaveHandler.SaveAccount(account.Aid, account);
+            Debug.PrintInfo($"Password reset for {account.Email}", "ACCOUNT");
+            return null;
         }
 
         /// <summary>

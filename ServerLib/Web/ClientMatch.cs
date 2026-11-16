@@ -15,8 +15,6 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             var rsp = ResponseControl.GetBody("true");
-            var SessionId = Utils.GetSessionId(session.Headers);
-            var match = GetMatch(SessionId);
             Utils.SendUnityResponse(session, rsp);
             return true;
         }
@@ -30,25 +28,20 @@ namespace ServerLib.Web
 
             var jsonreq = JsonConvert.DeserializeObject<Requests.MatchJoin>(ResponseControl.DeCompressReq(request.BodyBytes));
             Utilities.Debug.PrintDebug(JsonConvert.SerializeObject(jsonreq));
-            JoinMatch(sessionId, jsonreq);
             var character = CharacterController.GetCharacter(sessionId);
-            if (character == null)
+            if (character == null || jsonreq == null)
             {
-                Debug.PrintError("Character not found!", "ProfileStatus");
+                Debug.PrintError("Character or join request not found!", "MatchJoin");
+                Utils.SendUnityResponse(session, ResponseControl.GetBody("null", 500, "Character not found"));
+                return true;
             }
-            var match = GetMatch(sessionId);
-            Other.ProfileStatus[] response =
+            var match = JoinMatch(sessionId, jsonreq, ServerMatch.RemoteIp(session), out string error);
+            if (match == null)
             {
-                    new()
-                    {
-                        profileid = character.Id,
-                        status = "MatchWait",
-                        ip = match.matchData.Ip,
-                        port = match.matchData.Port,
-                        location = match.matchData.Location,
-                        gameMode = "deathmatch"
-                    }
-            };
+                Utils.SendUnityResponse(session, ResponseControl.GetBody("null", 503, error));
+                return true;
+            }
+            Other.ProfileStatus[] response = { StatusFor(sessionId, character.Id) };
             var rsp = ResponseControl.GetBody(JsonConvert.SerializeObject(response));
             Utils.SendUnityResponse(session, rsp);
             return true;

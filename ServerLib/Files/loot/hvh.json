@@ -1,0 +1,195 @@
+{
+ "location": "hvh",
+ "rules": {
+  "source": "preset",
+  "pointChance": 0.55,
+  "rarityWeights": {
+   "Common": 1.0,
+   "Rare": 0.35,
+   "Superrare": 0.08
+  },
+  "excludeTemplates": [],
+  "excludeCategories": [
+   "Weapon",
+   "AmmoBox",
+   "Stash",
+   "Pockets",
+   "Inventory",
+   "LootContainer",
+   "StationaryContainer",
+   "LockableContainer",
+   "MobContainer",
+   "SimpleContainer"
+  ],
+  "containers": {
+   "578f8778245977358849a9b5": {
+    "name": "Jacket",
+    "categories": [
+     "Key",
+     "Money",
+     "Food",
+     "Drink",
+     "Medical",
+     "Drugs",
+     "BarterItem"
+    ],
+    "min": 0,
+    "max": 2
+   },
+   "578f8782245977354405a1e3": {
+    "name": "Safe",
+    "categories": [
+     "Money",
+     "Jewelry",
+     "Electronics",
+     "Key"
+    ],
+    "min": 1,
+    "max": 4
+   },
+   "578f879c24597735401e6bc6": {
+    "name": "CashRegister",
+    "categories": [
+     "Money"
+    ],
+    "min": 1,
+    "max": 2
+   },
+   "578f87a3245977356274f2cb": {
+    "name": "SportBag",
+    "categories": [
+     "Food",
+     "Drink",
+     "Meds",
+     "Ammo",
+     "BarterItem"
+    ],
+    "min": 1,
+    "max": 3
+   },
+   "578f87ad245977356274f2cc": {
+    "name": "WeaponCrate",
+    "categories": [
+     "Ammo",
+     "Magazine",
+     "Mod",
+     "ThrowWeap"
+    ],
+    "min": 1,
+    "max": 5
+   },
+   "578f87b7245977356274f2cd": {
+    "name": "Drawer",
+    "categories": [
+     "BarterItem",
+     "Meds",
+     "Key",
+     "Money",
+     "Electronics"
+    ],
+    "min": 0,
+    "max": 3
+   },
+   "566966cd4bdc2d0c4c8b4578": {
+    "name": "StupidBox",
+    "categories": [
+     "Item"
+    ],
+    "min": 2,
+    "max": 6
+   }
+  },
+  "defaultContainer": {
+   "categories": [
+    "BarterItem",
+    "Food",
+    "Drink",
+    "Meds"
+   ],
+   "min": 0,
+   "max": 2
+  },
+  "stacks": {
+   "Money": [
+    500,
+    15000
+   ],
+   "Ammo": [
+    10,
+    40
+   ]
+  }
+ },
+ "containers": [
+  {
+   "id": "Lootable_00005",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00011",
+   "template": "578f87a3245977356274f2cb"
+  },
+  {
+   "id": "Lootable_00000",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00007",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00002",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00008",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00009",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00010",
+   "template": "578f879c24597735401e6bc6"
+  },
+  {
+   "id": "Lootable_00001",
+   "template": "578f8778245977358849a9b5"
+  },
+  {
+   "id": "Lootable_00006",
+   "template": "578f87b7245977356274f2cd"
+  },
+  {
+   "id": "Lootable_00004",
+   "template": "578f8782245977354405a1e3"
+  },
+  {
+   "id": "Lootable_00003",
+   "template": "578f87ad245977356274f2cc"
+  }
+ ],
+ "points": [],
+ "exits": [
+  {
+   "name": "Exit Trigger",
+   "center": [
+    20.095,
+    1.18,
+    18.823
+   ],
+   "size": [
+    3.068,
+    2.116,
+    1.792
+   ],
+   "rotation": [
+    0.0,
+    0.0,
+    0.0,
+    1.0
+   ]
+  }
+ ]
+}

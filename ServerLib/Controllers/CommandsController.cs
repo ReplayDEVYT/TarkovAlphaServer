@@ -25,7 +25,13 @@ namespace ServerLib.Controllers
             { "debug" , DebugEnable },
             { "listmatches" , ListMatches },
             { "deletematches" , DeleteMatches },
-            { "registeruser", RegisterUser }
+            { "startmatch" , StartMatch },
+            { "endmatch" , EndMatch },
+            { "hostport" , HostPort },
+            { "registeruser", RegisterUser },
+            { "traders" , Traders },
+            { "restock" , Restock },
+            { "sale" , Sale }
         };
         public static Dictionary<string, EPerms> CommandsPermission = new()
         {
@@ -41,7 +47,13 @@ namespace ServerLib.Controllers
             { "debug" , EPerms.Console },
             { "listmatches" , EPerms.User },
             { "deletematches" , EPerms.Mod },
-            { "registeruser", EPerms.User }
+            { "startmatch" , EPerms.Mod },
+            { "endmatch" , EPerms.Mod },
+            { "hostport" , EPerms.Mod },
+            { "registeruser", EPerms.User },
+            { "traders" , EPerms.User },
+            { "restock" , EPerms.Mod },
+            { "sale" , EPerms.Mod }
         };
 
         public static void Run(string CommandName)
@@ -120,6 +132,9 @@ namespace ServerLib.Controllers
             Console.WriteLine("debug:\t\t\t\tEnable Debug options");
             Console.WriteLine("listmatches:\t\t\tList all matches");
             Console.WriteLine("deletematches:\t\t\tDelete all matches");
+            Console.WriteLine("startmatch <matchId>:\t\tStart a waiting match now");
+            Console.WriteLine("endmatch <matchId>:\t\tEnd a match and free its port");
+            Console.WriteLine("hostport <nickname> <port>:\tPlayer hosts their next match on this port (0 = stop)");
             Console.WriteLine("registeruser <mail> <pass>:\t\tRegister designed user");
             Console.WriteLine();
             Console.WriteLine("AID stands for 'Account ID'. You can find a user's AID in ConsoleApp's 'profiles' folder.");
@@ -217,15 +232,79 @@ namespace ServerLib.Controllers
             DB.PrintInfo($"User {AID} unbanned");
         }
 
+        static IEnumerable<string> TraderIds() =>
+            Directory.Exists("Files/assort") ? Directory.GetFiles("Files/assort", "*.json").Select(f => Path.GetFileNameWithoutExtension(f)!) : Enumerable.Empty<string>();
+
+        /// <summary>!traders: restock countdown and running sale of every trader.</summary>
+        public static void Traders(object obj)
+        {
+            foreach (var id in TraderIds())
+            {
+                long left = TraderStock.SecondsToRestock(id);
+                int sale = TraderStock.SalePercent(id);
+                DB.PrintInfo($"{id}: restock in {(left > 0 ? TimeSpan.FromSeconds(left).ToString() : "never")}{(sale > 0 ? $", sale -{sale}%" : "")}");
+            }
+        }
+
+        /// <summary>!restock [traderId|all]: restock now (also rolls a sale).</summary>
+        public static void Restock(object obj)
+        {
+            var x = (string[])obj;
+            var ids = x.Length < 1 || x[0] == "all" ? TraderIds().ToList() : new List<string> { x[0] };
+            foreach (var id in ids) TraderStock.RestockNow(id);
+            DB.PrintInfo($"Restocked {ids.Count} trader(s). Players see it when they reopen or reload the trader.");
+        }
+
+        /// <summary>!sale <traderId|all> <percent>: start a sale until the next restock (0 ends it).</summary>
+        public static void Sale(object obj)
+        {
+            var x = (string[])obj;
+            if (x.Length < 2 || !int.TryParse(x[1], out int percent)) { DB.PrintWarn("Use: !sale <traderId|all> <percent>"); return; }
+            var ids = x[0] == "all" ? TraderIds().ToList() : new List<string> { x[0] };
+            foreach (var id in ids) TraderStock.SetSale(id, percent);
+            DB.PrintInfo(percent > 0 ? $"Sale -{percent}% at {ids.Count} trader(s) until their next restock." : $"Sale ended at {ids.Count} trader(s).");
+        }
+
         public static void ListMatches(object obj)
         {
-            var maches = JsonConvert.SerializeObject(MatchController.Matches);
-            DB.PrintInfo($"Matches: {maches}");
+            var matches = MatchController.Snapshot();
+            if (matches.Count == 0) { DB.PrintInfo("No matches."); return; }
+            foreach (var m in matches)
+                DB.PrintInfo($"[{m.MatchId}] {m.Location}/{m.Mode} {(m.IsStarted ? "started" : "waiting")} {m.Ip}:{m.Port} ({m.HostType}) players: {m.Users.Count}");
         }
         public static void DeleteMatches(object obj)
         {
-            MatchController.Matches.Clear();
+            MatchController.ClearAll();
             DB.PrintInfo($"Matches Cleared!");
+        }
+
+        public static void StartMatch(object obj)
+        {
+            var x = (string[])obj;
+            if (x.Length < 1) { DB.PrintWarn("Use: !startmatch <matchId>"); return; }
+            DB.PrintInfo(MatchController.ForceStart(x[0]) ? $"Match {x[0]} started." : $"No match {x[0]}.");
+        }
+
+        public static void EndMatch(object obj)
+        {
+            var x = (string[])obj;
+            if (x.Length < 1) { DB.PrintWarn("Use: !endmatch <matchId>"); return; }
+            DB.PrintInfo(MatchController.EndMatch(x[0]) ? $"Match {x[0]} ended." : $"No match {x[0]}.");
+        }
+
+        /// <summary>!hostport &lt;nickname&gt; &lt;port&gt;: that player hosts their next match on this port (0 = stop).</summary>
+        public static void HostPort(object obj)
+        {
+            var x = (string[])obj;
+            if (x.Length < 2 || !int.TryParse(x[1], out int port) || port < 0 || port > 65535)
+            {
+                DB.PrintWarn("Use: !hostport <nickname> <port>   (port 0 = stop hosting)");
+                return;
+            }
+            var found = CharacterController.SearchNickname(x[0]);
+            if (found.Count == 0) { DB.PrintWarn($"No character named {x[0]}."); return; }
+            MatchController.SetHostPort(found[0].Aid, port);
+            DB.PrintInfo(port == 0 ? $"{x[0]} no longer hosts." : $"{x[0]} hosts their next match on port {port}.");
         }
 
         public static void RegisterUser(object obj)

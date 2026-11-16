@@ -11,7 +11,16 @@ namespace ServerLib.Web
         public static bool ClientQuestList(HttpRequest request, HttpsBackendSession session)
         {
             Utils.PrintRequest(request, session);
-            string resp = File.ReadAllText("Files/static/questList.json");
+            // body {"completed": bool} (Class1031); templates from Files/quests (QuestController)
+            string SessionId = Utils.GetSessionId(session.Headers);
+            bool completed = false;
+            try
+            {
+                var body = Newtonsoft.Json.Linq.JObject.Parse(ResponseControl.DeCompressReq(request.BodyBytes));
+                completed = (bool?)body["completed"] ?? false;
+            }
+            catch { }
+            string resp = ResponseControl.GetBody(Controllers.QuestController.QuestList(SessionId, completed));
             Utils.SendUnityResponse(session, resp);
             return true;
         }
@@ -96,6 +105,8 @@ namespace ServerLib.Web
         {
             Utils.PrintRequest(request, session);
             string locale = session.HttpParam["locale"].ToLower();
+            // quest texts follow the language of the locale the client loaded
+            Controllers.QuestController.SetLanguage(Utils.GetSessionId(session.Headers), locale);
             string resp = File.ReadAllText($"Files/locales/{locale}/global.json");
             Utils.SendUnityResponse(session, resp);
             return true;
