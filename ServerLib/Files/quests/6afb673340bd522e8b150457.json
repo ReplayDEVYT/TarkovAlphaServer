@@ -1,0 +1,69 @@
+{
+	"_id": "6afb673340bd522e8b150457",
+	"traderId": "54cb50c76803fa8b248b4571",
+	"name": "Executioner pt. 2",
+	"description": "That last job was clean, damn! You really know how to do a number on people. Let's get your track record set, I want you to go around Tarkov and get some kills. Log them and let me know when you're done. I'll discuss payment with you afterwards.",
+	"image": "/files/quest/icon/5d67b41686f774368e1b78df.png",
+	"type": "Levelling",
+	"isKey": false,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 1500
+			},
+			{
+				"type": "TraderStanding",
+				"target": "54cb50c76803fa8b248b4571",
+				"value": 0.039999999105930328
+			},
+			{
+				"type": "Item",
+				"target": "6afb678340bd522e8b15045e",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6afb678340bd522e8b15045e",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 5316
+						}
+					}
+				]
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [
+			{
+				"_parent": "Quest",
+				"_props": {
+					"id": "6afb673340bd522e8b150458",
+					"target": "6afb6520dd7c23525d693828",
+					"status": "Success",
+					"value": 1,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"AvailableForFinish": [
+			{
+				"_parent": "StatisticsCounter",
+				"_props": {
+					"id": "6afb674940bd522e8b15045d",
+					"description": "Reach 25 overall kills",
+					"target": "Killed",
+					"value": 25,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

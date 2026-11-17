@@ -28,12 +28,27 @@ namespace ServerLib.Utilities
 
         public static bool SendUnityResponse(HttpsBackendSession session, byte[] resp)
         {
-            var rsp = session.Response.MakeGetResponse(resp, "application/json");
-            rsp = rsp.SetHeader("Content-Type", "application/json");
-            rsp = rsp.SetHeader("Content-Encoding", "deflate");
-            session.SendResponse(rsp);
+            session.SendResponse(BuildResponse(session.Response, 200, "application/json", resp, "deflate"));
             return true;
         }
+
+        /// <summary>
+        /// Reconstruction fix: headers must come before the body. NetCoreServer's MakeGetResponse writes the body, and a
+        /// SetHeader/SetBegin after it appended "Content-Type: ...\r\nContent-Encoding: deflate\r\n" behind the body,
+        /// which a client reusing the connection read as the start of its next answer.
+        /// </summary>
+        public static HttpResponse BuildResponse(HttpResponse response, int status, string? contentType, byte[] body, string? encoding = null)
+        {
+            response.Clear();
+            response.SetBegin(status);
+            if (!string.IsNullOrEmpty(contentType)) response.SetHeader("Content-Type", contentType);
+            if (!string.IsNullOrEmpty(encoding)) response.SetHeader("Content-Encoding", encoding);
+            response.SetBody(body);
+            return response;
+        }
+
+        public static HttpResponse BuildResponse(HttpResponse response, int status, string? contentType, string body) =>
+            BuildResponse(response, status, contentType, Encoding.UTF8.GetBytes(body));
 
         public static void PrintRequest(HttpRequest req, HttpsBackendSession session)
         {

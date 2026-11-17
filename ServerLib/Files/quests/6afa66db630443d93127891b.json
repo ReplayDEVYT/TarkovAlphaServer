@@ -5,7 +5,7 @@
 	"description": "Well, I am sure you know of the issues Prapor is having with his experience on Customs recently. Sad to say, I am also having problems transporting goods to people. This is extremely bad, I need to bring supplies to people who are in need. Customs is one of our main gateways to other parts of Tarkov, and if it is compromised, we cannot efficiently do our jobs. I would be very grateful if you were to help us out.",
 	"image": "/files/quest/icon/5c1e358f86f77408017f539f.png",
 	"type": "Elimination",
-	"isKey": true,
+	"isKey": false,
 	"rewards": {
 		"Started": [],
 		"Success": [

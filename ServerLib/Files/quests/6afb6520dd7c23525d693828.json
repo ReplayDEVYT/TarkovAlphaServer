@@ -1,0 +1,98 @@
+{
+	"_id": "6afb6520dd7c23525d693828",
+	"traderId": "54cb50c76803fa8b248b4571",
+	"name": "Executioner pt. 1",
+	"description": "I'm getting fucking tired of the people stirring up problems in Tarkov lately! Clearly, you can handle yourself. I need the scum ruining my transport, trade, and service to be gone. Executed. There's simply no other way to do this, you've gotta send a message. You wanna go out there and take them out for me? Maybe I'll keep giving you jobs like this if you can make it through this one.",
+	"image": "/files/quest/icon/5d67b41686f774368e1b78df.png",
+	"type": "Elimination",
+	"isKey": false,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Item",
+				"target": "6afb6672dd7c23525d69382f",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6afb6672dd7c23525d69382f",
+						"_tpl": "5648a7494bdc2d9d488b4583"
+					}
+				]
+			},
+			{
+				"type": "Item",
+				"target": "6afb6691dd7c23525d693831",
+				"value": 2,
+				"items": [
+					{
+						"_id": "6afb6691dd7c23525d693831",
+						"_tpl": "5645bc214bdc2d363b8b4571"
+					}
+				]
+			},
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 1025
+			},
+			{
+				"type": "TraderStanding",
+				"target": "54cb50c76803fa8b248b4571",
+				"value": 0.039999999105930328
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [
+			{
+				"_parent": "Quest",
+				"_props": {
+					"id": "6afb65e8dd7c23525d693829",
+					"target": "6a1f00000000000000000001",
+					"status": "Success",
+					"value": 1,
+					"compareMethod": ">="
+				}
+			},
+			{
+				"_parent": "Level",
+				"_props": {
+					"id": "6afb660ddd7c23525d69382a",
+					"value": 10,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"AvailableForFinish": [
+			{
+				"_parent": "CounterCreator",
+				"_props": {
+					"id": "6afb6621dd7c23525d69382b",
+					"description": "Kill 4 targets on any location",
+					"value": 4,
+					"type": "Elimination",
+					"counter": {
+						"id": "6afb6621dd7c23525d69382c",
+						"conditions": [
+							{
+								"_parent": "Kills",
+								"_props": {
+									"id": "6afb6621dd7c23525d69382d",
+									"target": "Any",
+									"value": 1,
+									"compareMethod": ">="
+								}
+							}
+						]
+					}
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

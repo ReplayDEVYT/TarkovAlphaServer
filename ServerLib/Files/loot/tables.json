@@ -1,0 +1,7939 @@
+{
+ "_readme": [
+  "Weighted loot tables, used by every map whose Files/loot/<map>.json has rules.source \"tables\".",
+  "containers: container template id (or \"default\") -> how many items (min..max) and from which table.",
+  "loose: chance that a loose-loot point of the map gets an item, from which table; filterByPoint keeps the map's own filter of each point (e.g. a shelf that only takes ammo).",
+  "tables: name -> entries. id = an item template id or a category id (then any item under it). weight is relative: 10 is ten times as likely as 1. count = stack size range for money/ammo. name and price are only for reading; they are not used.",
+  "A map file can carry its own \"tables\" object with the same three parts; its entries replace these.",
+  "Made by Tools/make_loot_tables.py (weight = 1000 / sqrt(price x stack) x rarity); edit freely."
+ ],
+ "containers": {
+  "578f879c24597735401e6bc6": {
+   "name": "CashRegister",
+   "min": 1,
+   "max": 2,
+   "table": "cashregister"
+  },
+  "578f87b7245977356274f2cd": {
+   "name": "Drawer",
+   "min": 0,
+   "max": 3,
+   "table": "drawer"
+  },
+  "578f8778245977358849a9b5": {
+   "name": "Jacket",
+   "min": 0,
+   "max": 2,
+   "table": "jacket"
+  },
+  "578f8782245977354405a1e3": {
+   "name": "Safe",
+   "min": 1,
+   "max": 4,
+   "table": "safe"
+  },
+  "578f87a3245977356274f2cb": {
+   "name": "SportBag",
+   "min": 1,
+   "max": 3,
+   "table": "sportbag"
+  },
+  "566966cd4bdc2d0c4c8b4578": {
+   "name": "StupidBox",
+   "min": 2,
+   "max": 6,
+   "table": "stupidbox"
+  },
+  "578f87ad245977356274f2cc": {
+   "name": "WeaponCrate",
+   "min": 1,
+   "max": 5,
+   "table": "weaponcrate"
+  },
+  "default": {
+   "name": "any other container",
+   "min": 0,
+   "max": 2,
+   "table": "default"
+  }
+ },
+ "loose": {
+  "chance": 0.55,
+  "table": "loose",
+  "filterByPoint": true
+ },
+ "tables": {
+  "cashregister": [
+   {
+    "id": "5449016a4bdc2d6f028b456f",
+    "name": "Рубли",
+    "weight": 11,
+    "price": 1,
+    "count": [
+     500,
+     15000
+    ]
+   },
+   {
+    "id": "5696686a4bdc2da3298b456a",
+    "name": "Dollars",
+    "weight": 1.7,
+    "price": 65,
+    "count": [
+     8,
+     231
+    ]
+   },
+   {
+    "id": "569668774bdc2da2298b4568",
+    "name": "Euros",
+    "weight": 1.7,
+    "price": 75,
+    "count": [
+     7,
+     200
+    ]
+   }
+  ],
+  "drawer": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Room 308 Key",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "5755356824597772cb798962",
+    "name": "AI-2 medikit",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5780d07a2459777de4559324",
+    "name": "Bus park key",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Room 218 Key",
+    "weight": 20,
+    "price": 2530
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5780cf692459777de4559321",
+    "name": "Room 315 Key",
+    "weight": 15,
+    "price": 4350
+   },
+   {
+    "id": "57a349b2245977762b199ec7",
+    "name": "Factory office ",
+    "weight": 14,
+    "price": 5100
+   },
+   {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Office key",
+    "weight": 13,
+    "price": 6100
+   },
+   {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Room 214 Key",
+    "weight": 13,
+    "price": 5730
+   },
+   {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Room 220 Key",
+    "weight": 13,
+    "price": 5560
+   },
+   {
+    "id": "5780cda02459777b272ede61",
+    "name": "Room 306 Key",
+    "weight": 13,
+    "price": 5780
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Room M",
+    "weight": 11,
+    "price": 8120
+   },
+   {
+    "id": "5449016a4bdc2d6f028b456f",
+    "name": "Рубли",
+    "weight": 11,
+    "price": 1,
+    "count": [
+     500,
+     15000
+    ]
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gasstation director",
+    "weight": 9.1,
+    "price": 12100
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Ключ от выхода с завода",
+    "weight": 7.4,
+    "price": 18100
+   },
+   {
+    "id": "544fb3f34bdc2d03748b456a",
+    "name": "Шприц с морфином",
+    "weight": 6.3,
+    "price": 4000
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Room 118 Key",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "544fb45d4bdc2dee738b4568",
+    "name": "Salewa FIRST AID KIT",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "6af8d1a595b1df23c4ec96df",
+    "name": "Grizzly First Aid Kit",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   },
+   {
+    "id": "5696686a4bdc2da3298b456a",
+    "name": "Dollars",
+    "weight": 1.7,
+    "price": 65,
+    "count": [
+     8,
+     231
+    ]
+   },
+   {
+    "id": "569668774bdc2da2298b4568",
+    "name": "Euros",
+    "weight": 1.7,
+    "price": 75,
+    "count": [
+     7,
+     200
+    ]
+   }
+  ],
+  "jacket": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347d3d245977448f7b7f61",
+    "name": "Bread crackers",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "5448ff904bdc2d6f028b456e",
+    "name": "Crackers",
+    "weight": 100,
+    "price": 100
+   },
+   {
+    "id": "5751487e245977207e26a315",
+    "name": "Emelya",
+    "weight": 95,
+    "price": 110
+   },
+   {
+    "id": "57347d90245977448f7b7f65",
+    "name": "Oat flakes pack",
+    "weight": 89,
+    "price": 125
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "544fb6cc4bdc2d34748b456e",
+    "name": "Батончик slippers",
+    "weight": 79,
+    "price": 160
+   },
+   {
+    "id": "57347d9c245977448b40fa85",
+    "name": "Can of herring",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5448fee04bdc2dbc018b4567",
+    "name": "Water",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "57347d692459774491567cf1",
+    "name": "Can of green peas",
+    "weight": 63,
+    "price": 250
+   },
+   {
+    "id": "57347d5f245977448b40fa81",
+    "name": "Can of pink salmon",
+    "weight": 56,
+    "price": 320
+   },
+   {
+    "id": "57347d8724597744596b4e76",
+    "name": "Can of squash caviar",
+    "weight": 53,
+    "price": 350
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5673de654bdc2d180f8b456d",
+    "name": "Can of Pacific Saury",
+    "weight": 47,
+    "price": 450
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "57347d7224597744596b4e72",
+    "name": "Can of beef",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Room 308 Key",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57347da92459774491567cf5",
+    "name": "Can of beef stew",
+    "weight": 39,
+    "price": 650
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "57505f6224597709a92585a9",
+    "name": "Chocolate bar",
+    "weight": 33,
+    "price": 913
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "5780d07a2459777de4559324",
+    "name": "Bus park key",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "544fb62a4bdc2dfb738b4568",
+    "name": "Пачка армейского сока (яблочный)",
+    "weight": 25,
+    "price": 250
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Room 218 Key",
+    "weight": 20,
+    "price": 2530
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5751435d24597720a27126d1",
+    "name": "Max energy",
+    "weight": 17,
+    "price": 570
+   },
+   {
+    "id": "57514643245977207f2c2d09",
+    "name": "TarCola",
+    "weight": 17,
+    "price": 530
+   },
+   {
+    "id": "5751496424597720a27126da",
+    "name": "Hot rod",
+    "weight": 16,
+    "price": 660
+   },
+   {
+    "id": "575146b724597720a27126d5",
+    "name": "Carton of milk",
+    "weight": 15,
+    "price": 700
+   },
+   {
+    "id": "5780cf692459777de4559321",
+    "name": "Room 315 Key",
+    "weight": 15,
+    "price": 4350
+   },
+   {
+    "id": "57513f07245977207e26a311",
+    "name": "Apple juice",
+    "weight": 14,
+    "price": 790
+   },
+   {
+    "id": "57a349b2245977762b199ec7",
+    "name": "Factory office ",
+    "weight": 14,
+    "price": 5100
+   },
+   {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Office key",
+    "weight": 13,
+    "price": 6100
+   },
+   {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Room 214 Key",
+    "weight": 13,
+    "price": 5730
+   },
+   {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Room 220 Key",
+    "weight": 13,
+    "price": 5560
+   },
+   {
+    "id": "5780cda02459777b272ede61",
+    "name": "Room 306 Key",
+    "weight": 13,
+    "price": 5780
+   },
+   {
+    "id": "57513fcc24597720a31c09a6",
+    "name": "Vita juice",
+    "weight": 13,
+    "price": 920
+   },
+   {
+    "id": "57513f9324597720a7128161",
+    "name": "Grand juice",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "575062b524597720a31c09a1",
+    "name": "Green Ice",
+    "weight": 12,
+    "price": 1120
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Room M",
+    "weight": 11,
+    "price": 8120
+   },
+   {
+    "id": "5449016a4bdc2d6f028b456f",
+    "name": "Рубли",
+    "weight": 11,
+    "price": 1,
+    "count": [
+     500,
+     15000
+    ]
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gasstation director",
+    "weight": 9.1,
+    "price": 12100
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Ключ от выхода с завода",
+    "weight": 7.4,
+    "price": 18100
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Room 118 Key",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   },
+   {
+    "id": "5696686a4bdc2da3298b456a",
+    "name": "Dollars",
+    "weight": 1.7,
+    "price": 65,
+    "count": [
+     8,
+     231
+    ]
+   },
+   {
+    "id": "569668774bdc2da2298b4568",
+    "name": "Euros",
+    "weight": 1.7,
+    "price": 75,
+    "count": [
+     7,
+     200
+    ]
+   }
+  ],
+  "safe": [
+   {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Room 308 Key",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "5780d07a2459777de4559324",
+    "name": "Bus park key",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Room 218 Key",
+    "weight": 20,
+    "price": 2530
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5780cf692459777de4559321",
+    "name": "Room 315 Key",
+    "weight": 15,
+    "price": 4350
+   },
+   {
+    "id": "57a349b2245977762b199ec7",
+    "name": "Factory office ",
+    "weight": 14,
+    "price": 5100
+   },
+   {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Office key",
+    "weight": 13,
+    "price": 6100
+   },
+   {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Room 214 Key",
+    "weight": 13,
+    "price": 5730
+   },
+   {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Room 220 Key",
+    "weight": 13,
+    "price": 5560
+   },
+   {
+    "id": "5780cda02459777b272ede61",
+    "name": "Room 306 Key",
+    "weight": 13,
+    "price": 5780
+   },
+   {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Room M",
+    "weight": 11,
+    "price": 8120
+   },
+   {
+    "id": "5449016a4bdc2d6f028b456f",
+    "name": "Рубли",
+    "weight": 11,
+    "price": 1,
+    "count": [
+     500,
+     15000
+    ]
+   },
+   {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gasstation director",
+    "weight": 9.1,
+    "price": 12100
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Ключ от выхода с завода",
+    "weight": 7.4,
+    "price": 18100
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Room 118 Key",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   },
+   {
+    "id": "5696686a4bdc2da3298b456a",
+    "name": "Dollars",
+    "weight": 1.7,
+    "price": 65,
+    "count": [
+     8,
+     231
+    ]
+   },
+   {
+    "id": "569668774bdc2da2298b4568",
+    "name": "Euros",
+    "weight": 1.7,
+    "price": 75,
+    "count": [
+     7,
+     200
+    ]
+   }
+  ],
+  "sportbag": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347d3d245977448f7b7f61",
+    "name": "Bread crackers",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "5448ff904bdc2d6f028b456e",
+    "name": "Crackers",
+    "weight": 100,
+    "price": 100
+   },
+   {
+    "id": "5751487e245977207e26a315",
+    "name": "Emelya",
+    "weight": 95,
+    "price": 110
+   },
+   {
+    "id": "57347d90245977448f7b7f65",
+    "name": "Oat flakes pack",
+    "weight": 89,
+    "price": 125
+   },
+   {
+    "id": "56dff3afd2720bba668b4567",
+    "name": "patron_545x39_PS",
+    "weight": 89,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "544fb6cc4bdc2d34748b456e",
+    "name": "Батончик slippers",
+    "weight": 79,
+    "price": 160
+   },
+   {
+    "id": "56dff0bed2720bb0668b4567",
+    "name": "patron_545x39_FMJ",
+    "weight": 71,
+    "price": 8,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347d9c245977448b40fa85",
+    "name": "Can of herring",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5448fee04bdc2dbc018b4567",
+    "name": "Water",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "57347d692459774491567cf1",
+    "name": "Can of green peas",
+    "weight": 63,
+    "price": 250
+   },
+   {
+    "id": "57347d5f245977448b40fa81",
+    "name": "Can of pink salmon",
+    "weight": 56,
+    "price": 320
+   },
+   {
+    "id": "57347d8724597744596b4e76",
+    "name": "Can of squash caviar",
+    "weight": 53,
+    "price": 350
+   },
+   {
+    "id": "56dff2ced2720bb4668b4567",
+    "name": "patron_545x39_PP",
+    "weight": 53,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5673de654bdc2d180f8b456d",
+    "name": "Can of Pacific Saury",
+    "weight": 47,
+    "price": 450
+   },
+   {
+    "id": "56d59d3ad2720bdb418b4577",
+    "name": "9x19 Pst gzh",
+    "weight": 46,
+    "price": 19,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5735ff5c245977640e39ba7e",
+    "name": "patron_762x25tt_FMJ43",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573719762459775a626ccbc1",
+    "name": "patron_9x18pm_P_gzh",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "57371f8d24597761006c6a81",
+    "name": "patron_9x18pm_PSO_gzh",
+    "weight": 44,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347d7224597744596b4e72",
+    "name": "Can of beef",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "573602322459776445391df1",
+    "name": "patron_762x25tt_LRNPC",
+    "weight": 42,
+    "price": 23,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57347da92459774491567cf5",
+    "name": "Can of beef stew",
+    "weight": 39,
+    "price": 650
+   },
+   {
+    "id": "5656d7c34bdc2d9d198b4587",
+    "name": "7.62x39 PS",
+    "weight": 38,
+    "price": 27,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371f2b24597761224311f1",
+    "name": "patron_9x18pm_PS_gs_PPO",
+    "weight": 38,
+    "price": 28,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "54527ac44bdc2d36668b4567",
+    "name": "5.56x45 мм M193 FMJ",
+    "weight": 37,
+    "price": 30,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573718ba2459775a75491131",
+    "name": "patron_9x18pm_BZT_gzh",
+    "weight": 36,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "57505f6224597709a92585a9",
+    "name": "Chocolate bar",
+    "weight": 33,
+    "price": 913
+   },
+   {
+    "id": "560d5e524bdc2d25448b4571",
+    "name": "12x70 Картечь",
+    "weight": 32,
+    "price": 50,
+    "count": [
+     10,
+     30
+    ]
+   },
+   {
+    "id": "56dff216d2720bbd668b4568",
+    "name": "patron_545x39_HP",
+    "weight": 30,
+    "price": 7,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "5736026a245977644601dc61",
+    "name": "patron_762x25tt_P_Gl",
+    "weight": 28,
+    "price": 50,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "54527a984bdc2d4e668b4567",
+    "name": "5.56x45 мм M193 Ball",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "m995",
+    "name": "5.56x45 мм M995",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5755356824597772cb798962",
+    "name": "AI-2 medikit",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "544fb62a4bdc2dfb738b4568",
+    "name": "Пачка армейского сока (яблочный)",
+    "weight": 25,
+    "price": 250
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "56dff421d2720b5f5a8b4567",
+    "name": "patron_545x39_SP",
+    "weight": 24,
+    "price": 11,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371e4124597760ff7b25f1",
+    "name": "patron_9x18pm_PPT_gzh",
+    "weight": 21,
+    "price": 15,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "5737201124597760fc4431f1",
+    "name": "patron_9x18pm_PST_gzh",
+    "weight": 20,
+    "price": 16,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5751435d24597720a27126d1",
+    "name": "Max energy",
+    "weight": 17,
+    "price": 570
+   },
+   {
+    "id": "57514643245977207f2c2d09",
+    "name": "TarCola",
+    "weight": 17,
+    "price": 530
+   },
+   {
+    "id": "56dff338d2720bbd668b4569",
+    "name": "patron_545x39_PRS",
+    "weight": 17,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5751496424597720a27126da",
+    "name": "Hot rod",
+    "weight": 16,
+    "price": 660
+   },
+   {
+    "id": "575146b724597720a27126d5",
+    "name": "Carton of milk",
+    "weight": 15,
+    "price": 700
+   },
+   {
+    "id": "57513f07245977207e26a311",
+    "name": "Apple juice",
+    "weight": 14,
+    "price": 790
+   },
+   {
+    "id": "57513fcc24597720a31c09a6",
+    "name": "Vita juice",
+    "weight": 13,
+    "price": 920
+   },
+   {
+    "id": "57513f9324597720a7128161",
+    "name": "Grand juice",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "575062b524597720a31c09a1",
+    "name": "Green Ice",
+    "weight": 12,
+    "price": 1120
+   },
+   {
+    "id": "5735fdcd2459776445391d61",
+    "name": "patron_762x25tt_akbs",
+    "weight": 12,
+    "price": 44,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "573603562459776430731618",
+    "name": "patron_762x25tt_Pst_gzh",
+    "weight": 11,
+    "price": 54,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56dfef82d2720bbd668b4567",
+    "name": "patron_545x39_BP",
+    "weight": 9.5,
+    "price": 10,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "560d61e84bdc2da74d8b4571",
+    "name": "7.62х54R SNB",
+    "weight": 8.9,
+    "price": 500,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "56dff061d2720bb5668b4567",
+    "name": "patron_545x39_BT",
+    "weight": 8.0,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5656eb674bdc2d35148b457c",
+    "name": "40 мм ВОГ-25",
+    "weight": 7.1,
+    "price": 2000,
+    "count": [
+     10,
+     10
+    ]
+   },
+   {
+    "id": "573719df2459775a626ccbc2",
+    "name": "patron_9x18pm_PBM",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371eb62459776125652ac1",
+    "name": "patron_9x18pm_PRS_gs",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56dff026d2720bb8668b4567",
+    "name": "patron_545x39_BS",
+    "weight": 6.7,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb3f34bdc2d03748b456a",
+    "name": "Шприц с морфином",
+    "weight": 6.3,
+    "price": 4000
+   },
+   {
+    "id": "573720e02459776143012541",
+    "name": "patron_9x18pm_RG028_gzh",
+    "weight": 6.1,
+    "price": 24,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "573601b42459776410737435",
+    "name": "patron_762x25tt_LRN",
+    "weight": 5.2,
+    "price": 33,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb45d4bdc2dee738b4568",
+    "name": "Salewa FIRST AID KIT",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "5737207f24597760ff7b25f2",
+    "name": "patron_9x18pm_PSV",
+    "weight": 5.0,
+    "price": 36,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573603c924597764442bd9cb",
+    "name": "patron_762x25tt_T_Gzh",
+    "weight": 4.7,
+    "price": 40,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371b192459775a9f58a5e0",
+    "name": "patron_9x18pm_PPE_gzh",
+    "weight": 4.6,
+    "price": 42,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57372140245977611f70ee91",
+    "name": "patron_9x18pm_SP7_gzh",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0dfb82459774d3078b56c",
+    "name": "patron_9x39_sp5",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0e5022459774d1673f889",
+    "name": "patron_9x39_sp6",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "5737218f245977612125ba51",
+    "name": "patron_9x18pm_SP8_gzh",
+    "weight": 3.6,
+    "price": 68,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "6af8d1a595b1df23c4ec96df",
+    "name": "Grizzly First Aid Kit",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   }
+  ],
+  "stupidbox": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "573722e82459776104581c21",
+    "name": "ammo_box_9x18pm_16_BZT_gzh",
+    "weight": 135,
+    "price": 55
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347d3d245977448f7b7f61",
+    "name": "Bread crackers",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "57372ebf2459776862260582",
+    "name": "ammo_box_545x39_30_PS",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "5448ff904bdc2d6f028b456e",
+    "name": "Crackers",
+    "weight": 100,
+    "price": 100
+   },
+   {
+    "id": "5751487e245977207e26a315",
+    "name": "Emelya",
+    "weight": 95,
+    "price": 110
+   },
+   {
+    "id": "57347d90245977448f7b7f65",
+    "name": "Oat flakes pack",
+    "weight": 89,
+    "price": 125
+   },
+   {
+    "id": "5737339e2459776af261abeb",
+    "name": "ammo_box_545x39_30_bpz_hp",
+    "weight": 89,
+    "price": 126
+   },
+   {
+    "id": "56dff3afd2720bba668b4567",
+    "name": "patron_545x39_PS",
+    "weight": 89,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5737330a2459776af32363a1",
+    "name": "ammo_box_545x39_30_bpz_fmj",
+    "weight": 83,
+    "price": 144
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57372f5c24597769917c0131",
+    "name": "ammo_box_545x39_30_T",
+    "weight": 79,
+    "price": 162
+   },
+   {
+    "id": "544fb6cc4bdc2d34748b456e",
+    "name": "Батончик slippers",
+    "weight": 79,
+    "price": 160
+   },
+   {
+    "id": "5737260b24597761224311f2",
+    "name": "ammo_box_9x18pm_16_PPT_gzh",
+    "weight": 78,
+    "price": 165
+   },
+   {
+    "id": "573727c624597765cc785b5b",
+    "name": "ammo_box_9x18pm_16_PST_gzh",
+    "weight": 75,
+    "price": 176
+   },
+   {
+    "id": "573733c72459776b0b7b51b0",
+    "name": "ammo_box_545x39_30_bpz_sp",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "5737250c2459776125652acc",
+    "name": "ammo_box_9x18pm_16_PBM",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "5737266524597761006c6a8c",
+    "name": "ammo_box_9x18pm_16_PRS_gs",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "56dff0bed2720bb0668b4567",
+    "name": "patron_545x39_FMJ",
+    "weight": 71,
+    "price": 8,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5739d41224597779c3645501",
+    "name": "ammo_box_9x19_default",
+    "weight": 69,
+    "price": 209
+   },
+   {
+    "id": "57347d9c245977448b40fa85",
+    "name": "Can of herring",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5448fee04bdc2dbc018b4567",
+    "name": "Water",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "573724b42459776125652ac2",
+    "name": "ammo_box_9x18pm_16_P_gzh",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5737273924597765dd374461",
+    "name": "ammo_box_9x18pm_16_PSO_gzh",
+    "weight": 66,
+    "price": 231
+   },
+   {
+    "id": "57347d692459774491567cf1",
+    "name": "Can of green peas",
+    "weight": 63,
+    "price": 250
+   },
+   {
+    "id": "57372c89245977685d4159b1",
+    "name": "ammo_box_545x39_30_BT",
+    "weight": 63,
+    "price": 252
+   },
+   {
+    "id": "57372db0245977685d4159b2",
+    "name": "ammo_box_545x39_30_PP",
+    "weight": 63,
+    "price": 252
+   },
+   {
+    "id": "5737287724597765e1625ae2",
+    "name": "ammo_box_9x18pm_RG028_gzh",
+    "weight": 62,
+    "price": 264
+   },
+   {
+    "id": "573726d824597765d96be361",
+    "name": "ammo_box_9x18pm_16_PS_gs_PPO",
+    "weight": 57,
+    "price": 308
+   },
+   {
+    "id": "57347d5f245977448b40fa81",
+    "name": "Can of pink salmon",
+    "weight": 56,
+    "price": 320
+   },
+   {
+    "id": "5737256c2459776125652acd",
+    "name": "ammo_box_9x18pm_16_PMM",
+    "weight": 55,
+    "price": 330
+   },
+   {
+    "id": "57347d8724597744596b4e76",
+    "name": "Can of squash caviar",
+    "weight": 53,
+    "price": 350
+   },
+   {
+    "id": "57372bd3245977670b7cd243",
+    "name": "ammo_box_545x39_30_BS",
+    "weight": 53,
+    "price": 360
+   },
+   {
+    "id": "5649ed104bdc2d3d1c8b458b",
+    "name": "ammo_box_762x39_20_PS",
+    "weight": 53,
+    "price": 351
+   },
+   {
+    "id": "56dff2ced2720bb4668b4567",
+    "name": "patron_545x39_PP",
+    "weight": 53,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57372e4a24597768553071c2",
+    "name": "ammo_box_545x39_30_PRS",
+    "weight": 51,
+    "price": 378
+   },
+   {
+    "id": "572b7d8524597762b472f9d1",
+    "name": "Cap",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5737280e24597765cc785b5c",
+    "name": "ammo_box_9x18pm_16_PSV",
+    "weight": 50,
+    "price": 396
+   },
+   {
+    "id": "5649af094bdc2df8348b4586",
+    "name": "Крышка ствольной коробки Ижмаш для АК-74",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5673de654bdc2d180f8b456d",
+    "name": "Can of Pacific Saury",
+    "weight": 47,
+    "price": 450
+   },
+   {
+    "id": "573725b0245977612125bae2",
+    "name": "ammo_box_9x18pm_16_PPE_gzh",
+    "weight": 47,
+    "price": 462
+   },
+   {
+    "id": "56d59d3ad2720bdb418b4577",
+    "name": "9x19 Pst gzh",
+    "weight": 46,
+    "price": 19,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5735ff5c245977640e39ba7e",
+    "name": "patron_762x25tt_FMJ43",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573719762459775a626ccbc1",
+    "name": "patron_9x18pm_P_gzh",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f112459772d28133310",
+    "name": "pistolgrip_ar15_hogue_overmolded_gg",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5448c12b4bdc2d02308b456f",
+    "name": "Магазин 90-93 9х18ПМ для ПМ на 8 патронов",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "57371f8d24597761006c6a81",
+    "name": "patron_9x18pm_PSO_gzh",
+    "weight": 44,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347d7224597744596b4e72",
+    "name": "Can of beef",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "573728cc24597765cc785b5d",
+    "name": "ammo_box_9x18pm_SP7_gzh",
+    "weight": 43,
+    "price": 539
+   },
+   {
+    "id": "573602322459776445391df1",
+    "name": "patron_762x25tt_LRNPC",
+    "weight": 42,
+    "price": 23,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Room 308 Key",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "5649aa744bdc2ded0b8b457e",
+    "name": "Дульный тормоз компенсатор Ижмаш 5.45x39 для АК-74",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57cffe0024597763b03fc60b",
+    "name": "handguard_ak_magpul_moe_ak_plm",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "5648b0744bdc2d363b8b4578",
+    "name": "Цевье деревянное для AK-74",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57347da92459774491567cf5",
+    "name": "Can of beef stew",
+    "weight": 39,
+    "price": 650
+   },
+   {
+    "id": "5656d7c34bdc2d9d198b4587",
+    "name": "7.62x39 PS",
+    "weight": 38,
+    "price": 27,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371f2b24597761224311f1",
+    "name": "patron_9x18pm_PS_gs_PPO",
+    "weight": 38,
+    "price": 28,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "54527ac44bdc2d36668b4567",
+    "name": "5.56x45 мм M193 FMJ",
+    "weight": 37,
+    "price": 30,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5737300424597769942d5a01",
+    "name": "ammo_box_545x39_30_US",
+    "weight": 37,
+    "price": 720
+   },
+   {
+    "id": "573728f324597765e5728561",
+    "name": "ammo_box_9x18pm_SP8_gzh",
+    "weight": 37,
+    "price": 748
+   },
+   {
+    "id": "573718ba2459775a75491131",
+    "name": "patron_9x18pm_BZT_gzh",
+    "weight": 36,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "5649b1c04bdc2d16268b457c",
+    "name": "Приклад Ижмаш деревянный для АК-74",
+    "weight": 35,
+    "price": 130
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "57505f6224597709a92585a9",
+    "name": "Chocolate bar",
+    "weight": 33,
+    "price": 913
+   },
+   {
+    "id": "571a282c2459771fb2755a69",
+    "name": "Щечки штатные для ТТ",
+    "weight": 33,
+    "price": 900
+   },
+   {
+    "id": "560d5e524bdc2d25448b4571",
+    "name": "12x70 Картечь",
+    "weight": 32,
+    "price": 50,
+    "count": [
+     10,
+     30
+    ]
+   },
+   {
+    "id": "57dc324a24597759501edc20",
+    "name": "muzzle_aks74u_izhmash_std_545x39",
+    "weight": 32,
+    "price": 1000
+   },
+   {
+    "id": "5447ac644bdc2d6c208b4567",
+    "name": "ammo_box_556x45_xx_m193ball",
+    "weight": 30,
+    "price": 1080
+   },
+   {
+    "id": "56dff216d2720bbd668b4568",
+    "name": "patron_545x39_HP",
+    "weight": 30,
+    "price": 7,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649ade84bdc2d1b2b8b4587",
+    "name": "Пистолетная рукоятка Ижмаш Полимер для АК-74",
+    "weight": 30,
+    "price": 1100
+   },
+   {
+    "id": "55d4b9964bdc2d1d4e8b456e",
+    "name": "Пистолетная рукоятка Colt A2 для AR-15 совместимых",
+    "weight": 29,
+    "price": 1200
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "5736026a245977644601dc61",
+    "name": "patron_762x25tt_P_Gl",
+    "weight": 28,
+    "price": 50,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "56083eab4bdc2d26448b456a",
+    "name": "Противомиражная лента СВ-98",
+    "weight": 27,
+    "price": 1350
+   },
+   {
+    "id": "54527a984bdc2d4e668b4567",
+    "name": "5.56x45 мм M193 Ball",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "m995",
+    "name": "5.56x45 мм M995",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5755356824597772cb798962",
+    "name": "AI-2 medikit",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5780d07a2459777de4559324",
+    "name": "Bus park key",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "572b7fa124597762b472f9d2",
+    "name": "Knitcap",
+    "weight": 26,
+    "price": 240
+   },
+   {
+    "id": "57af48872459771f0b2ebf11",
+    "name": "pistolgrip_ar15_hogue_overmolded_fde",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "544fb62a4bdc2dfb738b4568",
+    "name": "Пачка армейского сока (яблочный)",
+    "weight": 25,
+    "price": 250
+   },
+   {
+    "id": "571659bb2459771fb2755a12",
+    "name": "Пистолетная рукоятка DI ECS FDE для AR-15 совместимых",
+    "weight": 25,
+    "price": 1600
+   },
+   {
+    "id": "5649b0fc4bdc2d17108b4588",
+    "name": "Приклад Ижмаш полимерный для АК-74",
+    "weight": 25,
+    "price": 260
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "56dff421d2720b5f5a8b4567",
+    "name": "patron_545x39_SP",
+    "weight": 24,
+    "price": 11,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "564ca99c4bdc2d16268b4589",
+    "name": "Магазин 6Л20 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 24,
+    "price": 1700
+   },
+   {
+    "id": "5648b1504bdc2d9d488b4584",
+    "name": "Цевье пполимерное для AK-74",
+    "weight": 24,
+    "price": 280
+   },
+   {
+    "id": "55d4887d4bdc2d962f8b4570",
+    "name": "Магазин Colt AR-15 5.56x45 STANAG на 30 патронов",
+    "weight": 23,
+    "price": 1900
+   },
+   {
+    "id": "557ff21e4bdc2d89578b4586",
+    "name": "Tactical glasses",
+    "weight": 22,
+    "price": 340
+   },
+   {
+    "id": "57371e4124597760ff7b25f1",
+    "name": "patron_9x18pm_PPT_gzh",
+    "weight": 21,
+    "price": 15,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a38634bdc2d58388b4568",
+    "name": "Пламегаситель Colt USGI A2 5.56x45 для AR-15",
+    "weight": 21,
+    "price": 2305
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Room 218 Key",
+    "weight": 20,
+    "price": 2530
+   },
+   {
+    "id": "57372fc52459776998772ca1",
+    "name": "ammo_box_545x39_120_US_damaged",
+    "weight": 20,
+    "price": 2520
+   },
+   {
+    "id": "57616a9e2459773c7a400234",
+    "name": "mag_saiga12_izhmash_Sb5_12x76_5",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "5737201124597760fc4431f1",
+    "name": "patron_9x18pm_PST_gzh",
+    "weight": 20,
+    "price": 16,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55efc2459772d2c6271e7",
+    "name": "pistolgrip_ar15_hogue_overmolded_blk",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "56deee15d2720bee328b4567",
+    "name": "Заглушка магазина МР-153 12к для МР-153",
+    "weight": 20,
+    "price": 400
+   },
+   {
+    "id": "576a7c512459771e796e0e17",
+    "name": "mount_mp443_zenit_b8",
+    "weight": 19,
+    "price": 2687
+   },
+   {
+    "id": "55d480c04bdc2d1d4e8b456a",
+    "name": "Магазин 6Л23 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 19,
+    "price": 2700
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5751435d24597720a27126d1",
+    "name": "Max energy",
+    "weight": 17,
+    "price": 570
+   },
+   {
+    "id": "57514643245977207f2c2d09",
+    "name": "TarCola",
+    "weight": 17,
+    "price": 530
+   },
+   {
+    "id": "56dff338d2720bbd668b4569",
+    "name": "patron_545x39_PRS",
+    "weight": 17,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f092459772d291a8463",
+    "name": "pistolgrip_ar15_hogue_overmolded_ge",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57c55f172459772d27602381",
+    "name": "pistolgrip_ar15_hogue_overmolded_od",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57616c112459773cce774d66",
+    "name": "reciever_saiga12_izhmash_saiga12k_10_std",
+    "weight": 17,
+    "price": 3600
+   },
+   {
+    "id": "56d5a407d2720bb3418b456b",
+    "name": "Затвор Sig P226R 9x19 для пистолета P226",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "56083cba4bdc2de22e8b456f",
+    "name": "Приклад деревянный МР-133/153",
+    "weight": 17,
+    "price": 3284
+   },
+   {
+    "id": "5751496424597720a27126da",
+    "name": "Hot rod",
+    "weight": 16,
+    "price": 660
+   },
+   {
+    "id": "575146b724597720a27126d5",
+    "name": "Carton of milk",
+    "weight": 15,
+    "price": 700
+   },
+   {
+    "id": "5780cf692459777de4559321",
+    "name": "Room 315 Key",
+    "weight": 15,
+    "price": 4350
+   },
+   {
+    "id": "5649a2464bdc2d91118b45a8",
+    "name": "mount_all_ncstar_mpr45",
+    "weight": 15,
+    "price": 4740
+   },
+   {
+    "id": "57616ca52459773c69055192",
+    "name": "stock_saiga12",
+    "weight": 15,
+    "price": 670
+   },
+   {
+    "id": "57513f07245977207e26a311",
+    "name": "Apple juice",
+    "weight": 14,
+    "price": 790
+   },
+   {
+    "id": "57a349b2245977762b199ec7",
+    "name": "Factory office ",
+    "weight": 14,
+    "price": 5100
+   },
+   {
+    "id": "572b7fa524597762b747ce82",
+    "name": "Mask",
+    "weight": 14,
+    "price": 800
+   },
+   {
+    "id": "56ea8222d2720b69698b4567",
+    "name": "Сошки Ижмаш СВ-98",
+    "weight": 14,
+    "price": 5200
+   },
+   {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Office key",
+    "weight": 13,
+    "price": 6100
+   },
+   {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Room 214 Key",
+    "weight": 13,
+    "price": 5730
+   },
+   {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Room 220 Key",
+    "weight": 13,
+    "price": 5560
+   },
+   {
+    "id": "5780cda02459777b272ede61",
+    "name": "Room 306 Key",
+    "weight": 13,
+    "price": 5780
+   },
+   {
+    "id": "57513fcc24597720a31c09a6",
+    "name": "Vita juice",
+    "weight": 13,
+    "price": 920
+   },
+   {
+    "id": "55d48a634bdc2d8b2f8b456a",
+    "name": "mount_all_custom_top_rail_13",
+    "weight": 13,
+    "price": 5930
+   },
+   {
+    "id": "57e26fc7245977162a14b800",
+    "name": "weapon_bars_a-2607_95x18",
+    "weight": 13,
+    "price": 1000
+   },
+   {
+    "id": "57e26ea924597715ca604a09",
+    "name": "weapon_bars_a-2607_damask",
+    "weight": 13,
+    "price": 1000
+   },
+   {
+    "id": "560e620e4bdc2d724b8b456b",
+    "name": "Надульное устройство СВ-98",
+    "weight": 13,
+    "price": 5700
+   },
+   {
+    "id": "57513f9324597720a7128161",
+    "name": "Grand juice",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "575062b524597720a31c09a1",
+    "name": "Green Ice",
+    "weight": 12,
+    "price": 1120
+   },
+   {
+    "id": "5735fdcd2459776445391d61",
+    "name": "patron_762x25tt_akbs",
+    "weight": 12,
+    "price": 44,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d484b44bdc2d1d4e8b456d",
+    "name": "Магазин МР-133х6 12к для МР-133 на 6 патронов",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Room M",
+    "weight": 11,
+    "price": 8120
+   },
+   {
+    "id": "577d128124597739d65d0e56",
+    "name": "mount_all_burris_fast_fire_weaver",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "57d17e212459775a1179a0f5",
+    "name": "mount_all_noname_25mm_ring",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "55d48ebc4bdc2d8c2f8b456c",
+    "name": "mount_mr133_deltatech_sprut",
+    "weight": 11,
+    "price": 8754
+   },
+   {
+    "id": "573603562459776430731618",
+    "name": "patron_762x25tt_Pst_gzh",
+    "weight": 11,
+    "price": 54,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57dc347d245977596754e7a1",
+    "name": "stock_aks74u_izhmash_aks74u_std",
+    "weight": 11,
+    "price": 1260
+   },
+   {
+    "id": "57f3a5ae2459772b0e0bf19e",
+    "name": "tactical_pso_belomo_eyecup",
+    "weight": 11,
+    "price": 1258
+   },
+   {
+    "id": "5649ab884bdc2ded0b8b457f",
+    "name": "Дульный тормоз компенсатор Зенит ДТК-1 7.62х39 и 5.45x39 для АК",
+    "weight": 11,
+    "price": 8200
+   },
+   {
+    "id": "5449016a4bdc2d6f028b456f",
+    "name": "Рубли",
+    "weight": 11,
+    "price": 1,
+    "count": [
+     500,
+     15000
+    ]
+   },
+   {
+    "id": "572b7f1624597762ae139822",
+    "name": "Balaclava",
+    "weight": 10,
+    "price": 1600
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "57dc32dc245977596d4ef3d3",
+    "name": "handguard_aks74u_izhmash_aks74u_std_wood",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "576a5ed62459771e9c2096cb",
+    "name": "mag_mp443_izhmeh_std_9x19_18",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56d59948d2720bb7418b4582",
+    "name": "Магазин стандартный 9х19 для P226 на 15 патронов",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56083be64bdc2d20478b456f",
+    "name": "Приклад пластиковый МР-133/153",
+    "weight": 9.7,
+    "price": 1700
+   },
+   {
+    "id": "56dfef82d2720bbd668b4567",
+    "name": "patron_545x39_BP",
+    "weight": 9.5,
+    "price": 10,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gasstation director",
+    "weight": 9.1,
+    "price": 12100
+   },
+   {
+    "id": "560d61e84bdc2da74d8b4571",
+    "name": "7.62х54R SNB",
+    "weight": 8.9,
+    "price": 500,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c69dd424597774c03b7bbc",
+    "name": "mount_all_lobaev_dvl_std",
+    "weight": 8.8,
+    "price": 12780
+   },
+   {
+    "id": "57e3dba62459770f0c32322b",
+    "name": "pistolgrip_ak_izhmash_aks74u_std",
+    "weight": 8.3,
+    "price": 2300
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "57d14e1724597714010c3f4b",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_20",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "56dff061d2720bb5668b4567",
+    "name": "patron_545x39_BT",
+    "weight": 8.0,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "571a29dc2459771fb2755a6a",
+    "name": "Магазин стандартный 7.62х25 ТТ для ТТ на 8 патронов",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "58272b842459774abc128d50",
+    "name": "sight_rear_saiga_css_sight_rail_mount",
+    "weight": 7.8,
+    "price": 370
+   },
+   {
+    "id": "564ca9df4bdc2d35148b4569",
+    "name": "Магазин 6Л18 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 7.7,
+    "price": 2700
+   },
+   {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Ключ от выхода с завода",
+    "weight": 7.4,
+    "price": 18100
+   },
+   {
+    "id": "5656eb674bdc2d35148b457c",
+    "name": "40 мм ВОГ-25",
+    "weight": 7.1,
+    "price": 2000,
+    "count": [
+     10,
+     10
+    ]
+   },
+   {
+    "id": "573719df2459775a626ccbc2",
+    "name": "patron_9x18pm_PBM",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371eb62459776125652ac1",
+    "name": "patron_9x18pm_PRS_gs",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d4837c4bdc2d1d4e8b456c",
+    "name": "Магазин Сайга 545 5.45x39 для АК-74 и совместимых на 10 патронов",
+    "weight": 7.0,
+    "price": 3300
+   },
+   {
+    "id": "56ea6fafd2720b844b8b4593",
+    "name": "Пламегаситель Noveske KX3 5.56x45",
+    "weight": 6.9,
+    "price": 21200
+   },
+   {
+    "id": "56dff026d2720bb8668b4567",
+    "name": "patron_545x39_BS",
+    "weight": 6.7,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5448c1d04bdc2dff2f8b4569",
+    "name": "Магазин PMAG GEN M3 20 5.56x45 STANAG на 20 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "55802d5f4bdc2dac148b458e",
+    "name": "Магазин PMAG GEN M3 30 5.56x45 STANAG на 30 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "544fb3f34bdc2d03748b456a",
+    "name": "Шприц с морфином",
+    "weight": 6.3,
+    "price": 4000
+   },
+   {
+    "id": "573720e02459776143012541",
+    "name": "patron_9x18pm_RG028_gzh",
+    "weight": 6.1,
+    "price": 24,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "56ea7165d2720b6e518b4583",
+    "name": "charge_ar15_badger_ordnance_tactical_latch",
+    "weight": 5.8,
+    "price": 660
+   },
+   {
+    "id": "576169e62459773c69055191",
+    "name": "handguard_saiga12_izhmash_saiga12k_10_std",
+    "weight": 5.8,
+    "price": 4800
+   },
+   {
+    "id": "57ffaea724597779f52b3a4d",
+    "name": "mount_all_zenit_b12",
+    "weight": 5.8,
+    "price": 4680
+   },
+   {
+    "id": "55d485804bdc2d8c2f8b456b",
+    "name": "Магазин МР-133х8 12к для МР-133 на 8 патронов",
+    "weight": 5.8,
+    "price": 4700
+   },
+   {
+    "id": "56deeefcd2720bc8328b4568",
+    "name": "Удлиннитель магазина МР-153 12к для МР-153 до 8 ми патронов",
+    "weight": 5.7,
+    "price": 700
+   },
+   {
+    "id": "57ee59b42459771c7b045da5",
+    "name": "mount_pp-91_rotor_43_kedr_ris",
+    "weight": 5.6,
+    "price": 31680
+   },
+   {
+    "id": "55d44fd14bdc2d962f8b456e",
+    "name": "Рукоятка заряжания Colt AR-15 для AR-15 и совместимых",
+    "weight": 5.6,
+    "price": 730
+   },
+   {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Room 118 Key",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "5827272a24597748c74bdeea",
+    "name": "handguard_saiga12_utg_pro_mtu002_long_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "58272b392459774b4c7b3ccd",
+    "name": "handguard_saiga12_utg_pro_mtu002_short_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "57dc334d245977597164366f",
+    "name": "reciever_aks74u_izhmash_aks74u_std",
+    "weight": 5.4,
+    "price": 5400
+   },
+   {
+    "id": "55d45d3f4bdc2d972f8b456c",
+    "name": "Цевье Ижмех МР-133 Бук для МР-133",
+    "weight": 5.4,
+    "price": 5500
+   },
+   {
+    "id": "5648b6ff4bdc2d3d1c8b4581",
+    "name": "mount_ak_tactica_tula_10000",
+    "weight": 5.3,
+    "price": 5710
+   },
+   {
+    "id": "55d481904bdc2d8c2f8b456a",
+    "name": "Магазин 6Л26 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 5.3,
+    "price": 5700
+   },
+   {
+    "id": "5649ad3f4bdc2df8348b4585",
+    "name": "Пистолетная рукоятка Ижмаш Бакелит для АК-74",
+    "weight": 5.3,
+    "price": 800
+   },
+   {
+    "id": "573601b42459776410737435",
+    "name": "patron_762x25tt_LRN",
+    "weight": 5.2,
+    "price": 33,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c9a89124597704ee6faec1",
+    "name": " полимер для P226",
+    "weight": 5.0,
+    "price": 900
+   },
+   {
+    "id": "544fb45d4bdc2dee738b4568",
+    "name": "Salewa FIRST AID KIT",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "57a3459f245977764a01f703",
+    "name": "mount_vss_zenit_b3",
+    "weight": 5.0,
+    "price": 39680
+   },
+   {
+    "id": "5737207f24597760ff7b25f2",
+    "name": "patron_9x18pm_PSV",
+    "weight": 5.0,
+    "price": 36,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d355e64bdc2d962f8b4569",
+    "name": "Верхний ресивер Colt M4A1 5.56х45 для штурмовой винтовки M4A1",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "56deed6ed2720b4c698b4583",
+    "name": "Цевье Ижмех МР-153 Полимерное для МР-133",
+    "weight": 5.0,
+    "price": 6400
+   },
+   {
+    "id": "5448be9a4bdc2dfd2f8b456a",
+    "name": "Граната РГД-5",
+    "weight": 4.8,
+    "price": 7000
+   },
+   {
+    "id": "573603c924597764442bd9cb",
+    "name": "patron_762x25tt_T_Gzh",
+    "weight": 4.7,
+    "price": 40,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a37c44bdc2d25388b4567",
+    "name": "Магазин MAG5-60 5.56x45 STANAG на 60 патронов",
+    "weight": 4.7,
+    "price": 7200
+   },
+   {
+    "id": "57371b192459775a9f58a5e0",
+    "name": "patron_9x18pm_PPE_gzh",
+    "weight": 4.6,
+    "price": 42,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56083a334bdc2dc8488b4571",
+    "name": "Пластиковая рукоятка МР-133/153",
+    "weight": 4.6,
+    "price": 7500
+   },
+   {
+    "id": "57372140245977611f70ee91",
+    "name": "patron_9x18pm_SP7_gzh",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0dfb82459774d3078b56c",
+    "name": "patron_9x39_sp5",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0e5022459774d1673f889",
+    "name": "patron_9x39_sp6",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "560d75f54bdc2da74d8b4573",
+    "name": "ammo_box_762x54r_xx_SNB",
+    "weight": 4.2,
+    "price": 9000
+   },
+   {
+    "id": "57ffb0062459777a045af529",
+    "name": "mount_all_zenit_b18",
+    "weight": 4.1,
+    "price": 9680
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "56eabcd4d2720b66698b4574",
+    "name": "gas_block_ar15_dd_mk12_low_profile",
+    "weight": 3.8,
+    "price": 1600
+   },
+   {
+    "id": "55d4ae6c4bdc2d8b2f8b456e",
+    "name": "Приклад High Standard M4SS",
+    "weight": 3.8,
+    "price": 11350
+   },
+   {
+    "id": "55d459824bdc2d892f8b4573",
+    "name": "Цевье Knight's Armament KAC RIS для AR-15 и совместимых",
+    "weight": 3.8,
+    "price": 11300
+   },
+   {
+    "id": "578395e82459774a0e553c7b",
+    "name": "stock_vss_tochmash_vss_std_wood",
+    "weight": 3.7,
+    "price": 11800
+   },
+   {
+    "id": "5649b2314bdc2d79388b4576",
+    "name": "Переходник ME для АК",
+    "weight": 3.7,
+    "price": 11530
+   },
+   {
+    "id": "57ffa9f4245977728561e844",
+    "name": "handguard_aks74u_zenit_b11",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "5737218f245977612125ba51",
+    "name": "patron_9x18pm_SP8_gzh",
+    "weight": 3.6,
+    "price": 68,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5648b2414bdc2d3b4c8b4578",
+    "name": "Газоотводная трубка UltiMAK M1-B для АК",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "6af8d1a595b1df23c4ec96df",
+    "name": "Grizzly First Aid Kit",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "5710c24ad2720bc3458b45a3",
+    "name": "Граната Ф-1",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "576a63cd2459771e796e0e11",
+    "name": "pistolgrip_mp443_izmeh_mp443_std",
+    "weight": 3.2,
+    "price": 2200
+   },
+   {
+    "id": "57fd23e32459772d0805bcf1",
+    "name": "tactical_all_holosun_ls321",
+    "weight": 3.1,
+    "price": 16258
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "57c450252459772d28133253",
+    "name": "stock_val_tochmash_val_std",
+    "weight": 3.0,
+    "price": 17800
+   },
+   {
+    "id": "57cffb66245977632f391a99",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcd624597763133760c5",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcdd24597763f5110006",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffce524597763b31685d8",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "58272d7f2459774f6311ddfd",
+    "name": "muzzle_12g_red_heat_gk-02_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "576167ab2459773cad038c43",
+    "name": "muzzle_saiga12_izhmash_saiga12_std_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "558032614bdc2de7118b4585",
+    "name": "Тактическая рукотяка Tango Down Stubby BGV-MK46K",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "560d657b4bdc2da74d8b4572",
+    "name": "tactical_all_zenit_2p_kleh_vis_laser",
+    "weight": 2.8,
+    "price": 20257
+   },
+   {
+    "id": "5648ac824bdc2ded0b8b457d",
+    "name": "Рукоятка затвора РП-1 для АК и совместимых",
+    "weight": 2.8,
+    "price": 2900
+   },
+   {
+    "id": "5649be884bdc2d79388b4577",
+    "name": "Труба приклада Colt",
+    "weight": 2.7,
+    "price": 21370
+   },
+   {
+    "id": "57d1519e24597714373db79d",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_30",
+    "weight": 2.5,
+    "price": 3500
+   },
+   {
+    "id": "57838f9f2459774a150289a0",
+    "name": "mag_vss_tochmash_6L25_9x39_20",
+    "weight": 2.5,
+    "price": 3700
+   },
+   {
+    "id": "56ea7293d2720b8d4b8b45ba",
+    "name": "sight_rear_p226_sight_mount_220-239",
+    "weight": 2.5,
+    "price": 26650
+   },
+   {
+    "id": "56ea8d2fd2720b7c698b4570",
+    "name": "gas_block_ar15_windham_weaponry_rail_gas_block",
+    "weight": 2.4,
+    "price": 4000
+   },
+   {
+    "id": "5649ae4a4bdc2d1b2b8b4588",
+    "name": "Пистолетная рукоятка Зенит РК-3 для АК",
+    "weight": 2.4,
+    "price": 3800
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "57838f0b2459774a256959b2",
+    "name": "mag_vss_tochmash_6L24_9x39_10",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "57f3c7e024597738ea4ba286",
+    "name": "muzzle_pp-91-01_zmz_std_9x18pm",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "559ba5b34bdc2d1f1a8b4582",
+    "name": "Магазин полимерный 7.62х54R для СВ-98 на 10 патронов",
+    "weight": 2.2,
+    "price": 4500
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   },
+   {
+    "id": "560838c94bdc2d77798b4569",
+    "name": "Remington Tactical Choke 12g",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56ea8180d2720bf2698b456a",
+    "name": "muzzle_ar15_kac_qd_compensator_556x45",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56d5a2bbd2720bb8418b456a",
+    "name": "Пистолетная рукоятка Sig Sauer черн. полимер для P226",
+    "weight": 2.1,
+    "price": 4900
+   },
+   {
+    "id": "57cff947245977638e6f2a19",
+    "name": "handguard_ak_magpul_moe_ak_blk",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffd8224597763b03fc609",
+    "name": "handguard_ak_magpul_moe_ak_fde",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffddc24597763133760c6",
+    "name": "handguard_ak_magpul_moe_ak_od",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffe20245977632f391a9d",
+    "name": "handguard_ak_magpul_moe_ak_sg",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57c44f4f2459772d2c627113",
+    "name": "reciever_val_tochmash_val_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "578395402459774a256959b5",
+    "name": "reciever_vss_tochmash_vss_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "57d17c5e2459775a5c57d17d",
+    "name": "flashlight_ultrafire_WF-501B",
+    "weight": 1.9,
+    "price": 45120
+   },
+   {
+    "id": "57c44fa82459772d2d75e415",
+    "name": "pistolgrip_val_tochmash_val_std",
+    "weight": 1.9,
+    "price": 6200
+   },
+   {
+    "id": "544a378f4bdc2d30388b4567",
+    "name": "Магазин PMAG GEN M3 40 5.56х45 STANAG на 40 патронов",
+    "weight": 1.9,
+    "price": 6000
+   },
+   {
+    "id": "55d482194bdc2d1d4e8b456b",
+    "name": "Магазин 6Л31 5.45x39 для АК-74 и совместимых на 60 патронов",
+    "weight": 1.8,
+    "price": 7200
+   },
+   {
+    "id": "56d5a1f7d2720bb3418b456a",
+    "name": "Ствол 112мм для P226 9x19",
+    "weight": 1.8,
+    "price": 6860
+   },
+   {
+    "id": "544909bb4bdc2d6f028b4577",
+    "name": "Тактический блок AN/PEQ-15",
+    "weight": 1.8,
+    "price": 49258
+   },
+   {
+    "id": "5696686a4bdc2da3298b456a",
+    "name": "Dollars",
+    "weight": 1.7,
+    "price": 65,
+    "count": [
+     8,
+     231
+    ]
+   },
+   {
+    "id": "569668774bdc2da2298b4568",
+    "name": "Euros",
+    "weight": 1.7,
+    "price": 75,
+    "count": [
+     7,
+     200
+    ]
+   },
+   {
+    "id": "55d45f484bdc2d972f8b456d",
+    "name": "Цевье Кастом МР-133 пластик для МР-133 с направляющими",
+    "weight": 1.7,
+    "price": 8200
+   },
+   {
+    "id": "55d485be4bdc2d962f8b456f",
+    "name": "Магазин ПМ/ППШ 9х18ПМ для ПМ на 84 патрона",
+    "weight": 1.6,
+    "price": 8500
+   },
+   {
+    "id": "571a26d524597720680fbe8a",
+    "name": "Ствол 116мм для ТТ 7.62х25 ТТ",
+    "weight": 1.6,
+    "price": 8400
+   },
+   {
+    "id": "56e05a6ed2720bd0748b4567",
+    "name": "Щечки ЦНИИ Точмаш Бакелитовые для ПБ",
+    "weight": 1.6,
+    "price": 9300
+   },
+   {
+    "id": "57da93632459771cb65bf83f",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 1.5,
+    "price": 74000
+   },
+   {
+    "id": "57655f7d2459777aa2064c85",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_dot",
+    "weight": 1.4,
+    "price": 12315
+   },
+   {
+    "id": "576697fd2459770ab2362162",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_s",
+    "weight": 1.4,
+    "price": 12316
+   },
+   {
+    "id": "571a28e524597720b4066567",
+    "name": "Глушитель кустарный 7.62х25 ТТ",
+    "weight": 1.4,
+    "price": 12000
+   },
+   {
+    "id": "55d4491a4bdc2d882f8b456e",
+    "name": "Ствол 510мм для МР-133 12к ",
+    "weight": 1.4,
+    "price": 12185
+   },
+   {
+    "id": "55d448594bdc2d8c2f8b4569",
+    "name": "Ствол 610мм для ружья МР-133 12к",
+    "weight": 1.4,
+    "price": 12200
+   },
+   {
+    "id": "5648b4534bdc2d3d1c8b4580",
+    "name": "Цевье Б-10М и Газоотводная трубка Б-19",
+    "weight": 1.4,
+    "price": 11100
+   },
+   {
+    "id": "570fd79bd2720bc7458b4583",
+    "name": "scope_all_ekb_okp7",
+    "weight": 1.3,
+    "price": 12850
+   },
+   {
+    "id": "5649d9a14bdc2d79388b4580",
+    "name": "sight_rear_ak_tactica_tula_tt01",
+    "weight": 1.3,
+    "price": 12650
+   },
+   {
+    "id": "560836484bdc2d20478b456e",
+    "name": "Ствол 540мм для МР-133 12к ",
+    "weight": 1.3,
+    "price": 12700
+   },
+   {
+    "id": "560837154bdc2da74d8b4568",
+    "name": "Ствол 660мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.3,
+    "price": 12501
+   },
+   {
+    "id": "5608373c4bdc2dc8488b4570",
+    "name": "Ствол 710мм для ружья МР-133 12к",
+    "weight": 1.3,
+    "price": 14123
+   },
+   {
+    "id": "56deec93d2720bec348b4568",
+    "name": "Ствол 750мм для ружья МР-153 12к",
+    "weight": 1.3,
+    "price": 14180
+   },
+   {
+    "id": "5645bcc04bdc2d363b8b4572",
+    "name": "Peltor ComTac 2 headset",
+    "weight": 1.2,
+    "price": 16170
+   },
+   {
+    "id": "5649af884bdc2d1b2b8b4589",
+    "name": "Крышка ствольной коробки Зенит Б-33 для АК-74",
+    "weight": 1.2,
+    "price": 15200
+   },
+   {
+    "id": "56eabf3bd2720b75698b4569",
+    "name": "Приклад MOE Carbine",
+    "weight": 1.2,
+    "price": 14840
+   },
+   {
+    "id": "55d35ee94bdc2d61338b4568",
+    "name": "Ствол 260мм для AR-15 и совместимых 5.56х45",
+    "weight": 1.2,
+    "price": 15130
+   },
+   {
+    "id": "560836b64bdc2d57468b4567",
+    "name": "Ствол 540мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.2,
+    "price": 14900
+   },
+   {
+    "id": "560837824bdc2d57468b4568",
+    "name": "Ствол 750мм для ружья МР-133 12к",
+    "weight": 1.2,
+    "price": 15161
+   },
+   {
+    "id": "55f84c3c4bdc2d5f408b4576",
+    "name": "Цевье Daniel Defence RIS II 9.5 для AR-15 и совместимых",
+    "weight": 1.2,
+    "price": 15600
+   },
+   {
+    "id": "5645bc214bdc2d363b8b4571",
+    "name": "Kiver-M Helmet",
+    "weight": 1.1,
+    "price": 20100
+   },
+   {
+    "id": "5608379a4bdc2d26448b4569",
+    "name": "Ствол 750мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.1,
+    "price": 18180
+   },
+   {
+    "id": "571a279b24597720b4066566",
+    "name": "Ствол кустарный 116мм с резьбой для ТТ 7.62х25 ТТ",
+    "weight": 1.1,
+    "price": 18720
+   },
+   {
+    "id": "570fd721d2720bc5458b4596",
+    "name": "Walther MRS",
+    "weight": 1.0,
+    "price": 21570
+   },
+   {
+    "id": "558022b54bdc2dac148b458d",
+    "name": "scope_all_eotech_exps3",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "576697f22459770ab53cf5f6",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_penek",
+    "weight": 1.0,
+    "price": 22324
+   },
+   {
+    "id": "57486e672459770abd687134",
+    "name": "scope_dovetail_ekb_okp7_dovetail",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "544a3f024bdc2d1d388b4568",
+    "name": "Оптический прицел ELCAN Specter OS4x",
+    "weight": 1.0,
+    "price": 22120
+   },
+   {
+    "id": "55d449444bdc2d962f8b456d",
+    "name": "Ствол 610мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.0,
+    "price": 23103
+   },
+   {
+    "id": "56def37dd2720bec348b456a",
+    "name": "Тактический фонарь X400",
+    "weight": 1.0,
+    "price": 24355
+   },
+   {
+    "id": "560836fb4bdc2d773f8b4569",
+    "name": "Ствол 660мм для ружья МР-133 12к",
+    "weight": 0.9,
+    "price": 31105
+   },
+   {
+    "id": "5648ae314bdc2d3d1c8b457f",
+    "name": "Цевье CAA RS47 для AK и совместимых",
+    "weight": 0.9,
+    "price": 26100
+   },
+   {
+    "id": "57ae0171245977343c27bfcf",
+    "name": "scope_all_belomo_pk_06",
+    "weight": 0.8,
+    "price": 35310
+   },
+   {
+    "id": "544a39de4bdc2d24388b4567",
+    "name": "scope_all_leupold_deltapoint",
+    "weight": 0.8,
+    "price": 31327
+   },
+   {
+    "id": "577d141e24597739c5255e01",
+    "name": "scope_base_burris_fast_fire_3",
+    "weight": 0.8,
+    "price": 31404
+   },
+   {
+    "id": "57f3c8cc2459773ec4480328",
+    "name": "silencer_pp-91-01_zmz_kedr_b_std_9x18pm",
+    "weight": 0.8,
+    "price": 35600
+   },
+   {
+    "id": "55d3632e4bdc2d972f8b4569",
+    "name": "Ствол 370мм для AR-15 и совместимых 5.56х45",
+    "weight": 0.8,
+    "price": 31150
+   },
+   {
+    "id": "558032574bdc2d89578b458a",
+    "name": "Тактическая рукоятка Magpul AFG",
+    "weight": 0.8,
+    "price": 36000
+   },
+   {
+    "id": "560d3b2d4bdc2d773f8b4573",
+    "name": "scope_all_aimpoint_micro_h1_high",
+    "weight": 0.7,
+    "price": 52570
+   },
+   {
+    "id": "570fd6c2d2720bc6458b457f",
+    "name": "scope_all_eotech_553",
+    "weight": 0.7,
+    "price": 40225
+   },
+   {
+    "id": "56e05b06d2720bb2668b4586",
+    "name": "Глушитель штатный ПБ 9х18 ПМ",
+    "weight": 0.7,
+    "price": 45400
+   },
+   {
+    "id": "560837544bdc2de22e8b456e",
+    "name": "Ствол 710мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 0.7,
+    "price": 41158
+   },
+   {
+    "id": "544a3a774bdc2d3a388b4567",
+    "name": "scope_all_leupold_mark4_hamr",
+    "weight": 0.6,
+    "price": 60730
+   },
+   {
+    "id": "57ffb0e42459777d047111c5",
+    "name": "silencer_aks74u_tochmash_pbs-4_545x39",
+    "weight": 0.6,
+    "price": 53930
+   },
+   {
+    "id": "57dbb57e2459774673234890",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "57838c962459774a1651ec63",
+    "name": "silencer_vss_tochmash_std_9x39",
+    "weight": 0.6,
+    "price": 57000
+   },
+   {
+    "id": "55d614004bdc2d86028b4568",
+    "name": "Глушитель Surefire SOCOM556-MONSTER 5.56х45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "564caa3d4bdc2d17108b458e",
+    "name": "Глушитель Пламегаситель ТГП-А 5.45х39",
+    "weight": 0.6,
+    "price": 63930
+   },
+   {
+    "id": "57c44dd02459772d2e0ae249",
+    "name": "silencer_val_tochmash_std_9x39",
+    "weight": 0.5,
+    "price": 88000
+   },
+   {
+    "id": "55d6190f4bdc2d87028b4567",
+    "name": "Глушитель Surefire SOCOM556-MINI MONSTER 5.56х45",
+    "weight": 0.5,
+    "price": 89000
+   },
+   {
+    "id": "576fd4ec2459777f0b518431",
+    "name": "scope_dovetail_belomo_pso_1m2-1_4×24",
+    "weight": 0.3,
+    "price": 234407
+   }
+  ],
+  "weaponcrate": [
+   {
+    "id": "56dff3afd2720bba668b4567",
+    "name": "patron_545x39_PS",
+    "weight": 89,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56dff0bed2720bb0668b4567",
+    "name": "patron_545x39_FMJ",
+    "weight": 71,
+    "price": 8,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56dff2ced2720bb4668b4567",
+    "name": "patron_545x39_PP",
+    "weight": 53,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649af094bdc2df8348b4586",
+    "name": "Крышка ствольной коробки Ижмаш для АК-74",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "56d59d3ad2720bdb418b4577",
+    "name": "9x19 Pst gzh",
+    "weight": 46,
+    "price": 19,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5735ff5c245977640e39ba7e",
+    "name": "patron_762x25tt_FMJ43",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573719762459775a626ccbc1",
+    "name": "patron_9x18pm_P_gzh",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f112459772d28133310",
+    "name": "pistolgrip_ar15_hogue_overmolded_gg",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5448c12b4bdc2d02308b456f",
+    "name": "Магазин 90-93 9х18ПМ для ПМ на 8 патронов",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "57371f8d24597761006c6a81",
+    "name": "patron_9x18pm_PSO_gzh",
+    "weight": 44,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573602322459776445391df1",
+    "name": "patron_762x25tt_LRNPC",
+    "weight": 42,
+    "price": 23,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649aa744bdc2ded0b8b457e",
+    "name": "Дульный тормоз компенсатор Ижмаш 5.45x39 для АК-74",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "57cffe0024597763b03fc60b",
+    "name": "handguard_ak_magpul_moe_ak_plm",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "5648b0744bdc2d363b8b4578",
+    "name": "Цевье деревянное для AK-74",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "5656d7c34bdc2d9d198b4587",
+    "name": "7.62x39 PS",
+    "weight": 38,
+    "price": 27,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371f2b24597761224311f1",
+    "name": "patron_9x18pm_PS_gs_PPO",
+    "weight": 38,
+    "price": 28,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "54527ac44bdc2d36668b4567",
+    "name": "5.56x45 мм M193 FMJ",
+    "weight": 37,
+    "price": 30,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573718ba2459775a75491131",
+    "name": "patron_9x18pm_BZT_gzh",
+    "weight": 36,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649b1c04bdc2d16268b457c",
+    "name": "Приклад Ижмаш деревянный для АК-74",
+    "weight": 35,
+    "price": 130
+   },
+   {
+    "id": "571a282c2459771fb2755a69",
+    "name": "Щечки штатные для ТТ",
+    "weight": 33,
+    "price": 900
+   },
+   {
+    "id": "560d5e524bdc2d25448b4571",
+    "name": "12x70 Картечь",
+    "weight": 32,
+    "price": 50,
+    "count": [
+     10,
+     30
+    ]
+   },
+   {
+    "id": "57dc324a24597759501edc20",
+    "name": "muzzle_aks74u_izhmash_std_545x39",
+    "weight": 32,
+    "price": 1000
+   },
+   {
+    "id": "56dff216d2720bbd668b4568",
+    "name": "patron_545x39_HP",
+    "weight": 30,
+    "price": 7,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649ade84bdc2d1b2b8b4587",
+    "name": "Пистолетная рукоятка Ижмаш Полимер для АК-74",
+    "weight": 30,
+    "price": 1100
+   },
+   {
+    "id": "55d4b9964bdc2d1d4e8b456e",
+    "name": "Пистолетная рукоятка Colt A2 для AR-15 совместимых",
+    "weight": 29,
+    "price": 1200
+   },
+   {
+    "id": "5736026a245977644601dc61",
+    "name": "patron_762x25tt_P_Gl",
+    "weight": 28,
+    "price": 50,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56083eab4bdc2d26448b456a",
+    "name": "Противомиражная лента СВ-98",
+    "weight": 27,
+    "price": 1350
+   },
+   {
+    "id": "54527a984bdc2d4e668b4567",
+    "name": "5.56x45 мм M193 Ball",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "m995",
+    "name": "5.56x45 мм M995",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57af48872459771f0b2ebf11",
+    "name": "pistolgrip_ar15_hogue_overmolded_fde",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "571659bb2459771fb2755a12",
+    "name": "Пистолетная рукоятка DI ECS FDE для AR-15 совместимых",
+    "weight": 25,
+    "price": 1600
+   },
+   {
+    "id": "5649b0fc4bdc2d17108b4588",
+    "name": "Приклад Ижмаш полимерный для АК-74",
+    "weight": 25,
+    "price": 260
+   },
+   {
+    "id": "56dff421d2720b5f5a8b4567",
+    "name": "patron_545x39_SP",
+    "weight": 24,
+    "price": 11,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "564ca99c4bdc2d16268b4589",
+    "name": "Магазин 6Л20 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 24,
+    "price": 1700
+   },
+   {
+    "id": "5648b1504bdc2d9d488b4584",
+    "name": "Цевье пполимерное для AK-74",
+    "weight": 24,
+    "price": 280
+   },
+   {
+    "id": "55d4887d4bdc2d962f8b4570",
+    "name": "Магазин Colt AR-15 5.56x45 STANAG на 30 патронов",
+    "weight": 23,
+    "price": 1900
+   },
+   {
+    "id": "57371e4124597760ff7b25f1",
+    "name": "patron_9x18pm_PPT_gzh",
+    "weight": 21,
+    "price": 15,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a38634bdc2d58388b4568",
+    "name": "Пламегаситель Colt USGI A2 5.56x45 для AR-15",
+    "weight": 21,
+    "price": 2305
+   },
+   {
+    "id": "57616a9e2459773c7a400234",
+    "name": "mag_saiga12_izhmash_Sb5_12x76_5",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "5737201124597760fc4431f1",
+    "name": "patron_9x18pm_PST_gzh",
+    "weight": 20,
+    "price": 16,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55efc2459772d2c6271e7",
+    "name": "pistolgrip_ar15_hogue_overmolded_blk",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "56deee15d2720bee328b4567",
+    "name": "Заглушка магазина МР-153 12к для МР-153",
+    "weight": 20,
+    "price": 400
+   },
+   {
+    "id": "576a7c512459771e796e0e17",
+    "name": "mount_mp443_zenit_b8",
+    "weight": 19,
+    "price": 2687
+   },
+   {
+    "id": "55d480c04bdc2d1d4e8b456a",
+    "name": "Магазин 6Л23 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 19,
+    "price": 2700
+   },
+   {
+    "id": "56dff338d2720bbd668b4569",
+    "name": "patron_545x39_PRS",
+    "weight": 17,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f092459772d291a8463",
+    "name": "pistolgrip_ar15_hogue_overmolded_ge",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57c55f172459772d27602381",
+    "name": "pistolgrip_ar15_hogue_overmolded_od",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57616c112459773cce774d66",
+    "name": "reciever_saiga12_izhmash_saiga12k_10_std",
+    "weight": 17,
+    "price": 3600
+   },
+   {
+    "id": "56d5a407d2720bb3418b456b",
+    "name": "Затвор Sig P226R 9x19 для пистолета P226",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "56083cba4bdc2de22e8b456f",
+    "name": "Приклад деревянный МР-133/153",
+    "weight": 17,
+    "price": 3284
+   },
+   {
+    "id": "5649a2464bdc2d91118b45a8",
+    "name": "mount_all_ncstar_mpr45",
+    "weight": 15,
+    "price": 4740
+   },
+   {
+    "id": "57616ca52459773c69055192",
+    "name": "stock_saiga12",
+    "weight": 15,
+    "price": 670
+   },
+   {
+    "id": "56ea8222d2720b69698b4567",
+    "name": "Сошки Ижмаш СВ-98",
+    "weight": 14,
+    "price": 5200
+   },
+   {
+    "id": "55d48a634bdc2d8b2f8b456a",
+    "name": "mount_all_custom_top_rail_13",
+    "weight": 13,
+    "price": 5930
+   },
+   {
+    "id": "560e620e4bdc2d724b8b456b",
+    "name": "Надульное устройство СВ-98",
+    "weight": 13,
+    "price": 5700
+   },
+   {
+    "id": "5735fdcd2459776445391d61",
+    "name": "patron_762x25tt_akbs",
+    "weight": 12,
+    "price": 44,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d484b44bdc2d1d4e8b456d",
+    "name": "Магазин МР-133х6 12к для МР-133 на 6 патронов",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "577d128124597739d65d0e56",
+    "name": "mount_all_burris_fast_fire_weaver",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "57d17e212459775a1179a0f5",
+    "name": "mount_all_noname_25mm_ring",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "55d48ebc4bdc2d8c2f8b456c",
+    "name": "mount_mr133_deltatech_sprut",
+    "weight": 11,
+    "price": 8754
+   },
+   {
+    "id": "573603562459776430731618",
+    "name": "patron_762x25tt_Pst_gzh",
+    "weight": 11,
+    "price": 54,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57dc347d245977596754e7a1",
+    "name": "stock_aks74u_izhmash_aks74u_std",
+    "weight": 11,
+    "price": 1260
+   },
+   {
+    "id": "57f3a5ae2459772b0e0bf19e",
+    "name": "tactical_pso_belomo_eyecup",
+    "weight": 11,
+    "price": 1258
+   },
+   {
+    "id": "5649ab884bdc2ded0b8b457f",
+    "name": "Дульный тормоз компенсатор Зенит ДТК-1 7.62х39 и 5.45x39 для АК",
+    "weight": 11,
+    "price": 8200
+   },
+   {
+    "id": "57dc32dc245977596d4ef3d3",
+    "name": "handguard_aks74u_izhmash_aks74u_std_wood",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "576a5ed62459771e9c2096cb",
+    "name": "mag_mp443_izhmeh_std_9x19_18",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56d59948d2720bb7418b4582",
+    "name": "Магазин стандартный 9х19 для P226 на 15 патронов",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56083be64bdc2d20478b456f",
+    "name": "Приклад пластиковый МР-133/153",
+    "weight": 9.7,
+    "price": 1700
+   },
+   {
+    "id": "56dfef82d2720bbd668b4567",
+    "name": "patron_545x39_BP",
+    "weight": 9.5,
+    "price": 10,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "560d61e84bdc2da74d8b4571",
+    "name": "7.62х54R SNB",
+    "weight": 8.9,
+    "price": 500,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c69dd424597774c03b7bbc",
+    "name": "mount_all_lobaev_dvl_std",
+    "weight": 8.8,
+    "price": 12780
+   },
+   {
+    "id": "57e3dba62459770f0c32322b",
+    "name": "pistolgrip_ak_izhmash_aks74u_std",
+    "weight": 8.3,
+    "price": 2300
+   },
+   {
+    "id": "57d14e1724597714010c3f4b",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_20",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "56dff061d2720bb5668b4567",
+    "name": "patron_545x39_BT",
+    "weight": 8.0,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "571a29dc2459771fb2755a6a",
+    "name": "Магазин стандартный 7.62х25 ТТ для ТТ на 8 патронов",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "58272b842459774abc128d50",
+    "name": "sight_rear_saiga_css_sight_rail_mount",
+    "weight": 7.8,
+    "price": 370
+   },
+   {
+    "id": "564ca9df4bdc2d35148b4569",
+    "name": "Магазин 6Л18 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 7.7,
+    "price": 2700
+   },
+   {
+    "id": "5656eb674bdc2d35148b457c",
+    "name": "40 мм ВОГ-25",
+    "weight": 7.1,
+    "price": 2000,
+    "count": [
+     10,
+     10
+    ]
+   },
+   {
+    "id": "573719df2459775a626ccbc2",
+    "name": "patron_9x18pm_PBM",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371eb62459776125652ac1",
+    "name": "patron_9x18pm_PRS_gs",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d4837c4bdc2d1d4e8b456c",
+    "name": "Магазин Сайга 545 5.45x39 для АК-74 и совместимых на 10 патронов",
+    "weight": 7.0,
+    "price": 3300
+   },
+   {
+    "id": "56ea6fafd2720b844b8b4593",
+    "name": "Пламегаситель Noveske KX3 5.56x45",
+    "weight": 6.9,
+    "price": 21200
+   },
+   {
+    "id": "56dff026d2720bb8668b4567",
+    "name": "patron_545x39_BS",
+    "weight": 6.7,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5448c1d04bdc2dff2f8b4569",
+    "name": "Магазин PMAG GEN M3 20 5.56x45 STANAG на 20 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "55802d5f4bdc2dac148b458e",
+    "name": "Магазин PMAG GEN M3 30 5.56x45 STANAG на 30 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "573720e02459776143012541",
+    "name": "patron_9x18pm_RG028_gzh",
+    "weight": 6.1,
+    "price": 24,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56ea7165d2720b6e518b4583",
+    "name": "charge_ar15_badger_ordnance_tactical_latch",
+    "weight": 5.8,
+    "price": 660
+   },
+   {
+    "id": "576169e62459773c69055191",
+    "name": "handguard_saiga12_izhmash_saiga12k_10_std",
+    "weight": 5.8,
+    "price": 4800
+   },
+   {
+    "id": "57ffaea724597779f52b3a4d",
+    "name": "mount_all_zenit_b12",
+    "weight": 5.8,
+    "price": 4680
+   },
+   {
+    "id": "55d485804bdc2d8c2f8b456b",
+    "name": "Магазин МР-133х8 12к для МР-133 на 8 патронов",
+    "weight": 5.8,
+    "price": 4700
+   },
+   {
+    "id": "56deeefcd2720bc8328b4568",
+    "name": "Удлиннитель магазина МР-153 12к для МР-153 до 8 ми патронов",
+    "weight": 5.7,
+    "price": 700
+   },
+   {
+    "id": "57ee59b42459771c7b045da5",
+    "name": "mount_pp-91_rotor_43_kedr_ris",
+    "weight": 5.6,
+    "price": 31680
+   },
+   {
+    "id": "55d44fd14bdc2d962f8b456e",
+    "name": "Рукоятка заряжания Colt AR-15 для AR-15 и совместимых",
+    "weight": 5.6,
+    "price": 730
+   },
+   {
+    "id": "5827272a24597748c74bdeea",
+    "name": "handguard_saiga12_utg_pro_mtu002_long_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "58272b392459774b4c7b3ccd",
+    "name": "handguard_saiga12_utg_pro_mtu002_short_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "57dc334d245977597164366f",
+    "name": "reciever_aks74u_izhmash_aks74u_std",
+    "weight": 5.4,
+    "price": 5400
+   },
+   {
+    "id": "55d45d3f4bdc2d972f8b456c",
+    "name": "Цевье Ижмех МР-133 Бук для МР-133",
+    "weight": 5.4,
+    "price": 5500
+   },
+   {
+    "id": "5648b6ff4bdc2d3d1c8b4581",
+    "name": "mount_ak_tactica_tula_10000",
+    "weight": 5.3,
+    "price": 5710
+   },
+   {
+    "id": "55d481904bdc2d8c2f8b456a",
+    "name": "Магазин 6Л26 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 5.3,
+    "price": 5700
+   },
+   {
+    "id": "5649ad3f4bdc2df8348b4585",
+    "name": "Пистолетная рукоятка Ижмаш Бакелит для АК-74",
+    "weight": 5.3,
+    "price": 800
+   },
+   {
+    "id": "573601b42459776410737435",
+    "name": "patron_762x25tt_LRN",
+    "weight": 5.2,
+    "price": 33,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c9a89124597704ee6faec1",
+    "name": " полимер для P226",
+    "weight": 5.0,
+    "price": 900
+   },
+   {
+    "id": "57a3459f245977764a01f703",
+    "name": "mount_vss_zenit_b3",
+    "weight": 5.0,
+    "price": 39680
+   },
+   {
+    "id": "5737207f24597760ff7b25f2",
+    "name": "patron_9x18pm_PSV",
+    "weight": 5.0,
+    "price": 36,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d355e64bdc2d962f8b4569",
+    "name": "Верхний ресивер Colt M4A1 5.56х45 для штурмовой винтовки M4A1",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "56deed6ed2720b4c698b4583",
+    "name": "Цевье Ижмех МР-153 Полимерное для МР-133",
+    "weight": 5.0,
+    "price": 6400
+   },
+   {
+    "id": "5448be9a4bdc2dfd2f8b456a",
+    "name": "Граната РГД-5",
+    "weight": 4.8,
+    "price": 7000
+   },
+   {
+    "id": "573603c924597764442bd9cb",
+    "name": "patron_762x25tt_T_Gzh",
+    "weight": 4.7,
+    "price": 40,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a37c44bdc2d25388b4567",
+    "name": "Магазин MAG5-60 5.56x45 STANAG на 60 патронов",
+    "weight": 4.7,
+    "price": 7200
+   },
+   {
+    "id": "57371b192459775a9f58a5e0",
+    "name": "patron_9x18pm_PPE_gzh",
+    "weight": 4.6,
+    "price": 42,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56083a334bdc2dc8488b4571",
+    "name": "Пластиковая рукоятка МР-133/153",
+    "weight": 4.6,
+    "price": 7500
+   },
+   {
+    "id": "57372140245977611f70ee91",
+    "name": "patron_9x18pm_SP7_gzh",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0dfb82459774d3078b56c",
+    "name": "patron_9x39_sp5",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0e5022459774d1673f889",
+    "name": "patron_9x39_sp6",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57ffb0062459777a045af529",
+    "name": "mount_all_zenit_b18",
+    "weight": 4.1,
+    "price": 9680
+   },
+   {
+    "id": "56eabcd4d2720b66698b4574",
+    "name": "gas_block_ar15_dd_mk12_low_profile",
+    "weight": 3.8,
+    "price": 1600
+   },
+   {
+    "id": "55d4ae6c4bdc2d8b2f8b456e",
+    "name": "Приклад High Standard M4SS",
+    "weight": 3.8,
+    "price": 11350
+   },
+   {
+    "id": "55d459824bdc2d892f8b4573",
+    "name": "Цевье Knight's Armament KAC RIS для AR-15 и совместимых",
+    "weight": 3.8,
+    "price": 11300
+   },
+   {
+    "id": "578395e82459774a0e553c7b",
+    "name": "stock_vss_tochmash_vss_std_wood",
+    "weight": 3.7,
+    "price": 11800
+   },
+   {
+    "id": "5649b2314bdc2d79388b4576",
+    "name": "Переходник ME для АК",
+    "weight": 3.7,
+    "price": 11530
+   },
+   {
+    "id": "57ffa9f4245977728561e844",
+    "name": "handguard_aks74u_zenit_b11",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "5737218f245977612125ba51",
+    "name": "patron_9x18pm_SP8_gzh",
+    "weight": 3.6,
+    "price": 68,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5648b2414bdc2d3b4c8b4578",
+    "name": "Газоотводная трубка UltiMAK M1-B для АК",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "5710c24ad2720bc3458b45a3",
+    "name": "Граната Ф-1",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "576a63cd2459771e796e0e11",
+    "name": "pistolgrip_mp443_izmeh_mp443_std",
+    "weight": 3.2,
+    "price": 2200
+   },
+   {
+    "id": "57fd23e32459772d0805bcf1",
+    "name": "tactical_all_holosun_ls321",
+    "weight": 3.1,
+    "price": 16258
+   },
+   {
+    "id": "57c450252459772d28133253",
+    "name": "stock_val_tochmash_val_std",
+    "weight": 3.0,
+    "price": 17800
+   },
+   {
+    "id": "57cffb66245977632f391a99",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcd624597763133760c5",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcdd24597763f5110006",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffce524597763b31685d8",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "58272d7f2459774f6311ddfd",
+    "name": "muzzle_12g_red_heat_gk-02_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "576167ab2459773cad038c43",
+    "name": "muzzle_saiga12_izhmash_saiga12_std_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "558032614bdc2de7118b4585",
+    "name": "Тактическая рукотяка Tango Down Stubby BGV-MK46K",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "560d657b4bdc2da74d8b4572",
+    "name": "tactical_all_zenit_2p_kleh_vis_laser",
+    "weight": 2.8,
+    "price": 20257
+   },
+   {
+    "id": "5648ac824bdc2ded0b8b457d",
+    "name": "Рукоятка затвора РП-1 для АК и совместимых",
+    "weight": 2.8,
+    "price": 2900
+   },
+   {
+    "id": "5649be884bdc2d79388b4577",
+    "name": "Труба приклада Colt",
+    "weight": 2.7,
+    "price": 21370
+   },
+   {
+    "id": "57d1519e24597714373db79d",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_30",
+    "weight": 2.5,
+    "price": 3500
+   },
+   {
+    "id": "57838f9f2459774a150289a0",
+    "name": "mag_vss_tochmash_6L25_9x39_20",
+    "weight": 2.5,
+    "price": 3700
+   },
+   {
+    "id": "56ea7293d2720b8d4b8b45ba",
+    "name": "sight_rear_p226_sight_mount_220-239",
+    "weight": 2.5,
+    "price": 26650
+   },
+   {
+    "id": "56ea8d2fd2720b7c698b4570",
+    "name": "gas_block_ar15_windham_weaponry_rail_gas_block",
+    "weight": 2.4,
+    "price": 4000
+   },
+   {
+    "id": "5649ae4a4bdc2d1b2b8b4588",
+    "name": "Пистолетная рукоятка Зенит РК-3 для АК",
+    "weight": 2.4,
+    "price": 3800
+   },
+   {
+    "id": "57838f0b2459774a256959b2",
+    "name": "mag_vss_tochmash_6L24_9x39_10",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "57f3c7e024597738ea4ba286",
+    "name": "muzzle_pp-91-01_zmz_std_9x18pm",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "559ba5b34bdc2d1f1a8b4582",
+    "name": "Магазин полимерный 7.62х54R для СВ-98 на 10 патронов",
+    "weight": 2.2,
+    "price": 4500
+   },
+   {
+    "id": "560838c94bdc2d77798b4569",
+    "name": "Remington Tactical Choke 12g",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56ea8180d2720bf2698b456a",
+    "name": "muzzle_ar15_kac_qd_compensator_556x45",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56d5a2bbd2720bb8418b456a",
+    "name": "Пистолетная рукоятка Sig Sauer черн. полимер для P226",
+    "weight": 2.1,
+    "price": 4900
+   },
+   {
+    "id": "57cff947245977638e6f2a19",
+    "name": "handguard_ak_magpul_moe_ak_blk",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffd8224597763b03fc609",
+    "name": "handguard_ak_magpul_moe_ak_fde",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffddc24597763133760c6",
+    "name": "handguard_ak_magpul_moe_ak_od",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffe20245977632f391a9d",
+    "name": "handguard_ak_magpul_moe_ak_sg",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57c44f4f2459772d2c627113",
+    "name": "reciever_val_tochmash_val_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "578395402459774a256959b5",
+    "name": "reciever_vss_tochmash_vss_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "57d17c5e2459775a5c57d17d",
+    "name": "flashlight_ultrafire_WF-501B",
+    "weight": 1.9,
+    "price": 45120
+   },
+   {
+    "id": "57c44fa82459772d2d75e415",
+    "name": "pistolgrip_val_tochmash_val_std",
+    "weight": 1.9,
+    "price": 6200
+   },
+   {
+    "id": "544a378f4bdc2d30388b4567",
+    "name": "Магазин PMAG GEN M3 40 5.56х45 STANAG на 40 патронов",
+    "weight": 1.9,
+    "price": 6000
+   },
+   {
+    "id": "55d482194bdc2d1d4e8b456b",
+    "name": "Магазин 6Л31 5.45x39 для АК-74 и совместимых на 60 патронов",
+    "weight": 1.8,
+    "price": 7200
+   },
+   {
+    "id": "56d5a1f7d2720bb3418b456a",
+    "name": "Ствол 112мм для P226 9x19",
+    "weight": 1.8,
+    "price": 6860
+   },
+   {
+    "id": "544909bb4bdc2d6f028b4577",
+    "name": "Тактический блок AN/PEQ-15",
+    "weight": 1.8,
+    "price": 49258
+   },
+   {
+    "id": "55d45f484bdc2d972f8b456d",
+    "name": "Цевье Кастом МР-133 пластик для МР-133 с направляющими",
+    "weight": 1.7,
+    "price": 8200
+   },
+   {
+    "id": "55d485be4bdc2d962f8b456f",
+    "name": "Магазин ПМ/ППШ 9х18ПМ для ПМ на 84 патрона",
+    "weight": 1.6,
+    "price": 8500
+   },
+   {
+    "id": "571a26d524597720680fbe8a",
+    "name": "Ствол 116мм для ТТ 7.62х25 ТТ",
+    "weight": 1.6,
+    "price": 8400
+   },
+   {
+    "id": "56e05a6ed2720bd0748b4567",
+    "name": "Щечки ЦНИИ Точмаш Бакелитовые для ПБ",
+    "weight": 1.6,
+    "price": 9300
+   },
+   {
+    "id": "57da93632459771cb65bf83f",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 1.5,
+    "price": 74000
+   },
+   {
+    "id": "57655f7d2459777aa2064c85",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_dot",
+    "weight": 1.4,
+    "price": 12315
+   },
+   {
+    "id": "576697fd2459770ab2362162",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_s",
+    "weight": 1.4,
+    "price": 12316
+   },
+   {
+    "id": "571a28e524597720b4066567",
+    "name": "Глушитель кустарный 7.62х25 ТТ",
+    "weight": 1.4,
+    "price": 12000
+   },
+   {
+    "id": "55d4491a4bdc2d882f8b456e",
+    "name": "Ствол 510мм для МР-133 12к ",
+    "weight": 1.4,
+    "price": 12185
+   },
+   {
+    "id": "55d448594bdc2d8c2f8b4569",
+    "name": "Ствол 610мм для ружья МР-133 12к",
+    "weight": 1.4,
+    "price": 12200
+   },
+   {
+    "id": "5648b4534bdc2d3d1c8b4580",
+    "name": "Цевье Б-10М и Газоотводная трубка Б-19",
+    "weight": 1.4,
+    "price": 11100
+   },
+   {
+    "id": "570fd79bd2720bc7458b4583",
+    "name": "scope_all_ekb_okp7",
+    "weight": 1.3,
+    "price": 12850
+   },
+   {
+    "id": "5649d9a14bdc2d79388b4580",
+    "name": "sight_rear_ak_tactica_tula_tt01",
+    "weight": 1.3,
+    "price": 12650
+   },
+   {
+    "id": "560836484bdc2d20478b456e",
+    "name": "Ствол 540мм для МР-133 12к ",
+    "weight": 1.3,
+    "price": 12700
+   },
+   {
+    "id": "560837154bdc2da74d8b4568",
+    "name": "Ствол 660мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.3,
+    "price": 12501
+   },
+   {
+    "id": "5608373c4bdc2dc8488b4570",
+    "name": "Ствол 710мм для ружья МР-133 12к",
+    "weight": 1.3,
+    "price": 14123
+   },
+   {
+    "id": "56deec93d2720bec348b4568",
+    "name": "Ствол 750мм для ружья МР-153 12к",
+    "weight": 1.3,
+    "price": 14180
+   },
+   {
+    "id": "5649af884bdc2d1b2b8b4589",
+    "name": "Крышка ствольной коробки Зенит Б-33 для АК-74",
+    "weight": 1.2,
+    "price": 15200
+   },
+   {
+    "id": "56eabf3bd2720b75698b4569",
+    "name": "Приклад MOE Carbine",
+    "weight": 1.2,
+    "price": 14840
+   },
+   {
+    "id": "55d35ee94bdc2d61338b4568",
+    "name": "Ствол 260мм для AR-15 и совместимых 5.56х45",
+    "weight": 1.2,
+    "price": 15130
+   },
+   {
+    "id": "560836b64bdc2d57468b4567",
+    "name": "Ствол 540мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.2,
+    "price": 14900
+   },
+   {
+    "id": "560837824bdc2d57468b4568",
+    "name": "Ствол 750мм для ружья МР-133 12к",
+    "weight": 1.2,
+    "price": 15161
+   },
+   {
+    "id": "55f84c3c4bdc2d5f408b4576",
+    "name": "Цевье Daniel Defence RIS II 9.5 для AR-15 и совместимых",
+    "weight": 1.2,
+    "price": 15600
+   },
+   {
+    "id": "5608379a4bdc2d26448b4569",
+    "name": "Ствол 750мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.1,
+    "price": 18180
+   },
+   {
+    "id": "571a279b24597720b4066566",
+    "name": "Ствол кустарный 116мм с резьбой для ТТ 7.62х25 ТТ",
+    "weight": 1.1,
+    "price": 18720
+   },
+   {
+    "id": "570fd721d2720bc5458b4596",
+    "name": "Walther MRS",
+    "weight": 1.0,
+    "price": 21570
+   },
+   {
+    "id": "558022b54bdc2dac148b458d",
+    "name": "scope_all_eotech_exps3",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "576697f22459770ab53cf5f6",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_penek",
+    "weight": 1.0,
+    "price": 22324
+   },
+   {
+    "id": "57486e672459770abd687134",
+    "name": "scope_dovetail_ekb_okp7_dovetail",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "544a3f024bdc2d1d388b4568",
+    "name": "Оптический прицел ELCAN Specter OS4x",
+    "weight": 1.0,
+    "price": 22120
+   },
+   {
+    "id": "55d449444bdc2d962f8b456d",
+    "name": "Ствол 610мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.0,
+    "price": 23103
+   },
+   {
+    "id": "56def37dd2720bec348b456a",
+    "name": "Тактический фонарь X400",
+    "weight": 1.0,
+    "price": 24355
+   },
+   {
+    "id": "560836fb4bdc2d773f8b4569",
+    "name": "Ствол 660мм для ружья МР-133 12к",
+    "weight": 0.9,
+    "price": 31105
+   },
+   {
+    "id": "5648ae314bdc2d3d1c8b457f",
+    "name": "Цевье CAA RS47 для AK и совместимых",
+    "weight": 0.9,
+    "price": 26100
+   },
+   {
+    "id": "57ae0171245977343c27bfcf",
+    "name": "scope_all_belomo_pk_06",
+    "weight": 0.8,
+    "price": 35310
+   },
+   {
+    "id": "544a39de4bdc2d24388b4567",
+    "name": "scope_all_leupold_deltapoint",
+    "weight": 0.8,
+    "price": 31327
+   },
+   {
+    "id": "577d141e24597739c5255e01",
+    "name": "scope_base_burris_fast_fire_3",
+    "weight": 0.8,
+    "price": 31404
+   },
+   {
+    "id": "57f3c8cc2459773ec4480328",
+    "name": "silencer_pp-91-01_zmz_kedr_b_std_9x18pm",
+    "weight": 0.8,
+    "price": 35600
+   },
+   {
+    "id": "55d3632e4bdc2d972f8b4569",
+    "name": "Ствол 370мм для AR-15 и совместимых 5.56х45",
+    "weight": 0.8,
+    "price": 31150
+   },
+   {
+    "id": "558032574bdc2d89578b458a",
+    "name": "Тактическая рукоятка Magpul AFG",
+    "weight": 0.8,
+    "price": 36000
+   },
+   {
+    "id": "560d3b2d4bdc2d773f8b4573",
+    "name": "scope_all_aimpoint_micro_h1_high",
+    "weight": 0.7,
+    "price": 52570
+   },
+   {
+    "id": "570fd6c2d2720bc6458b457f",
+    "name": "scope_all_eotech_553",
+    "weight": 0.7,
+    "price": 40225
+   },
+   {
+    "id": "56e05b06d2720bb2668b4586",
+    "name": "Глушитель штатный ПБ 9х18 ПМ",
+    "weight": 0.7,
+    "price": 45400
+   },
+   {
+    "id": "560837544bdc2de22e8b456e",
+    "name": "Ствол 710мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 0.7,
+    "price": 41158
+   },
+   {
+    "id": "544a3a774bdc2d3a388b4567",
+    "name": "scope_all_leupold_mark4_hamr",
+    "weight": 0.6,
+    "price": 60730
+   },
+   {
+    "id": "57ffb0e42459777d047111c5",
+    "name": "silencer_aks74u_tochmash_pbs-4_545x39",
+    "weight": 0.6,
+    "price": 53930
+   },
+   {
+    "id": "57dbb57e2459774673234890",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "57838c962459774a1651ec63",
+    "name": "silencer_vss_tochmash_std_9x39",
+    "weight": 0.6,
+    "price": 57000
+   },
+   {
+    "id": "55d614004bdc2d86028b4568",
+    "name": "Глушитель Surefire SOCOM556-MONSTER 5.56х45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "564caa3d4bdc2d17108b458e",
+    "name": "Глушитель Пламегаситель ТГП-А 5.45х39",
+    "weight": 0.6,
+    "price": 63930
+   },
+   {
+    "id": "57c44dd02459772d2e0ae249",
+    "name": "silencer_val_tochmash_std_9x39",
+    "weight": 0.5,
+    "price": 88000
+   },
+   {
+    "id": "55d6190f4bdc2d87028b4567",
+    "name": "Глушитель Surefire SOCOM556-MINI MONSTER 5.56х45",
+    "weight": 0.5,
+    "price": 89000
+   },
+   {
+    "id": "576fd4ec2459777f0b518431",
+    "name": "scope_dovetail_belomo_pso_1m2-1_4×24",
+    "weight": 0.3,
+    "price": 234407
+   }
+  ],
+  "default": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347d3d245977448f7b7f61",
+    "name": "Bread crackers",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "5448ff904bdc2d6f028b456e",
+    "name": "Crackers",
+    "weight": 100,
+    "price": 100
+   },
+   {
+    "id": "5751487e245977207e26a315",
+    "name": "Emelya",
+    "weight": 95,
+    "price": 110
+   },
+   {
+    "id": "57347d90245977448f7b7f65",
+    "name": "Oat flakes pack",
+    "weight": 89,
+    "price": 125
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "544fb6cc4bdc2d34748b456e",
+    "name": "Батончик slippers",
+    "weight": 79,
+    "price": 160
+   },
+   {
+    "id": "57347d9c245977448b40fa85",
+    "name": "Can of herring",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5448fee04bdc2dbc018b4567",
+    "name": "Water",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "57347d692459774491567cf1",
+    "name": "Can of green peas",
+    "weight": 63,
+    "price": 250
+   },
+   {
+    "id": "57347d5f245977448b40fa81",
+    "name": "Can of pink salmon",
+    "weight": 56,
+    "price": 320
+   },
+   {
+    "id": "57347d8724597744596b4e76",
+    "name": "Can of squash caviar",
+    "weight": 53,
+    "price": 350
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5673de654bdc2d180f8b456d",
+    "name": "Can of Pacific Saury",
+    "weight": 47,
+    "price": 450
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "57347d7224597744596b4e72",
+    "name": "Can of beef",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57347da92459774491567cf5",
+    "name": "Can of beef stew",
+    "weight": 39,
+    "price": 650
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "57505f6224597709a92585a9",
+    "name": "Chocolate bar",
+    "weight": 33,
+    "price": 913
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "5755356824597772cb798962",
+    "name": "AI-2 medikit",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "544fb62a4bdc2dfb738b4568",
+    "name": "Пачка армейского сока (яблочный)",
+    "weight": 25,
+    "price": 250
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5751435d24597720a27126d1",
+    "name": "Max energy",
+    "weight": 17,
+    "price": 570
+   },
+   {
+    "id": "57514643245977207f2c2d09",
+    "name": "TarCola",
+    "weight": 17,
+    "price": 530
+   },
+   {
+    "id": "5751496424597720a27126da",
+    "name": "Hot rod",
+    "weight": 16,
+    "price": 660
+   },
+   {
+    "id": "575146b724597720a27126d5",
+    "name": "Carton of milk",
+    "weight": 15,
+    "price": 700
+   },
+   {
+    "id": "57513f07245977207e26a311",
+    "name": "Apple juice",
+    "weight": 14,
+    "price": 790
+   },
+   {
+    "id": "57513fcc24597720a31c09a6",
+    "name": "Vita juice",
+    "weight": 13,
+    "price": 920
+   },
+   {
+    "id": "57513f9324597720a7128161",
+    "name": "Grand juice",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "575062b524597720a31c09a1",
+    "name": "Green Ice",
+    "weight": 12,
+    "price": 1120
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "544fb3f34bdc2d03748b456a",
+    "name": "Шприц с морфином",
+    "weight": 6.3,
+    "price": 4000
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "544fb45d4bdc2dee738b4568",
+    "name": "Salewa FIRST AID KIT",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "6af8d1a595b1df23c4ec96df",
+    "name": "Grizzly First Aid Kit",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   }
+  ],
+  "loose": [
+   {
+    "id": "57347c5b245977448d35f6e1",
+    "name": "Bolts",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c77245977448d35f6e2",
+    "name": "Screw nut",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "57347c93245977448d35f6e3",
+    "name": "toothpaste",
+    "weight": 141,
+    "price": 50
+   },
+   {
+    "id": "573722e82459776104581c21",
+    "name": "ammo_box_9x18pm_16_BZT_gzh",
+    "weight": 135,
+    "price": 55
+   },
+   {
+    "id": "5755383e24597772cb798966",
+    "name": "Vaseline",
+    "weight": 129,
+    "price": 60
+   },
+   {
+    "id": "57347d3d245977448f7b7f61",
+    "name": "Bread crackers",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "57372ebf2459776862260582",
+    "name": "ammo_box_545x39_30_PS",
+    "weight": 105,
+    "price": 90
+   },
+   {
+    "id": "5448ff904bdc2d6f028b456e",
+    "name": "Crackers",
+    "weight": 100,
+    "price": 100
+   },
+   {
+    "id": "5751487e245977207e26a315",
+    "name": "Emelya",
+    "weight": 95,
+    "price": 110
+   },
+   {
+    "id": "57347d90245977448f7b7f65",
+    "name": "Oat flakes pack",
+    "weight": 89,
+    "price": 125
+   },
+   {
+    "id": "5737339e2459776af261abeb",
+    "name": "ammo_box_545x39_30_bpz_hp",
+    "weight": 89,
+    "price": 126
+   },
+   {
+    "id": "56dff3afd2720bba668b4567",
+    "name": "patron_545x39_PS",
+    "weight": 89,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5737330a2459776af32363a1",
+    "name": "ammo_box_545x39_30_bpz_fmj",
+    "weight": 83,
+    "price": 144
+   },
+   {
+    "id": "57347cf924597744902c94a2",
+    "name": "Dog tag",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347c1124597737fb1379e3",
+    "name": "Duct tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57347b8b24597737dd42e192",
+    "name": "Matches",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "5734795124597738002c6176",
+    "name": "insulating tape",
+    "weight": 82,
+    "price": 150
+   },
+   {
+    "id": "57372f5c24597769917c0131",
+    "name": "ammo_box_545x39_30_T",
+    "weight": 79,
+    "price": 162
+   },
+   {
+    "id": "544fb6cc4bdc2d34748b456e",
+    "name": "Батончик slippers",
+    "weight": 79,
+    "price": 160
+   },
+   {
+    "id": "5737260b24597761224311f2",
+    "name": "ammo_box_9x18pm_16_PPT_gzh",
+    "weight": 78,
+    "price": 165
+   },
+   {
+    "id": "573727c624597765cc785b5b",
+    "name": "ammo_box_9x18pm_16_PST_gzh",
+    "weight": 75,
+    "price": 176
+   },
+   {
+    "id": "573733c72459776b0b7b51b0",
+    "name": "ammo_box_545x39_30_bpz_sp",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "5737250c2459776125652acc",
+    "name": "ammo_box_9x18pm_16_PBM",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "5737266524597761006c6a8c",
+    "name": "ammo_box_9x18pm_16_PRS_gs",
+    "weight": 71,
+    "price": 198
+   },
+   {
+    "id": "56dff0bed2720bb0668b4567",
+    "name": "patron_545x39_FMJ",
+    "weight": 71,
+    "price": 8,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5739d41224597779c3645501",
+    "name": "ammo_box_9x19_default",
+    "weight": 69,
+    "price": 209
+   },
+   {
+    "id": "57347d9c245977448b40fa85",
+    "name": "Can of herring",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5448fee04bdc2dbc018b4567",
+    "name": "Water",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "573724b42459776125652ac2",
+    "name": "ammo_box_9x18pm_16_P_gzh",
+    "weight": 67,
+    "price": 220
+   },
+   {
+    "id": "5737273924597765dd374461",
+    "name": "ammo_box_9x18pm_16_PSO_gzh",
+    "weight": 66,
+    "price": 231
+   },
+   {
+    "id": "57347d692459774491567cf1",
+    "name": "Can of green peas",
+    "weight": 63,
+    "price": 250
+   },
+   {
+    "id": "57372c89245977685d4159b1",
+    "name": "ammo_box_545x39_30_BT",
+    "weight": 63,
+    "price": 252
+   },
+   {
+    "id": "57372db0245977685d4159b2",
+    "name": "ammo_box_545x39_30_PP",
+    "weight": 63,
+    "price": 252
+   },
+   {
+    "id": "5737287724597765e1625ae2",
+    "name": "ammo_box_9x18pm_RG028_gzh",
+    "weight": 62,
+    "price": 264
+   },
+   {
+    "id": "573726d824597765d96be361",
+    "name": "ammo_box_9x18pm_16_PS_gs_PPO",
+    "weight": 57,
+    "price": 308
+   },
+   {
+    "id": "57347d5f245977448b40fa81",
+    "name": "Can of pink salmon",
+    "weight": 56,
+    "price": 320
+   },
+   {
+    "id": "5737256c2459776125652acd",
+    "name": "ammo_box_9x18pm_16_PMM",
+    "weight": 55,
+    "price": 330
+   },
+   {
+    "id": "57347d8724597744596b4e76",
+    "name": "Can of squash caviar",
+    "weight": 53,
+    "price": 350
+   },
+   {
+    "id": "57372bd3245977670b7cd243",
+    "name": "ammo_box_545x39_30_BS",
+    "weight": 53,
+    "price": 360
+   },
+   {
+    "id": "5649ed104bdc2d3d1c8b458b",
+    "name": "ammo_box_762x39_20_PS",
+    "weight": 53,
+    "price": 351
+   },
+   {
+    "id": "56dff2ced2720bb4668b4567",
+    "name": "patron_545x39_PP",
+    "weight": 53,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57372e4a24597768553071c2",
+    "name": "ammo_box_545x39_30_PRS",
+    "weight": 51,
+    "price": 378
+   },
+   {
+    "id": "572b7d8524597762b472f9d1",
+    "name": "Cap",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "56742c284bdc2d98058b456d",
+    "name": "Crickent",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5737280e24597765cc785b5c",
+    "name": "ammo_box_9x18pm_16_PSV",
+    "weight": 50,
+    "price": 396
+   },
+   {
+    "id": "5649af094bdc2df8348b4586",
+    "name": "Крышка ствольной коробки Ижмаш для АК-74",
+    "weight": 50,
+    "price": 400
+   },
+   {
+    "id": "5673de654bdc2d180f8b456d",
+    "name": "Can of Pacific Saury",
+    "weight": 47,
+    "price": 450
+   },
+   {
+    "id": "573725b0245977612125bae2",
+    "name": "ammo_box_9x18pm_16_PPE_gzh",
+    "weight": 47,
+    "price": 462
+   },
+   {
+    "id": "56d59d3ad2720bdb418b4577",
+    "name": "9x19 Pst gzh",
+    "weight": 46,
+    "price": 19,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573475fb24597737fb1379e1",
+    "name": "Cigarettes Apollon Souz",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476d324597737da2adc13",
+    "name": "Cigarettes Malboro",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5734770f24597738025ee254",
+    "name": "Cigarettes Strike",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "573476f124597737e04bf328",
+    "name": "Cigarettes Winston",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5735ff5c245977640e39ba7e",
+    "name": "patron_762x25tt_FMJ43",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "573719762459775a626ccbc1",
+    "name": "patron_9x18pm_P_gzh",
+    "weight": 45,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f112459772d28133310",
+    "name": "pistolgrip_ar15_hogue_overmolded_gg",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5448c12b4bdc2d02308b456f",
+    "name": "Магазин 90-93 9х18ПМ для ПМ на 8 патронов",
+    "weight": 45,
+    "price": 500
+   },
+   {
+    "id": "5751a89d24597722aa0e8db0",
+    "name": "Golden Star Balm",
+    "weight": 44,
+    "price": 510
+   },
+   {
+    "id": "57371f8d24597761006c6a81",
+    "name": "patron_9x18pm_PSO_gzh",
+    "weight": 44,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347d7224597744596b4e72",
+    "name": "Can of beef",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "577e1c9d2459773cd707c525",
+    "name": "Copy & printer paper",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "57347cd0245977445a2d6ff1",
+    "name": "Power branch",
+    "weight": 43,
+    "price": 550
+   },
+   {
+    "id": "573728cc24597765cc785b5d",
+    "name": "ammo_box_9x18pm_SP7_gzh",
+    "weight": 43,
+    "price": 539
+   },
+   {
+    "id": "573602322459776445391df1",
+    "name": "patron_762x25tt_LRNPC",
+    "weight": 42,
+    "price": 23,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5780cf722459777a5108b9a1",
+    "name": "Room 308 Key",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "5649aa744bdc2ded0b8b457e",
+    "name": "Дульный тормоз компенсатор Ижмаш 5.45x39 для АК-74",
+    "weight": 41,
+    "price": 600
+   },
+   {
+    "id": "56742c2e4bdc2d95058b456d",
+    "name": "Zibbo lighter",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57cffe0024597763b03fc60b",
+    "name": "handguard_ak_magpul_moe_ak_plm",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "5648b0744bdc2d363b8b4578",
+    "name": "Цевье деревянное для AK-74",
+    "weight": 40,
+    "price": 100
+   },
+   {
+    "id": "57347da92459774491567cf5",
+    "name": "Can of beef stew",
+    "weight": 39,
+    "price": 650
+   },
+   {
+    "id": "5656d7c34bdc2d9d198b4587",
+    "name": "7.62x39 PS",
+    "weight": 38,
+    "price": 27,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371f2b24597761224311f1",
+    "name": "patron_9x18pm_PS_gs_PPO",
+    "weight": 38,
+    "price": 28,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "54527ac44bdc2d36668b4567",
+    "name": "5.56x45 мм M193 FMJ",
+    "weight": 37,
+    "price": 30,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5737300424597769942d5a01",
+    "name": "ammo_box_545x39_30_US",
+    "weight": 37,
+    "price": 720
+   },
+   {
+    "id": "573728f324597765e5728561",
+    "name": "ammo_box_9x18pm_SP8_gzh",
+    "weight": 37,
+    "price": 748
+   },
+   {
+    "id": "573718ba2459775a75491131",
+    "name": "patron_9x18pm_BZT_gzh",
+    "weight": 36,
+    "price": 5,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5751a25924597722c463c472",
+    "name": "Army bandage",
+    "weight": 35,
+    "price": 830
+   },
+   {
+    "id": "5649b1c04bdc2d16268b457c",
+    "name": "Приклад Ижмаш деревянный для АК-74",
+    "weight": 35,
+    "price": 130
+   },
+   {
+    "id": "544fb25a4bdc2dfb738b4567",
+    "name": "Бинт стерильный",
+    "weight": 34,
+    "price": 880
+   },
+   {
+    "id": "57505f6224597709a92585a9",
+    "name": "Chocolate bar",
+    "weight": 33,
+    "price": 913
+   },
+   {
+    "id": "571a282c2459771fb2755a69",
+    "name": "Щечки штатные для ТТ",
+    "weight": 33,
+    "price": 900
+   },
+   {
+    "id": "560d5e524bdc2d25448b4571",
+    "name": "12x70 Картечь",
+    "weight": 32,
+    "price": 50,
+    "count": [
+     10,
+     30
+    ]
+   },
+   {
+    "id": "57dc324a24597759501edc20",
+    "name": "muzzle_aks74u_izhmash_std_545x39",
+    "weight": 32,
+    "price": 1000
+   },
+   {
+    "id": "5447ac644bdc2d6c208b4567",
+    "name": "ammo_box_556x45_xx_m193ball",
+    "weight": 30,
+    "price": 1080
+   },
+   {
+    "id": "56dff216d2720bbd668b4568",
+    "name": "patron_545x39_HP",
+    "weight": 30,
+    "price": 7,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5649ade84bdc2d1b2b8b4587",
+    "name": "Пистолетная рукоятка Ижмаш Полимер для АК-74",
+    "weight": 30,
+    "price": 1100
+   },
+   {
+    "id": "55d4b9964bdc2d1d4e8b456e",
+    "name": "Пистолетная рукоятка Colt A2 для AR-15 совместимых",
+    "weight": 29,
+    "price": 1200
+   },
+   {
+    "id": "5672cb124bdc2d1a0f8b4568",
+    "name": "AA Battery",
+    "weight": 28,
+    "price": 1250
+   },
+   {
+    "id": "5736026a245977644601dc61",
+    "name": "patron_762x25tt_P_Gl",
+    "weight": 28,
+    "price": 50,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544fb37f4bdc2dee738b4567",
+    "name": "Таблетки Анальгин",
+    "weight": 28,
+    "price": 1260
+   },
+   {
+    "id": "56083eab4bdc2d26448b456a",
+    "name": "Противомиражная лента СВ-98",
+    "weight": 27,
+    "price": 1350
+   },
+   {
+    "id": "54527a984bdc2d4e668b4567",
+    "name": "5.56x45 мм M193 Ball",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "m995",
+    "name": "5.56x45 мм M995",
+    "weight": 26,
+    "price": 60,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5755356824597772cb798962",
+    "name": "AI-2 medikit",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5780d07a2459777de4559324",
+    "name": "Bus park key",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "5672cb304bdc2dc2088b456a",
+    "name": "D Battery",
+    "weight": 26,
+    "price": 1530
+   },
+   {
+    "id": "572b7fa124597762b472f9d2",
+    "name": "Knitcap",
+    "weight": 26,
+    "price": 240
+   },
+   {
+    "id": "57af48872459771f0b2ebf11",
+    "name": "pistolgrip_ar15_hogue_overmolded_fde",
+    "weight": 26,
+    "price": 1500
+   },
+   {
+    "id": "544fb62a4bdc2dfb738b4568",
+    "name": "Пачка армейского сока (яблочный)",
+    "weight": 25,
+    "price": 250
+   },
+   {
+    "id": "571659bb2459771fb2755a12",
+    "name": "Пистолетная рукоятка DI ECS FDE для AR-15 совместимых",
+    "weight": 25,
+    "price": 1600
+   },
+   {
+    "id": "5649b0fc4bdc2d17108b4588",
+    "name": "Приклад Ижмаш полимерный для АК-74",
+    "weight": 25,
+    "price": 260
+   },
+   {
+    "id": "57347baf24597738002c6178",
+    "name": "RAM",
+    "weight": 24,
+    "price": 1750
+   },
+   {
+    "id": "56dff421d2720b5f5a8b4567",
+    "name": "patron_545x39_SP",
+    "weight": 24,
+    "price": 11,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "564ca99c4bdc2d16268b4589",
+    "name": "Магазин 6Л20 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 24,
+    "price": 1700
+   },
+   {
+    "id": "5648b1504bdc2d9d488b4584",
+    "name": "Цевье пполимерное для AK-74",
+    "weight": 24,
+    "price": 280
+   },
+   {
+    "id": "55d4887d4bdc2d962f8b4570",
+    "name": "Магазин Colt AR-15 5.56x45 STANAG на 30 патронов",
+    "weight": 23,
+    "price": 1900
+   },
+   {
+    "id": "557ff21e4bdc2d89578b4586",
+    "name": "Tactical glasses",
+    "weight": 22,
+    "price": 340
+   },
+   {
+    "id": "57371e4124597760ff7b25f1",
+    "name": "patron_9x18pm_PPT_gzh",
+    "weight": 21,
+    "price": 15,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a38634bdc2d58388b4568",
+    "name": "Пламегаситель Colt USGI A2 5.56x45 для AR-15",
+    "weight": 21,
+    "price": 2305
+   },
+   {
+    "id": "544fb3364bdc2d34748b456a",
+    "name": "Шина",
+    "weight": 21,
+    "price": 2225
+   },
+   {
+    "id": "5780cf9e2459777df90dcb73",
+    "name": "Room 218 Key",
+    "weight": 20,
+    "price": 2530
+   },
+   {
+    "id": "57372fc52459776998772ca1",
+    "name": "ammo_box_545x39_120_US_damaged",
+    "weight": 20,
+    "price": 2520
+   },
+   {
+    "id": "57616a9e2459773c7a400234",
+    "name": "mag_saiga12_izhmash_Sb5_12x76_5",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "5737201124597760fc4431f1",
+    "name": "patron_9x18pm_PST_gzh",
+    "weight": 20,
+    "price": 16,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55efc2459772d2c6271e7",
+    "name": "pistolgrip_ar15_hogue_overmolded_blk",
+    "weight": 20,
+    "price": 2500
+   },
+   {
+    "id": "56deee15d2720bee328b4567",
+    "name": "Заглушка магазина МР-153 12к для МР-153",
+    "weight": 20,
+    "price": 400
+   },
+   {
+    "id": "576a7c512459771e796e0e17",
+    "name": "mount_mp443_zenit_b8",
+    "weight": 19,
+    "price": 2687
+   },
+   {
+    "id": "55d480c04bdc2d1d4e8b456a",
+    "name": "Магазин 6Л23 5.45x39 для АК-74 и совместимых на 30 патронов",
+    "weight": 19,
+    "price": 2700
+   },
+   {
+    "id": "57347c2e24597744902c94a1",
+    "name": "Power supply",
+    "weight": 18,
+    "price": 3050
+   },
+   {
+    "id": "5751435d24597720a27126d1",
+    "name": "Max energy",
+    "weight": 17,
+    "price": 570
+   },
+   {
+    "id": "57514643245977207f2c2d09",
+    "name": "TarCola",
+    "weight": 17,
+    "price": 530
+   },
+   {
+    "id": "56dff338d2720bbd668b4569",
+    "name": "patron_545x39_PRS",
+    "weight": 17,
+    "price": 21,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c55f092459772d291a8463",
+    "name": "pistolgrip_ar15_hogue_overmolded_ge",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57c55f172459772d27602381",
+    "name": "pistolgrip_ar15_hogue_overmolded_od",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "57616c112459773cce774d66",
+    "name": "reciever_saiga12_izhmash_saiga12k_10_std",
+    "weight": 17,
+    "price": 3600
+   },
+   {
+    "id": "56d5a407d2720bb3418b456b",
+    "name": "Затвор Sig P226R 9x19 для пистолета P226",
+    "weight": 17,
+    "price": 3500
+   },
+   {
+    "id": "56083cba4bdc2de22e8b456f",
+    "name": "Приклад деревянный МР-133/153",
+    "weight": 17,
+    "price": 3284
+   },
+   {
+    "id": "5751496424597720a27126da",
+    "name": "Hot rod",
+    "weight": 16,
+    "price": 660
+   },
+   {
+    "id": "575146b724597720a27126d5",
+    "name": "Carton of milk",
+    "weight": 15,
+    "price": 700
+   },
+   {
+    "id": "5780cf692459777de4559321",
+    "name": "Room 315 Key",
+    "weight": 15,
+    "price": 4350
+   },
+   {
+    "id": "5649a2464bdc2d91118b45a8",
+    "name": "mount_all_ncstar_mpr45",
+    "weight": 15,
+    "price": 4740
+   },
+   {
+    "id": "57616ca52459773c69055192",
+    "name": "stock_saiga12",
+    "weight": 15,
+    "price": 670
+   },
+   {
+    "id": "57513f07245977207e26a311",
+    "name": "Apple juice",
+    "weight": 14,
+    "price": 790
+   },
+   {
+    "id": "57a349b2245977762b199ec7",
+    "name": "Factory office ",
+    "weight": 14,
+    "price": 5100
+   },
+   {
+    "id": "572b7fa524597762b747ce82",
+    "name": "Mask",
+    "weight": 14,
+    "price": 800
+   },
+   {
+    "id": "56ea8222d2720b69698b4567",
+    "name": "Сошки Ижмаш СВ-98",
+    "weight": 14,
+    "price": 5200
+   },
+   {
+    "id": "5780d0532459777a5108b9a2",
+    "name": "Office key",
+    "weight": 13,
+    "price": 6100
+   },
+   {
+    "id": "5780cf942459777df90dcb72",
+    "name": "Room 214 Key",
+    "weight": 13,
+    "price": 5730
+   },
+   {
+    "id": "5780cfa52459777dfb276eb1",
+    "name": "Room 220 Key",
+    "weight": 13,
+    "price": 5560
+   },
+   {
+    "id": "5780cda02459777b272ede61",
+    "name": "Room 306 Key",
+    "weight": 13,
+    "price": 5780
+   },
+   {
+    "id": "57513fcc24597720a31c09a6",
+    "name": "Vita juice",
+    "weight": 13,
+    "price": 920
+   },
+   {
+    "id": "55d48a634bdc2d8b2f8b456a",
+    "name": "mount_all_custom_top_rail_13",
+    "weight": 13,
+    "price": 5930
+   },
+   {
+    "id": "57e26fc7245977162a14b800",
+    "name": "weapon_bars_a-2607_95x18",
+    "weight": 13,
+    "price": 1000
+   },
+   {
+    "id": "57e26ea924597715ca604a09",
+    "name": "weapon_bars_a-2607_damask",
+    "weight": 13,
+    "price": 1000
+   },
+   {
+    "id": "560e620e4bdc2d724b8b456b",
+    "name": "Надульное устройство СВ-98",
+    "weight": 13,
+    "price": 5700
+   },
+   {
+    "id": "57513f9324597720a7128161",
+    "name": "Grand juice",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "575062b524597720a31c09a1",
+    "name": "Green Ice",
+    "weight": 12,
+    "price": 1120
+   },
+   {
+    "id": "5735fdcd2459776445391d61",
+    "name": "patron_762x25tt_akbs",
+    "weight": 12,
+    "price": 44,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d484b44bdc2d1d4e8b456d",
+    "name": "Магазин МР-133х6 12к для МР-133 на 6 патронов",
+    "weight": 12,
+    "price": 1200
+   },
+   {
+    "id": "5734773724597737fd047c14",
+    "name": "Condensed milk",
+    "weight": 11,
+    "price": 8500
+   },
+   {
+    "id": "5780cf7f2459777de4559322",
+    "name": "Room M",
+    "weight": 11,
+    "price": 8120
+   },
+   {
+    "id": "577d128124597739d65d0e56",
+    "name": "mount_all_burris_fast_fire_weaver",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "57d17e212459775a1179a0f5",
+    "name": "mount_all_noname_25mm_ring",
+    "weight": 11,
+    "price": 8780
+   },
+   {
+    "id": "55d48ebc4bdc2d8c2f8b456c",
+    "name": "mount_mr133_deltatech_sprut",
+    "weight": 11,
+    "price": 8754
+   },
+   {
+    "id": "573603562459776430731618",
+    "name": "patron_762x25tt_Pst_gzh",
+    "weight": 11,
+    "price": 54,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57dc347d245977596754e7a1",
+    "name": "stock_aks74u_izhmash_aks74u_std",
+    "weight": 11,
+    "price": 1260
+   },
+   {
+    "id": "57f3a5ae2459772b0e0bf19e",
+    "name": "tactical_pso_belomo_eyecup",
+    "weight": 11,
+    "price": 1258
+   },
+   {
+    "id": "5649ab884bdc2ded0b8b457f",
+    "name": "Дульный тормоз компенсатор Зенит ДТК-1 7.62х39 и 5.45x39 для АК",
+    "weight": 11,
+    "price": 8200
+   },
+   {
+    "id": "572b7f1624597762ae139822",
+    "name": "Balaclava",
+    "weight": 10,
+    "price": 1600
+   },
+   {
+    "id": "573478bc24597738002c6175",
+    "name": "Horse statue",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "57dc32dc245977596d4ef3d3",
+    "name": "handguard_aks74u_izhmash_aks74u_std_wood",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "576a5ed62459771e9c2096cb",
+    "name": "mag_mp443_izhmeh_std_9x19_18",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56d59948d2720bb7418b4582",
+    "name": "Магазин стандартный 9х19 для P226 на 15 патронов",
+    "weight": 10,
+    "price": 1500
+   },
+   {
+    "id": "56083be64bdc2d20478b456f",
+    "name": "Приклад пластиковый МР-133/153",
+    "weight": 9.7,
+    "price": 1700
+   },
+   {
+    "id": "56dfef82d2720bbd668b4567",
+    "name": "patron_545x39_BP",
+    "weight": 9.5,
+    "price": 10,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5733279d245977289b77ec24",
+    "name": "Auto battery",
+    "weight": 9.4,
+    "price": 11300
+   },
+   {
+    "id": "5780d0652459777df90dcb74",
+    "name": "Gasstation director",
+    "weight": 9.1,
+    "price": 12100
+   },
+   {
+    "id": "560d61e84bdc2da74d8b4571",
+    "name": "7.62х54R SNB",
+    "weight": 8.9,
+    "price": 500,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c69dd424597774c03b7bbc",
+    "name": "mount_all_lobaev_dvl_std",
+    "weight": 8.8,
+    "price": 12780
+   },
+   {
+    "id": "57e3dba62459770f0c32322b",
+    "name": "pistolgrip_ak_izhmash_aks74u_std",
+    "weight": 8.3,
+    "price": 2300
+   },
+   {
+    "id": "5734781f24597737e04bf32a",
+    "name": "DVD rom",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "5734779624597737e04bf329",
+    "name": "PC cooler",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "57d14e1724597714010c3f4b",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_20",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "56dff061d2720bb5668b4567",
+    "name": "patron_545x39_BT",
+    "weight": 8.0,
+    "price": 14,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "571a29dc2459771fb2755a6a",
+    "name": "Магазин стандартный 7.62х25 ТТ для ТТ на 8 патронов",
+    "weight": 8.0,
+    "price": 2500
+   },
+   {
+    "id": "58272b842459774abc128d50",
+    "name": "sight_rear_saiga_css_sight_rail_mount",
+    "weight": 7.8,
+    "price": 370
+   },
+   {
+    "id": "564ca9df4bdc2d35148b4569",
+    "name": "Магазин 6Л18 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 7.7,
+    "price": 2700
+   },
+   {
+    "id": "5448ba0b4bdc2d02308b456c",
+    "name": "Ключ от выхода с завода",
+    "weight": 7.4,
+    "price": 18100
+   },
+   {
+    "id": "5656eb674bdc2d35148b457c",
+    "name": "40 мм ВОГ-25",
+    "weight": 7.1,
+    "price": 2000,
+    "count": [
+     10,
+     10
+    ]
+   },
+   {
+    "id": "573719df2459775a626ccbc2",
+    "name": "patron_9x18pm_PBM",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57371eb62459776125652ac1",
+    "name": "patron_9x18pm_PRS_gs",
+    "weight": 7.1,
+    "price": 18,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d4837c4bdc2d1d4e8b456c",
+    "name": "Магазин Сайга 545 5.45x39 для АК-74 и совместимых на 10 патронов",
+    "weight": 7.0,
+    "price": 3300
+   },
+   {
+    "id": "56ea6fafd2720b844b8b4593",
+    "name": "Пламегаситель Noveske KX3 5.56x45",
+    "weight": 6.9,
+    "price": 21200
+   },
+   {
+    "id": "56dff026d2720bb8668b4567",
+    "name": "patron_545x39_BS",
+    "weight": 6.7,
+    "price": 20,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5448c1d04bdc2dff2f8b4569",
+    "name": "Магазин PMAG GEN M3 20 5.56x45 STANAG на 20 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "55802d5f4bdc2dac148b458e",
+    "name": "Магазин PMAG GEN M3 30 5.56x45 STANAG на 30 патронов",
+    "weight": 6.6,
+    "price": 3700
+   },
+   {
+    "id": "544fb3f34bdc2d03748b456a",
+    "name": "Шприц с морфином",
+    "weight": 6.3,
+    "price": 4000
+   },
+   {
+    "id": "573720e02459776143012541",
+    "name": "patron_9x18pm_RG028_gzh",
+    "weight": 6.1,
+    "price": 24,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57347ca924597744596b4e71",
+    "name": "Video card",
+    "weight": 5.9,
+    "price": 28500
+   },
+   {
+    "id": "56ea7165d2720b6e518b4583",
+    "name": "charge_ar15_badger_ordnance_tactical_latch",
+    "weight": 5.8,
+    "price": 660
+   },
+   {
+    "id": "576169e62459773c69055191",
+    "name": "handguard_saiga12_izhmash_saiga12k_10_std",
+    "weight": 5.8,
+    "price": 4800
+   },
+   {
+    "id": "57ffaea724597779f52b3a4d",
+    "name": "mount_all_zenit_b12",
+    "weight": 5.8,
+    "price": 4680
+   },
+   {
+    "id": "55d485804bdc2d8c2f8b456b",
+    "name": "Магазин МР-133х8 12к для МР-133 на 8 патронов",
+    "weight": 5.8,
+    "price": 4700
+   },
+   {
+    "id": "56deeefcd2720bc8328b4568",
+    "name": "Удлиннитель магазина МР-153 12к для МР-153 до 8 ми патронов",
+    "weight": 5.7,
+    "price": 700
+   },
+   {
+    "id": "57ee59b42459771c7b045da5",
+    "name": "mount_pp-91_rotor_43_kedr_ris",
+    "weight": 5.6,
+    "price": 31680
+   },
+   {
+    "id": "55d44fd14bdc2d962f8b456e",
+    "name": "Рукоятка заряжания Colt AR-15 для AR-15 и совместимых",
+    "weight": 5.6,
+    "price": 730
+   },
+   {
+    "id": "5672c92d4bdc2d180f8b4567",
+    "name": "Room 118 Key",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "5827272a24597748c74bdeea",
+    "name": "handguard_saiga12_utg_pro_mtu002_long_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "58272b392459774b4c7b3ccd",
+    "name": "handguard_saiga12_utg_pro_mtu002_short_top",
+    "weight": 5.5,
+    "price": 5200
+   },
+   {
+    "id": "57dc334d245977597164366f",
+    "name": "reciever_aks74u_izhmash_aks74u_std",
+    "weight": 5.4,
+    "price": 5400
+   },
+   {
+    "id": "55d45d3f4bdc2d972f8b456c",
+    "name": "Цевье Ижмех МР-133 Бук для МР-133",
+    "weight": 5.4,
+    "price": 5500
+   },
+   {
+    "id": "5648b6ff4bdc2d3d1c8b4581",
+    "name": "mount_ak_tactica_tula_10000",
+    "weight": 5.3,
+    "price": 5710
+   },
+   {
+    "id": "55d481904bdc2d8c2f8b456a",
+    "name": "Магазин 6Л26 5.45x39 для АК-74 и совместимых на 45 патронов",
+    "weight": 5.3,
+    "price": 5700
+   },
+   {
+    "id": "5649ad3f4bdc2df8348b4585",
+    "name": "Пистолетная рукоятка Ижмаш Бакелит для АК-74",
+    "weight": 5.3,
+    "price": 800
+   },
+   {
+    "id": "573601b42459776410737435",
+    "name": "patron_762x25tt_LRN",
+    "weight": 5.2,
+    "price": 33,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57c9a89124597704ee6faec1",
+    "name": " полимер для P226",
+    "weight": 5.0,
+    "price": 900
+   },
+   {
+    "id": "544fb45d4bdc2dee738b4568",
+    "name": "Salewa FIRST AID KIT",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "57a3459f245977764a01f703",
+    "name": "mount_vss_zenit_b3",
+    "weight": 5.0,
+    "price": 39680
+   },
+   {
+    "id": "5737207f24597760ff7b25f2",
+    "name": "patron_9x18pm_PSV",
+    "weight": 5.0,
+    "price": 36,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "55d355e64bdc2d962f8b4569",
+    "name": "Верхний ресивер Colt M4A1 5.56х45 для штурмовой винтовки M4A1",
+    "weight": 5.0,
+    "price": 6500
+   },
+   {
+    "id": "56deed6ed2720b4c698b4583",
+    "name": "Цевье Ижмех МР-153 Полимерное для МР-133",
+    "weight": 5.0,
+    "price": 6400
+   },
+   {
+    "id": "5448be9a4bdc2dfd2f8b456a",
+    "name": "Граната РГД-5",
+    "weight": 4.8,
+    "price": 7000
+   },
+   {
+    "id": "573603c924597764442bd9cb",
+    "name": "patron_762x25tt_T_Gzh",
+    "weight": 4.7,
+    "price": 40,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "544a37c44bdc2d25388b4567",
+    "name": "Магазин MAG5-60 5.56x45 STANAG на 60 патронов",
+    "weight": 4.7,
+    "price": 7200
+   },
+   {
+    "id": "57371b192459775a9f58a5e0",
+    "name": "patron_9x18pm_PPE_gzh",
+    "weight": 4.6,
+    "price": 42,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "56083a334bdc2dc8488b4571",
+    "name": "Пластиковая рукоятка МР-133/153",
+    "weight": 4.6,
+    "price": 7500
+   },
+   {
+    "id": "57372140245977611f70ee91",
+    "name": "patron_9x18pm_SP7_gzh",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0dfb82459774d3078b56c",
+    "name": "patron_9x39_sp5",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "57a0e5022459774d1673f889",
+    "name": "patron_9x39_sp6",
+    "weight": 4.3,
+    "price": 49,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "560d75f54bdc2da74d8b4573",
+    "name": "ammo_box_762x54r_xx_SNB",
+    "weight": 4.2,
+    "price": 9000
+   },
+   {
+    "id": "57ffb0062459777a045af529",
+    "name": "mount_all_zenit_b18",
+    "weight": 4.1,
+    "price": 9680
+   },
+   {
+    "id": "573474f924597738002c6174",
+    "name": "Neck chain",
+    "weight": 3.8,
+    "price": 11000
+   },
+   {
+    "id": "56eabcd4d2720b66698b4574",
+    "name": "gas_block_ar15_dd_mk12_low_profile",
+    "weight": 3.8,
+    "price": 1600
+   },
+   {
+    "id": "55d4ae6c4bdc2d8b2f8b456e",
+    "name": "Приклад High Standard M4SS",
+    "weight": 3.8,
+    "price": 11350
+   },
+   {
+    "id": "55d459824bdc2d892f8b4573",
+    "name": "Цевье Knight's Armament KAC RIS для AR-15 и совместимых",
+    "weight": 3.8,
+    "price": 11300
+   },
+   {
+    "id": "578395e82459774a0e553c7b",
+    "name": "stock_vss_tochmash_vss_std_wood",
+    "weight": 3.7,
+    "price": 11800
+   },
+   {
+    "id": "5649b2314bdc2d79388b4576",
+    "name": "Переходник ME для АК",
+    "weight": 3.7,
+    "price": 11530
+   },
+   {
+    "id": "57ffa9f4245977728561e844",
+    "name": "handguard_aks74u_zenit_b11",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "5737218f245977612125ba51",
+    "name": "patron_9x18pm_SP8_gzh",
+    "weight": 3.6,
+    "price": 68,
+    "count": [
+     10,
+     40
+    ]
+   },
+   {
+    "id": "5648b2414bdc2d3b4c8b4578",
+    "name": "Газоотводная трубка UltiMAK M1-B для АК",
+    "weight": 3.6,
+    "price": 12100
+   },
+   {
+    "id": "6af8d1a595b1df23c4ec96df",
+    "name": "Grizzly First Aid Kit",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "5710c24ad2720bc3458b45a3",
+    "name": "Граната Ф-1",
+    "weight": 3.3,
+    "price": 15000
+   },
+   {
+    "id": "576a63cd2459771e796e0e11",
+    "name": "pistolgrip_mp443_izmeh_mp443_std",
+    "weight": 3.2,
+    "price": 2200
+   },
+   {
+    "id": "57fd23e32459772d0805bcf1",
+    "name": "tactical_all_holosun_ls321",
+    "weight": 3.1,
+    "price": 16258
+   },
+   {
+    "id": "5672cb724bdc2dc2088b456b",
+    "name": "Geiger counter",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "573477e124597737dd42e191",
+    "name": "PC CPU",
+    "weight": 3.0,
+    "price": 17500
+   },
+   {
+    "id": "57c450252459772d28133253",
+    "name": "stock_val_tochmash_val_std",
+    "weight": 3.0,
+    "price": 17800
+   },
+   {
+    "id": "57cffb66245977632f391a99",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcd624597763133760c5",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffcdd24597763f5110006",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "57cffce524597763b31685d8",
+    "name": "foregrip_m-lok_magpul_m-lok_afg_blk",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "58272d7f2459774f6311ddfd",
+    "name": "muzzle_12g_red_heat_gk-02_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "576167ab2459773cad038c43",
+    "name": "muzzle_saiga12_izhmash_saiga12_std_12g",
+    "weight": 2.9,
+    "price": 2700
+   },
+   {
+    "id": "558032614bdc2de7118b4585",
+    "name": "Тактическая рукотяка Tango Down Stubby BGV-MK46K",
+    "weight": 2.9,
+    "price": 18500
+   },
+   {
+    "id": "560d657b4bdc2da74d8b4572",
+    "name": "tactical_all_zenit_2p_kleh_vis_laser",
+    "weight": 2.8,
+    "price": 20257
+   },
+   {
+    "id": "5648ac824bdc2ded0b8b457d",
+    "name": "Рукоятка затвора РП-1 для АК и совместимых",
+    "weight": 2.8,
+    "price": 2900
+   },
+   {
+    "id": "5649be884bdc2d79388b4577",
+    "name": "Труба приклада Colt",
+    "weight": 2.7,
+    "price": 21370
+   },
+   {
+    "id": "57d1519e24597714373db79d",
+    "name": "mag_pp-91_zmz_pp-91_std_9x18pm_30",
+    "weight": 2.5,
+    "price": 3500
+   },
+   {
+    "id": "57838f9f2459774a150289a0",
+    "name": "mag_vss_tochmash_6L25_9x39_20",
+    "weight": 2.5,
+    "price": 3700
+   },
+   {
+    "id": "56ea7293d2720b8d4b8b45ba",
+    "name": "sight_rear_p226_sight_mount_220-239",
+    "weight": 2.5,
+    "price": 26650
+   },
+   {
+    "id": "56ea8d2fd2720b7c698b4570",
+    "name": "gas_block_ar15_windham_weaponry_rail_gas_block",
+    "weight": 2.4,
+    "price": 4000
+   },
+   {
+    "id": "5649ae4a4bdc2d1b2b8b4588",
+    "name": "Пистолетная рукоятка Зенит РК-3 для АК",
+    "weight": 2.4,
+    "price": 3800
+   },
+   {
+    "id": "5734758f24597738025ee253",
+    "name": "Golden neck chain",
+    "weight": 2.2,
+    "price": 32000
+   },
+   {
+    "id": "57838f0b2459774a256959b2",
+    "name": "mag_vss_tochmash_6L24_9x39_10",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "57f3c7e024597738ea4ba286",
+    "name": "muzzle_pp-91-01_zmz_std_9x18pm",
+    "weight": 2.2,
+    "price": 4700
+   },
+   {
+    "id": "559ba5b34bdc2d1f1a8b4582",
+    "name": "Магазин полимерный 7.62х54R для СВ-98 на 10 патронов",
+    "weight": 2.2,
+    "price": 4500
+   },
+   {
+    "id": "56742c324bdc2d150f8b456d",
+    "name": "Broken GPhone",
+    "weight": 2.1,
+    "price": 35000
+   },
+   {
+    "id": "560838c94bdc2d77798b4569",
+    "name": "Remington Tactical Choke 12g",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56ea8180d2720bf2698b456a",
+    "name": "muzzle_ar15_kac_qd_compensator_556x45",
+    "weight": 2.1,
+    "price": 5200
+   },
+   {
+    "id": "56d5a2bbd2720bb8418b456a",
+    "name": "Пистолетная рукоятка Sig Sauer черн. полимер для P226",
+    "weight": 2.1,
+    "price": 4900
+   },
+   {
+    "id": "57cff947245977638e6f2a19",
+    "name": "handguard_ak_magpul_moe_ak_blk",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffd8224597763b03fc609",
+    "name": "handguard_ak_magpul_moe_ak_fde",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffddc24597763133760c6",
+    "name": "handguard_ak_magpul_moe_ak_od",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57cffe20245977632f391a9d",
+    "name": "handguard_ak_magpul_moe_ak_sg",
+    "weight": 2.0,
+    "price": 39100
+   },
+   {
+    "id": "57c44f4f2459772d2c627113",
+    "name": "reciever_val_tochmash_val_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "578395402459774a256959b5",
+    "name": "reciever_vss_tochmash_vss_std",
+    "weight": 2.0,
+    "price": 5700
+   },
+   {
+    "id": "57d17c5e2459775a5c57d17d",
+    "name": "flashlight_ultrafire_WF-501B",
+    "weight": 1.9,
+    "price": 45120
+   },
+   {
+    "id": "57c44fa82459772d2d75e415",
+    "name": "pistolgrip_val_tochmash_val_std",
+    "weight": 1.9,
+    "price": 6200
+   },
+   {
+    "id": "544a378f4bdc2d30388b4567",
+    "name": "Магазин PMAG GEN M3 40 5.56х45 STANAG на 40 патронов",
+    "weight": 1.9,
+    "price": 6000
+   },
+   {
+    "id": "55d482194bdc2d1d4e8b456b",
+    "name": "Магазин 6Л31 5.45x39 для АК-74 и совместимых на 60 патронов",
+    "weight": 1.8,
+    "price": 7200
+   },
+   {
+    "id": "56d5a1f7d2720bb3418b456a",
+    "name": "Ствол 112мм для P226 9x19",
+    "weight": 1.8,
+    "price": 6860
+   },
+   {
+    "id": "544909bb4bdc2d6f028b4577",
+    "name": "Тактический блок AN/PEQ-15",
+    "weight": 1.8,
+    "price": 49258
+   },
+   {
+    "id": "55d45f484bdc2d972f8b456d",
+    "name": "Цевье Кастом МР-133 пластик для МР-133 с направляющими",
+    "weight": 1.7,
+    "price": 8200
+   },
+   {
+    "id": "55d485be4bdc2d962f8b456f",
+    "name": "Магазин ПМ/ППШ 9х18ПМ для ПМ на 84 патрона",
+    "weight": 1.6,
+    "price": 8500
+   },
+   {
+    "id": "571a26d524597720680fbe8a",
+    "name": "Ствол 116мм для ТТ 7.62х25 ТТ",
+    "weight": 1.6,
+    "price": 8400
+   },
+   {
+    "id": "56e05a6ed2720bd0748b4567",
+    "name": "Щечки ЦНИИ Точмаш Бакелитовые для ПБ",
+    "weight": 1.6,
+    "price": 9300
+   },
+   {
+    "id": "57da93632459771cb65bf83f",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 1.5,
+    "price": 74000
+   },
+   {
+    "id": "57655f7d2459777aa2064c85",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_dot",
+    "weight": 1.4,
+    "price": 12315
+   },
+   {
+    "id": "576697fd2459770ab2362162",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_s",
+    "weight": 1.4,
+    "price": 12316
+   },
+   {
+    "id": "571a28e524597720b4066567",
+    "name": "Глушитель кустарный 7.62х25 ТТ",
+    "weight": 1.4,
+    "price": 12000
+   },
+   {
+    "id": "55d4491a4bdc2d882f8b456e",
+    "name": "Ствол 510мм для МР-133 12к ",
+    "weight": 1.4,
+    "price": 12185
+   },
+   {
+    "id": "55d448594bdc2d8c2f8b4569",
+    "name": "Ствол 610мм для ружья МР-133 12к",
+    "weight": 1.4,
+    "price": 12200
+   },
+   {
+    "id": "5648b4534bdc2d3d1c8b4580",
+    "name": "Цевье Б-10М и Газоотводная трубка Б-19",
+    "weight": 1.4,
+    "price": 11100
+   },
+   {
+    "id": "570fd79bd2720bc7458b4583",
+    "name": "scope_all_ekb_okp7",
+    "weight": 1.3,
+    "price": 12850
+   },
+   {
+    "id": "5649d9a14bdc2d79388b4580",
+    "name": "sight_rear_ak_tactica_tula_tt01",
+    "weight": 1.3,
+    "price": 12650
+   },
+   {
+    "id": "560836484bdc2d20478b456e",
+    "name": "Ствол 540мм для МР-133 12к ",
+    "weight": 1.3,
+    "price": 12700
+   },
+   {
+    "id": "560837154bdc2da74d8b4568",
+    "name": "Ствол 660мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.3,
+    "price": 12501
+   },
+   {
+    "id": "5608373c4bdc2dc8488b4570",
+    "name": "Ствол 710мм для ружья МР-133 12к",
+    "weight": 1.3,
+    "price": 14123
+   },
+   {
+    "id": "56deec93d2720bec348b4568",
+    "name": "Ствол 750мм для ружья МР-153 12к",
+    "weight": 1.3,
+    "price": 14180
+   },
+   {
+    "id": "5645bcc04bdc2d363b8b4572",
+    "name": "Peltor ComTac 2 headset",
+    "weight": 1.2,
+    "price": 16170
+   },
+   {
+    "id": "5649af884bdc2d1b2b8b4589",
+    "name": "Крышка ствольной коробки Зенит Б-33 для АК-74",
+    "weight": 1.2,
+    "price": 15200
+   },
+   {
+    "id": "56eabf3bd2720b75698b4569",
+    "name": "Приклад MOE Carbine",
+    "weight": 1.2,
+    "price": 14840
+   },
+   {
+    "id": "55d35ee94bdc2d61338b4568",
+    "name": "Ствол 260мм для AR-15 и совместимых 5.56х45",
+    "weight": 1.2,
+    "price": 15130
+   },
+   {
+    "id": "560836b64bdc2d57468b4567",
+    "name": "Ствол 540мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.2,
+    "price": 14900
+   },
+   {
+    "id": "560837824bdc2d57468b4568",
+    "name": "Ствол 750мм для ружья МР-133 12к",
+    "weight": 1.2,
+    "price": 15161
+   },
+   {
+    "id": "55f84c3c4bdc2d5f408b4576",
+    "name": "Цевье Daniel Defence RIS II 9.5 для AR-15 и совместимых",
+    "weight": 1.2,
+    "price": 15600
+   },
+   {
+    "id": "5645bc214bdc2d363b8b4571",
+    "name": "Kiver-M Helmet",
+    "weight": 1.1,
+    "price": 20100
+   },
+   {
+    "id": "5608379a4bdc2d26448b4569",
+    "name": "Ствол 750мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.1,
+    "price": 18180
+   },
+   {
+    "id": "571a279b24597720b4066566",
+    "name": "Ствол кустарный 116мм с резьбой для ТТ 7.62х25 ТТ",
+    "weight": 1.1,
+    "price": 18720
+   },
+   {
+    "id": "570fd721d2720bc5458b4596",
+    "name": "Walther MRS",
+    "weight": 1.0,
+    "price": 21570
+   },
+   {
+    "id": "558022b54bdc2dac148b458d",
+    "name": "scope_all_eotech_exps3",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "576697f22459770ab53cf5f6",
+    "name": "scope_all_vomz_pilad_p1x42_weaver_penek",
+    "weight": 1.0,
+    "price": 22324
+   },
+   {
+    "id": "57486e672459770abd687134",
+    "name": "scope_dovetail_ekb_okp7_dovetail",
+    "weight": 1.0,
+    "price": 21250
+   },
+   {
+    "id": "544a3f024bdc2d1d388b4568",
+    "name": "Оптический прицел ELCAN Specter OS4x",
+    "weight": 1.0,
+    "price": 22120
+   },
+   {
+    "id": "55d449444bdc2d962f8b456d",
+    "name": "Ствол 610мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 1.0,
+    "price": 23103
+   },
+   {
+    "id": "56def37dd2720bec348b456a",
+    "name": "Тактический фонарь X400",
+    "weight": 1.0,
+    "price": 24355
+   },
+   {
+    "id": "560836fb4bdc2d773f8b4569",
+    "name": "Ствол 660мм для ружья МР-133 12к",
+    "weight": 0.9,
+    "price": 31105
+   },
+   {
+    "id": "5648ae314bdc2d3d1c8b457f",
+    "name": "Цевье CAA RS47 для AK и совместимых",
+    "weight": 0.9,
+    "price": 26100
+   },
+   {
+    "id": "57ae0171245977343c27bfcf",
+    "name": "scope_all_belomo_pk_06",
+    "weight": 0.8,
+    "price": 35310
+   },
+   {
+    "id": "544a39de4bdc2d24388b4567",
+    "name": "scope_all_leupold_deltapoint",
+    "weight": 0.8,
+    "price": 31327
+   },
+   {
+    "id": "577d141e24597739c5255e01",
+    "name": "scope_base_burris_fast_fire_3",
+    "weight": 0.8,
+    "price": 31404
+   },
+   {
+    "id": "57f3c8cc2459773ec4480328",
+    "name": "silencer_pp-91-01_zmz_kedr_b_std_9x18pm",
+    "weight": 0.8,
+    "price": 35600
+   },
+   {
+    "id": "55d3632e4bdc2d972f8b4569",
+    "name": "Ствол 370мм для AR-15 и совместимых 5.56х45",
+    "weight": 0.8,
+    "price": 31150
+   },
+   {
+    "id": "558032574bdc2d89578b458a",
+    "name": "Тактическая рукоятка Magpul AFG",
+    "weight": 0.8,
+    "price": 36000
+   },
+   {
+    "id": "560d3b2d4bdc2d773f8b4573",
+    "name": "scope_all_aimpoint_micro_h1_high",
+    "weight": 0.7,
+    "price": 52570
+   },
+   {
+    "id": "570fd6c2d2720bc6458b457f",
+    "name": "scope_all_eotech_553",
+    "weight": 0.7,
+    "price": 40225
+   },
+   {
+    "id": "56e05b06d2720bb2668b4586",
+    "name": "Глушитель штатный ПБ 9х18 ПМ",
+    "weight": 0.7,
+    "price": 45400
+   },
+   {
+    "id": "560837544bdc2de22e8b456e",
+    "name": "Ствол 710мм для ружья МР-133 12к с прицельной планкой",
+    "weight": 0.7,
+    "price": 41158
+   },
+   {
+    "id": "544a3a774bdc2d3a388b4567",
+    "name": "scope_all_leupold_mark4_hamr",
+    "weight": 0.6,
+    "price": 60730
+   },
+   {
+    "id": "57ffb0e42459777d047111c5",
+    "name": "silencer_aks74u_tochmash_pbs-4_545x39",
+    "weight": 0.6,
+    "price": 53930
+   },
+   {
+    "id": "57dbb57e2459774673234890",
+    "name": "silencer_kac_nt-4_556x45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "57838c962459774a1651ec63",
+    "name": "silencer_vss_tochmash_std_9x39",
+    "weight": 0.6,
+    "price": 57000
+   },
+   {
+    "id": "55d614004bdc2d86028b4568",
+    "name": "Глушитель Surefire SOCOM556-MONSTER 5.56х45",
+    "weight": 0.6,
+    "price": 74000
+   },
+   {
+    "id": "564caa3d4bdc2d17108b458e",
+    "name": "Глушитель Пламегаситель ТГП-А 5.45х39",
+    "weight": 0.6,
+    "price": 63930
+   },
+   {
+    "id": "57c44dd02459772d2e0ae249",
+    "name": "silencer_val_tochmash_std_9x39",
+    "weight": 0.5,
+    "price": 88000
+   },
+   {
+    "id": "55d6190f4bdc2d87028b4567",
+    "name": "Глушитель Surefire SOCOM556-MINI MONSTER 5.56х45",
+    "weight": 0.5,
+    "price": 89000
+   },
+   {
+    "id": "576fd4ec2459777f0b518431",
+    "name": "scope_dovetail_belomo_pso_1m2-1_4×24",
+    "weight": 0.3,
+    "price": 234407
+   }
+  ]
+ }
+}

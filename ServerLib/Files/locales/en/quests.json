@@ -43,5 +43,30 @@
 			"6af9261f3bf39e67e24f2631": "Sell Water Bottle to Prapor",
 			"6af991c93bdbcad489dedff5": "Hand over 2 Water Bottles"
 		}
+	},
+	"6afb629541bb1cfc4e104b4e": {
+		"name": "Food Service",
+		"description": "Hello, young man. Really, thank you for the help with our supplies. We were in a very desperate situation there. I am sure you know that I also sell food, which people all across Tarkov come to me for. We aren't running low on food, but we do need some more items to sell. People don't particularly like eating crackers and fish every day, I thought it may bring in more service. Could you find us some unique food to sell?",
+		"conditions": {
+			"6afb629541bb1cfc4e104b4f": "Hand over Russian Army pineapple juice",
+			"6afb629541bb1cfc4e104b50": "Hand over Emelya rye croutons",
+			"6afb635edd7c23525d693823": "Hand over Can of beef stew (large)",
+			"6afb637cdd7c23525d693824": "Hand over Can of green peas"
+		}
+	},
+	"6afb6520dd7c23525d693828": {
+		"name": "Executioner pt. 1",
+		"description": "I'm getting fucking tired of the people stirring up problems in Tarkov lately! Clearly, you can handle yourself. I need the scum ruining my transport, trade, and service to be gone. Executed. There's simply no other way to do this, you've gotta send a message. You wanna go out there and take them out for me? Maybe I'll keep giving you jobs like this if you can make it through this one.",
+		"conditions": {
+			"6afb6621dd7c23525d69382b": "Kill 4 targets on any location"
+		}
+	},
+	"6afb673340bd522e8b150457": {
+		"name": "Executioner pt. 2",
+		"description": "That last job was clean, damn! You really know how to do a number on people. Let's get your track record set, I want you to go around Tarkov and get some kills. Log them and let me know when you're done. I'll discuss payment with you afterwards.",
+		"conditions": {
+			"6afb673340bd522e8b15045a": "Kill 4 targets on any location",
+			"6afb674940bd522e8b15045d": "Reach 25 overall kills"
+		}
 	}
 }

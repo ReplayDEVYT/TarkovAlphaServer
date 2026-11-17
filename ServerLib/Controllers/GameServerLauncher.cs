@@ -15,18 +15,29 @@ namespace ServerLib.Controllers
 
         public static bool Enabled => !string.IsNullOrEmpty(ConfigController.Configs.Server?.Matchmaking?.GameServerPath);
 
-        public static bool Launch(MatchController.MatchData match)
+        public static bool Launch(MatchController.MatchData match, out string error)
         {
+            error = "";
             var cfg = ConfigController.Configs.Server.Matchmaking;
             var exe = cfg.GameServerPath;
             if (!File.Exists(exe))
             {
+                error = "the game server exe (matchmaking.gameServerPath) does not exist on the server PC";
                 Debug.PrintError($"matchmaking.gameServerPath does not exist: {exe}", "GameServer");
+                return false;
+            }
+            // the game server quits at once when it cannot listen; say why instead of a 90 s wait
+            var portProblem = Utilities.NetAddress.UdpPortProblem(match.Port);
+            if (portProblem != null)
+            {
+                error = portProblem;
+                Debug.PrintError(portProblem, "GameServer");
                 return false;
             }
             Directory.CreateDirectory("logs");
             var log = Path.GetFullPath(Path.Combine("logs", $"gameserver_{match.MatchId}.log"));
-            var backend = $"http://127.0.0.1:{ConfigController.Configs.Server.Port}";
+            // a backend listening on one LAN address does not answer on 127.0.0.1
+            var backend = Web.HTTPServer.LocalUrl;
             var info = new ProcessStartInfo
             {
                 FileName = exe,
@@ -51,6 +62,7 @@ namespace ServerLib.Controllers
             }
             catch (Exception ex)
             {
+                error = ex.Message;
                 Debug.PrintError($"Could not start the game server: {ex.Message}", "GameServer");
                 return false;
             }
@@ -63,6 +75,9 @@ namespace ServerLib.Controllers
                 if (Running.TryGetValue(matchId, out var p) && p == process) Running.Remove(matchId);
             }
             Debug.PrintInfo($"Game server for match [{matchId}] exited (code {SafeExitCode(process)})", "GameServer");
+            // before it reported ready = it never started; the players waiting for it are told why (/client/match/problem)
+            MatchController.ServerFailed(matchId, $"The game server for this raid stopped while starting (exit code {SafeExitCode(process)}). " +
+                $"Its log is logs/gameserver_{matchId}.log on the server PC.");
             // A server that dies takes its match with it; otherwise players stay "Busy" in a dead match.
             MatchController.EndMatch(matchId);
         }

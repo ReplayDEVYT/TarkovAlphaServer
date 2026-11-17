@@ -41,7 +41,7 @@ namespace ServerLib.Web
                 Utils.SendUnityResponse(session, ResponseControl.GetBody("null", 503, error));
                 return true;
             }
-            Other.ProfileStatus[] response = { StatusFor(sessionId, character.Id) };
+            Other.ProfileStatus[] response = { StatusFor(sessionId, character.Id, ServerMatch.Endpoint(session)) };
             var rsp = ResponseControl.GetBody(JsonConvert.SerializeObject(response));
             Utils.SendUnityResponse(session, rsp);
             return true;

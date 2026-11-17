@@ -124,7 +124,7 @@ namespace ServerLib.Responders
             Utilities.Debug.PrintInfo($"Raid lost: {remove.Count} items lost, health restored", "GameProfile.SAVE");
         }
 
-        public static string ProfileStatus(string SessionId)
+        public static string ProfileStatus(string SessionId, MatchController.ClientEndpoint? endpoint = null)
         {
             var character = CharacterController.GetCharacter(SessionId);
             if (character == null)
@@ -133,7 +133,7 @@ namespace ServerLib.Responders
                 return GetBody("[]");
             }
 
-            Other.ProfileStatus[] response = { MatchController.StatusFor(SessionId, character.Id) };
+            Other.ProfileStatus[] response = { MatchController.StatusFor(SessionId, character.Id, endpoint) };
             return GetBody(JsonConvert.SerializeObject(response));
         }
 
@@ -207,14 +207,17 @@ namespace ServerLib.Responders
             Debug.PrintInfo($"Profile {profile.Id} revived ({reason})", "GameProfile");
         }
 
-        public static string ProfileSelect(string SessionId)
+        public static string ProfileSelect(string SessionId, string? hostHeader = null)
         {
+            // Reconstruction fix: the game long-polls http://<server>/push/notifier/get/..., and "server" was server.json's
+            // ip:port (127.0.0.1 or 0.0.0.0 for anyone on another PC). The address the game used to reach us works for it.
+            string notifierServer = !string.IsNullOrWhiteSpace(hostHeader) && !hostHeader.Contains('/') ? hostHeader.Trim() : ServerLibClass.ip_port;
             SelectProfileResponse response = new()
-            { 
+            {
                 status = "ok",
                 notifier = new()
                 {
-                    { "server", ServerLibClass.ip_port },
+                    { "server", notifierServer },
                     { "channel_id", SessionId }
                 }
             };

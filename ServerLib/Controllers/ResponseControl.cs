@@ -11,13 +11,26 @@ namespace ServerLib.Web
         }
         public static string GetBody(string Data, int errorcode = 0, string errormsg = "null")
         {
-            var Stuff = "{\"err\":" + errorcode + ",\"errmsg\":" + errormsg + ",\"data\":" + Data + "}";
+            var Stuff = "{\"err\":" + errorcode + ",\"errmsg\":" + ErrMsg(errormsg) + ",\"data\":" + Data + "}";
             return Stuff;
         }
         public static string GetBodyCRC(string Data, int errorcode = 0, string errormsg = "null", uint crc = 0)
         {
-            var Stuff = "{\"err\":" + errorcode + ",\"errmsg\":" + errormsg + ",\"data\":" + Data + ",\"crc\":" + crc + "}";
+            var Stuff = "{\"err\":" + errorcode + ",\"errmsg\":" + ErrMsg(errormsg) + ",\"data\":" + Data + ",\"crc\":" + crc + "}";
             return Stuff;
+        }
+
+        /// <summary>
+        /// Reconstruction fix: most callers pass plain text ("Character not found"), which went into the JSON unquoted, so
+        /// the game could not read the answer and showed a parse error instead of the message. Already quoted text
+        /// (JsonConvert.SerializeObject) and null stay as they are.
+        /// </summary>
+        static string ErrMsg(string? errormsg)
+        {
+            if (errormsg == null || errormsg == "null") return "null";
+            string t = errormsg.Trim();
+            if (t.Length >= 2 && t[0] == '"' && t[t.Length - 1] == '"') return errormsg;
+            return Newtonsoft.Json.JsonConvert.SerializeObject(errormsg);
         }
         public static string BodyWithCheckUserAccess(string SessionId, string Body)
         {

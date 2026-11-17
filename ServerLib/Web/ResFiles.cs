@@ -21,7 +21,7 @@ namespace ServerLib.Web
             {
                 rsp = File.ReadAllBytes($"Files/res/trader/{avatar}");
             }
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Type", "image/png"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "image/png", rsp));
             return true;
         }
 
@@ -39,7 +39,7 @@ namespace ServerLib.Web
             {
                 rsp = File.ReadAllBytes($"Files/res/handbook/{handbook}");
             }
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Type", "image/png"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "image/png", rsp));
             return true;
         }
 
@@ -57,7 +57,7 @@ namespace ServerLib.Web
             {
                 rsp = File.ReadAllBytes($"Files/res/hideout/{Hideout}");
             }
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Type", "image/png"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "image/png", rsp));
             return true;
         }
 
@@ -75,7 +75,7 @@ namespace ServerLib.Web
             {
                 rsp = File.ReadAllBytes($"Files/res/quest/{quest}");
             }
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Type", "image/png"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "image/png", rsp));
             return true;
         }
 

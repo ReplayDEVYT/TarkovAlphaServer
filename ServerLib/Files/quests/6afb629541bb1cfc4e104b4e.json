@@ -1,0 +1,117 @@
+{
+	"_id": "6afb629541bb1cfc4e104b4e",
+	"traderId": "6afa55d33d2787af8b204192",
+	"name": "Food Service",
+	"description": "Hello, young man. Really, thank you for the help with our supplies. We were in a very desperate situation there. I am sure you know that I also sell food, which people all across Tarkov come to me for. We aren't running low on food, but we do need some more items to sell. People don't particularly like eating crackers and fish every day, I thought it may bring in more service. Could you find us some unique food to sell?",
+	"image": "/files/quest/icon/59c2742286f77475ec568d92.png",
+	"type": "PickUp",
+	"isKey": true,
+	"rewards": {
+		"Started": [],
+		"Success": [
+			{
+				"type": "Item",
+				"target": "6afa613377a29edad8e19b5e",
+				"value": 1,
+				"items": [
+					{
+						"_id": "6afa613377a29edad8e19b5e",
+						"_tpl": "5449016a4bdc2d6f028b456f",
+						"upd": {
+							"StackObjectsCount": 14275
+						}
+					}
+				]
+			},
+			{
+				"type": "Experience",
+				"target": "",
+				"value": 470
+			},
+			{
+				"type": "TraderStanding",
+				"target": "6afa55d33d2787af8b204192",
+				"value": 0.039999999105930328
+			},
+			{
+				"type": "Item",
+				"target": "6afb63bfdd7c23525d693825",
+				"value": 3,
+				"items": [
+					{
+						"_id": "6afb63bfdd7c23525d693825",
+						"_tpl": "5448fee04bdc2dbc018b4567"
+					}
+				]
+			},
+			{
+				"type": "Item",
+				"target": "6afb63ccdd7c23525d693826",
+				"value": 4,
+				"items": [
+					{
+						"_id": "6afb63ccdd7c23525d693826",
+						"_tpl": "5448ff904bdc2d6f028b456e"
+					}
+				]
+			}
+		],
+		"Fail": []
+	},
+	"conditions": {
+		"AvailableForStart": [
+			{
+				"_parent": "Quest",
+				"_props": {
+					"id": "6afb631fdd7c23525d693822",
+					"target": "6afa5e1777a29edad8e19b5a",
+					"status": "Success",
+					"value": 1,
+					"compareMethod": ">="
+				}
+			}
+		],
+		"AvailableForFinish": [
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afb629541bb1cfc4e104b4f",
+					"description": "Hand over Russian Army pineapple juice",
+					"target": "544fb62a4bdc2dfb738b4568",
+					"value": 2
+				}
+			},
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afb635edd7c23525d693823",
+					"description": "Hand over Can of beef stew (large)",
+					"target": "57347da92459774491567cf5",
+					"value": 2
+				}
+			},
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afb637cdd7c23525d693824",
+					"description": "Hand over Can of green peas",
+					"target": "57347d692459774491567cf1",
+					"value": 1
+				}
+			},
+			{
+				"_parent": "HandoverItem",
+				"_props": {
+					"id": "6afb629541bb1cfc4e104b50",
+					"description": "Hand over Emelya rye croutons",
+					"target": "5751487e245977207e26a315",
+					"value": 1
+				}
+			}
+		],
+		"Fail": []
+	},
+	"_server": {
+		"handOverItems": false
+	}
+}

@@ -1,7 +1,7 @@
 {
  "location": "hvh",
  "rules": {
-  "source": "preset",
+  "source": "tables",
   "pointChance": 0.55,
   "rarityWeights": {
    "Common": 1.0,

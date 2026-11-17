@@ -10,6 +10,11 @@
     <Content Include="Files\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <!-- next to the server exe: "Open firewall ports.bat" (see NetworkReport) -->
+    <Content Include="Scripts\**">
+      <Link>%(Filename)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="L" Version="5.0.0" />

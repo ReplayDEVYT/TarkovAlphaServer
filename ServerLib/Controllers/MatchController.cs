@@ -147,6 +147,8 @@ namespace ServerLib.Controllers
                 }
                 if (m.ServerLaunched && !m.ServerReady && now - m.CreatedAt > cfg.GameServerStartTimeoutSeconds)
                 {
+                    SetProblem(m, $"The game server for this raid did not start within {cfg.GameServerStartTimeoutSeconds} s. " +
+                        $"The server's log is logs/gameserver_{m.MatchId}.log on the server PC.");
                     Matches.Remove(m.MatchId);
                     GameServerLauncher.Stop(m.MatchId);
                     Debug.PrintError($"Game server for match [{m.MatchId}] did not report ready within {cfg.GameServerStartTimeoutSeconds} s; match cancelled.", "MatchController");
@@ -296,10 +298,46 @@ namespace ServerLib.Controllers
         static int? FreeDedicatedPort()
         {
             var cfg = Cfg;
-            var used = Matches.Values.Where(m => m.HostType == EHostType.Dedicated).Select(m => m.Port).ToHashSet();
+            var used = Matches.Values.Where(m => m.HostType == EHostType.Dedicated || m.ServerLaunched).Select(m => m.Port).ToHashSet();
             for (int p = cfg.PortStart; p <= cfg.PortEnd; p++)
-                if (!used.Contains(p)) return p;
+            {
+                if (used.Contains(p)) continue;
+                // a port another program (or a game server left running) holds would make the new server quit at once
+                if (GameServerLauncher.Enabled && NetAddress.UdpPortProblem(p) != null) continue;
+                return p;
+            }
             return null;
+        }
+
+        /// <summary>
+        /// Why the last match of a session ended before the raid (game server did not start, exited, ...). The game asks
+        /// for it (/client/match/problem) when matching fails, and shows it. Cleared when read and on the next queue.
+        /// </summary>
+        public static Dictionary<string, string> Problems = new();
+
+        static void SetProblem(MatchData m, string text)
+        {
+            foreach (var u in m.Users) Problems[u.sessionId] = text;
+        }
+
+        public static string TakeProblem(string SessionId)
+        {
+            lock (Lock)
+            {
+                if (!Problems.TryGetValue(SessionId, out var text)) return "";
+                Problems.Remove(SessionId);
+                return text;
+            }
+        }
+
+        /// <summary>A launched game server exited before it reported ready: the match is cancelled with this reason.</summary>
+        public static void ServerFailed(string MatchId, string text)
+        {
+            lock (Lock)
+            {
+                if (!Matches.TryGetValue(MatchId, out var m) || m.ServerReady) return;
+                SetProblem(m, text);
+            }
         }
 
         /// <summary>
@@ -314,6 +352,7 @@ namespace ServerLib.Controllers
             var cfg = Cfg;
             lock (Lock)
             {
+                Problems.Remove(ProfileId);
                 Update();
                 long now = TimeHelper.UnixTimeNow_Int();
                 string? group = Groups.TryGetValue(ProfileId, out var g) ? g : null;
@@ -369,7 +408,7 @@ namespace ServerLib.Controllers
                     var port = FreeDedicatedPort();
                     if (port == null)
                     {
-                        error = $"All match ports ({cfg.PortStart}-{cfg.PortEnd}) are in use";
+                        error = $"No free raid port on the server: UDP {cfg.PortStart}-{cfg.PortEnd} are all in use (running raids or other programs). Try again later.";
                         Debug.PrintWarn(error, "MatchController");
                         return null;
                     }
@@ -381,26 +420,37 @@ namespace ServerLib.Controllers
                 // The game client cannot host a raid in-process yet. A host on the backend's own machine gets
                 // the backend's game server on the port they chose (e.g. one their tunnel/router forwards).
                 bool launchForHost = playerHosts && GameServerLauncher.Enabled && IsLocal(remoteIp);
-                if (launchForHost && Matches.Values.Any(m => m.ServerLaunched && m.Port == match.Port))
-                {
-                    error = $"Port {match.Port} is already used by another match";
-                    Debug.PrintWarn(error, "MatchController");
-                    return null;
-                }
                 if (playerHosts && !launchForHost)
                 {
-                    Debug.PrintWarn($"Match [{match.MatchId}] is hosted by {ProfileId} on {match.Ip}:{match.Port}, but the game cannot host raids itself yet and " +
-                        "no game server is started for it (only for hosts on the backend's machine with matchmaking.gameServerPath set). Clients will fail to connect.", "MatchController");
+                    // Reconstruction fix: such a match used to be created anyway, with nothing listening at its address,
+                    // so everyone who joined failed to connect and was thrown out. Refuse it with the reason instead.
+                    error = GameServerLauncher.Enabled
+                        ? "Hosting only works on the server's own PC: the game cannot host raids itself. Turn off \"Host matches\" in the matching options to play on the server's game servers."
+                        : "Hosting is not available: this server has no game server set up (matchmaking.gameServerPath). Turn off \"Host matches\" in the matching options.";
+                    Debug.PrintWarn($"{ProfileId} wanted to host on {match.Ip}:{match.Port}: refused. " + error, "MatchController");
+                    return null;
+                }
+                if (launchForHost)
+                {
+                    string? portProblem = Matches.Values.Any(m => m.ServerLaunched && m.Port == match.Port)
+                        ? $"Port {match.Port} is already used by another match on the server PC"
+                        : NetAddress.UdpPortProblem(match.Port);
+                    if (portProblem != null)
+                    {
+                        error = portProblem + ". Pick another port in the matching options.";
+                        Debug.PrintWarn(error, "MatchController");
+                        return null;
+                    }
                 }
 
                 Matches.Add(match.MatchId, match);
                 if (launchForHost)
                 {
-                    match.ServerLaunched = GameServerLauncher.Launch(match);
+                    match.ServerLaunched = GameServerLauncher.Launch(match, out string launchError);
                     if (!match.ServerLaunched)
                     {
                         Matches.Remove(match.MatchId);
-                        error = "The game server could not be started";
+                        error = "The game server could not be started: " + launchError;
                         return null;
                     }
                 }
@@ -411,11 +461,11 @@ namespace ServerLib.Controllers
                 }
                 if (match.HostType == EHostType.Dedicated && GameServerLauncher.Enabled)
                 {
-                    match.ServerLaunched = GameServerLauncher.Launch(match);
+                    match.ServerLaunched = GameServerLauncher.Launch(match, out string launchError);
                     if (!match.ServerLaunched)
                     {
                         Matches.Remove(match.MatchId);
-                        error = "The game server could not be started";
+                        error = "The game server could not be started: " + launchError;
                         return null;
                     }
                 }
@@ -428,8 +478,8 @@ namespace ServerLib.Controllers
         /// The address other players should connect to when this player hosts. A host that reached the
         /// backend over loopback is on the backend's machine, so hand out the configured public address.
         /// </summary>
-        static bool IsLocal(string? remoteIp) =>
-            string.IsNullOrEmpty(remoteIp) || remoteIp == "127.0.0.1" || remoteIp == "::1" || remoteIp == "::ffff:127.0.0.1";
+        /// <summary>The player runs the game on the backend's own PC (loopback, or one of this PC's LAN addresses).</summary>
+        static bool IsLocal(string? remoteIp) => NetAddress.IsThisMachine(remoteIp);
 
         static string HostAddress(string? remoteIp)
         {
@@ -442,14 +492,63 @@ namespace ServerLib.Controllers
             return remoteIp;
         }
 
+        /// <summary>How a player's game reached the backend (one HTTP request): its address, this PC's address it
+        /// connected to, and the Host header it used.</summary>
+        public class ClientEndpoint
+        {
+            public string Remote = "";
+            public string Local = "";
+            public string Host = "";
+        }
+
+        static readonly HashSet<string> Announced = new();
+
+        /// <summary>
+        /// Reconstruction fix: every player of a match used to get the same address (matchIp / servers[0].ip). With
+        /// that set to the public address, players on the server's LAN went out to the router and back in (hairpin
+        /// NAT: slow, or no connection at all on many routers); with it on a LAN address, internet players could not
+        /// connect. For a game server on this PC each player now gets the address that fits:
+        ///   - same PC (loopback): 127.0.0.1
+        ///   - LAN / VPN (private address), or this PC has the public address itself: the address of this PC the
+        ///     player's game just reached the backend at
+        ///   - internet through NAT (router, most VPS): the configured public address (matchIp / hostPublicIp / the
+        ///     host's given IP), or when that is empty, loopback or a LAN address, the host name the player typed to
+        ///     reach the backend.
+        /// A game server elsewhere (started by hand) keeps the configured address.
+        /// </summary>
+        public static string AddressFor(MatchData m, ClientEndpoint? ep)
+        {
+            if (ep == null || !m.ServerLaunched) return m.Ip;
+            string remote = NetAddress.Normalize(ep.Remote), local = NetAddress.Normalize(ep.Local);
+            if (NetAddress.IsLoopback(remote) || remote == "") return "127.0.0.1";
+            if (NetAddress.IsIPv4(local) && !NetAddress.IsLoopback(local))
+            {
+                if (NetAddress.IsPrivate(remote) || !NetAddress.IsPrivate(local) || remote == local) return local;
+            }
+            string configured = NetAddress.Normalize(m.Ip);
+            if (configured != "" && !NetAddress.IsLoopback(configured) && !NetAddress.IsPrivate(configured)) return configured;
+            string host = NetAddress.HostOf(ep.Host);
+            if (host != "" && !NetAddress.IsLoopback(host) && !NetAddress.IsPrivate(host)) return host;
+            return configured != "" ? configured : host;
+        }
+
         /// <summary>The profile-status entry for this session (what /client/profile/status reports).</summary>
-        public static Other.ProfileStatus StatusFor(string SessionId, string ProfileId)
+        public static Other.ProfileStatus StatusFor(string SessionId, string ProfileId, ClientEndpoint? endpoint = null)
         {
             var status = new Other.ProfileStatus { profileid = ProfileId, status = "Free", ip = "", port = 0 };
             var (match, isNew) = GetMatch(SessionId);
             if (isNew) return status;
             status.status = match.IsStarted ? "Busy" : "MatchWait";
-            status.ip = match.Ip;
+            status.ip = AddressFor(match, endpoint);
+            if (match.IsStarted)
+            {
+                lock (Announced)
+                {
+                    if (Announced.Add(match.MatchId + "/" + SessionId))
+                        Debug.PrintInfo($"{SessionId} connects to the raid at {status.ip}:{match.Port}" +
+                            (endpoint != null ? $" (game reached the backend from {NetAddress.Normalize(endpoint.Remote)} at {NetAddress.Normalize(endpoint.Local)})" : ""), "MatchController");
+                }
+            }
             status.port = match.Port;
             status.location = match.Location;
             status.gameMode = "deathmatch";

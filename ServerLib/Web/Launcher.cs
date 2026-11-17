@@ -17,7 +17,7 @@ namespace ServerLib.Web
             // RPS
             string resp = AccountController.Login(JsonConvert.DeserializeObject<Json.Classes.Requests.Login>(Uncompressed));
             var rsp = ResponseControl.CompressRsp(resp);
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Encoding", "deflate"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "text/plain; charset=UTF-8", rsp, "deflate"));
             return true;
         }
 
@@ -31,7 +31,7 @@ namespace ServerLib.Web
             // RPS
             string resp = AccountController.Register(JsonConvert.DeserializeObject<Json.Classes.Requests.Register>(Uncompressed));
             var rsp = ResponseControl.CompressRsp(resp);
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Encoding", "deflate"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "text/plain; charset=UTF-8", rsp, "deflate"));
             return true;
         }
 
@@ -45,7 +45,7 @@ namespace ServerLib.Web
             // RPS
             string resp = JsonConvert.SerializeObject(AccountController.FindAccount(Uncompressed));
             var rsp = ResponseControl.CompressRsp(resp);
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Encoding", "deflate"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "text/plain; charset=UTF-8", rsp, "deflate"));
             return true;
         }
 
@@ -59,7 +59,7 @@ namespace ServerLib.Web
             var server = ConfigController.Configs.Server;
             string resp = "{backendUrl: https://" + server.Ip + ":" + server.Port + ",name:" + server.Name + ",server:" + JsonConvert.SerializeObject(server) + "}";
             var rsp = ResponseControl.CompressRsp(resp);
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Encoding", "deflate"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "text/plain; charset=UTF-8", rsp, "deflate"));
             return true;
         }
 
@@ -74,7 +74,7 @@ namespace ServerLib.Web
             Console.WriteLine(Uncompressed);
             string resp = AccountController.RemoveAccount(Uncompressed);
             var rsp = ResponseControl.CompressRsp(resp);
-            session.SendResponse(session.Response.MakeGetResponse(rsp).SetHeader("Content-Encoding", "deflate"));
+            session.SendResponse(Utils.BuildResponse(session.Response, 200, "text/plain; charset=UTF-8", rsp, "deflate"));
             return true;
         }
     }

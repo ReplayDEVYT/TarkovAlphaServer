@@ -30,7 +30,7 @@ namespace ServerLib.Web
             string SessionId = Utils.GetSessionId(session.Headers);
             Utils.PrintRequest(request, session);
 
-            var rsp = GameProfile.ProfileSelect(SessionId);
+            var rsp = GameProfile.ProfileSelect(SessionId, session.HostHeader);
             Utils.SendUnityResponse(session, rsp);
             return true;
         }
@@ -137,7 +137,7 @@ namespace ServerLib.Web
             string SessionId = Utils.GetSessionId(session.Headers);
             Utils.PrintRequest(request, session);
 
-            var rsp = GameProfile.ProfileStatus(SessionId);
+            var rsp = GameProfile.ProfileStatus(SessionId, ServerMatch.Endpoint(session));
             Utils.SendUnityResponse(session, rsp);
             return true;
         }

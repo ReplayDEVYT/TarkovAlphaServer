@@ -25,6 +25,31 @@ namespace ServerLib.Web
             }
         }
 
+        /// <summary>How this request reached the backend (for MatchController.AddressFor).</summary>
+        public static MatchController.ClientEndpoint Endpoint(HttpsBackendSession session)
+        {
+            var ep = new MatchController.ClientEndpoint { Remote = RemoteIp(session) ?? "", Host = session.HostHeader };
+            try
+            {
+                ep.Local = (session.Socket?.LocalEndPoint as IPEndPoint)?.Address.ToString() ?? "";
+            }
+            catch (ObjectDisposedException) { }
+            return ep;
+        }
+
+        /// <summary>
+        /// Why the player's last match ended before the raid ("" = nothing to tell): game server did not start in time,
+        /// exited, ... The game asks after matching failed and shows it (EFT.Reconstruction.RaidConnectionNotice).
+        /// </summary>
+        [HTTP("POST", "/client/match/problem")]
+        public static bool MatchProblem(HttpRequest request, HttpsBackendSession session)
+        {
+            var sessionId = Utils.GetSessionId(session.Headers);
+            string text = MatchController.TakeProblem(sessionId);
+            Utils.SendUnityResponse(session, ResponseControl.GetBody(JsonConvert.SerializeObject(text)));
+            return true;
+        }
+
         static bool IsLoopback(string? ip) => ip == "127.0.0.1" || ip == "::1" || ip == "::ffff:127.0.0.1";
 
         /// <summary>
@@ -41,9 +66,7 @@ namespace ServerLib.Web
 
         static void SendJson(HttpsBackendSession session, object value, int code = 200)
         {
-            var rsp = session.Response.MakeGetResponse(JsonConvert.SerializeObject(value), "application/json");
-            if (code != 200) rsp.SetBegin(code);
-            session.SendResponse(rsp);
+            session.SendResponse(Utils.BuildResponse(session.Response, code, "application/json", JsonConvert.SerializeObject(value)));
         }
 
         static object Describe(MatchController.MatchData m) => new
@@ -262,6 +285,29 @@ namespace ServerLib.Web
                 return true;
             }
             session.SendResponse(session.Response.MakeGetResponse(File.ReadAllText(path), "application/json"));
+            return true;
+        }
+
+        /// <summary>
+        /// Loot data for an offline raid, which the game generates itself (EFT/Reconstruction/RaidLoot.cs,
+        /// smethod_OfflineLoot): {"location": Files/loot/{locationId}.json, "tables": Files/loot/tables.json}.
+        /// Plain JSON (not zlib), read by the game with its own web request. Open to any address: the same data
+        /// decides loot online, where the game server reads it through /server/loot/.
+        /// </summary>
+        [HTTP("GET", "/client/raid/loot/{locationId}")]
+        public static bool ClientRaidLoot(HttpRequest request, HttpsBackendSession session)
+        {
+            string id = session.HttpParam["locationId"];
+            string path = Path.Combine("Files", "loot", id + ".json");
+            if (id.Contains('/') || id.Contains('\\') || id.Contains("..") || id == "tables" || !File.Exists(path))
+            {
+                SendJson(session, new { error = "no loot data" }, 404);
+                return true;
+            }
+            string tablesPath = Path.Combine("Files", "loot", "tables.json");
+            string tables = File.Exists(tablesPath) ? File.ReadAllText(tablesPath) : "null";
+            string body = "{\"location\":" + File.ReadAllText(path) + ",\"tables\":" + tables + "}";
+            session.SendResponse(session.Response.MakeGetResponse(body, "application/json"));
             return true;
         }
 
